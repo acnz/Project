@@ -1,0 +1,352 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Jin%
+\ \protect \BOthers {.}}{%
+Jin%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2008}}%
+}]{%
+hrib}
+\APACinsertmetastar {%
+hrib}%
+\begin{APACrefauthors}%
+Jin, H.%
+, Qiu, H.%
+, Sakamoto, Y.%
+, Shu, P.%
+, Terasaki, O.%
+\BCBL {}\ \BBA {} Che, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2008}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Mesoporous Silicas by Self-Assembly of Lipid Molecules:
+  Ribbon, Hollow Sphere, and Chiral Materials} {Mesoporous silicas by
+  self-assembly of lipid molecules: Ribbon, hollow sphere, and chiral
+  materials}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Chemistry – A European Journal}{14}{21}{6413--6420}.
+\newblock
+\begin{APACrefURL} \url{http://dx.doi.org/10.1002/chem.200701988}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1002/chem.200701988} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Kresge%
+\ \BBA {} Roth%
+}{%
+Kresge%
+\ \BBA {} Roth%
+}{%
+{\protect \APACyear {2013}}%
+}]{%
+mcm}
+\APACinsertmetastar {%
+mcm}%
+\begin{APACrefauthors}%
+Kresge, C\BPBI T.%
+\BCBT {}\ \BBA {} Roth, W\BPBI J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2013}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The discovery of mesoporous molecular sieves from the
+  twenty year perspective} {The discovery of mesoporous molecular sieves from
+  the twenty year perspective}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Chem. Soc. Rev.}{42}{}{3663-3670}.
+\newblock
+\begin{APACrefURL} \url{http://dx.doi.org/10.1039/C3CS60016E} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1039/C3CS60016E} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Mirzoev%
+\ \BBA {} Lyubartsev%
+}{%
+Mirzoev%
+\ \BBA {} Lyubartsev%
+}{%
+{\protect \APACyear {2013}}%
+}]{%
+magic}
+\APACinsertmetastar {%
+magic}%
+\begin{APACrefauthors}%
+Mirzoev, A.%
+\BCBT {}\ \BBA {} Lyubartsev, A\BPBI P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2013}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {MagiC: Software Package for Multiscale Modeling} {Magic:
+  Software package for multiscale modeling}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Chemical Theory and
+  Computation}{9}{3}{1512-1520}.
+\newblock
+\begin{APACrefURL} \url{http://dx.doi.org/10.1021/ct301019v} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1021/ct301019v} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Mirzoev%
+\ \BBA {} Lyubartsev%
+}{%
+Mirzoev%
+\ \BBA {} Lyubartsev%
+}{%
+{\protect \APACyear {2014}}%
+}]{%
+dmpc}
+\APACinsertmetastar {%
+dmpc}%
+\begin{APACrefauthors}%
+Mirzoev, A.%
+\BCBT {}\ \BBA {} Lyubartsev, A\BPBI P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Systematic implicit solvent coarse graining of
+  dimyristoylphosphatidylcholine lipids} {Systematic implicit solvent coarse
+  graining of dimyristoylphosphatidylcholine lipids}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Computational
+  Chemistry}{35}{16}{1208--1218}.
+\newblock
+\begin{APACrefURL} \url{http://dx.doi.org/10.1002/jcc.23610} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1002/jcc.23610} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Need%
+\ \BBA {} Someone%
+}{%
+Need%
+\ \BBA {} Someone%
+}{%
+{\protect \APACyear {2025}}%
+}]{%
+someone}
+\APACinsertmetastar {%
+someone}%
+\begin{APACrefauthors}%
+Need, A.%
+\BCBT {}\ \BBA {} Someone, T\BPBI C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2025}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Mock article: You need to read more} {Mock article: You
+  need to read more}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Void Theory}{1}{1}{151-1510}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Patwardhan%
+}{%
+Patwardhan%
+}{%
+{\protect \APACyear {2011}}%
+}]{%
+bioinsp}
+\APACinsertmetastar {%
+bioinsp}%
+\begin{APACrefauthors}%
+Patwardhan, S\BPBI V.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Biomimetic and bioinspired silica: recent developments
+  and applications} {Biomimetic and bioinspired silica: recent developments and
+  applications}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Chem. Commun.}{47}{}{7567-7582}.
+\newblock
+\begin{APACrefURL} \url{http://dx.doi.org/10.1039/C0CC05648K} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1039/C0CC05648K} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Pronk%
+\ \protect \BOthers {.}}{%
+Pronk%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2013}}%
+}]{%
+gromacs}
+\APACinsertmetastar {%
+gromacs}%
+\begin{APACrefauthors}%
+Pronk, S.%
+, Páll, S.%
+, Schulz, R.%
+, Larsson, P.%
+, Bjelkmar, P.%
+, Apostolov, R.%
+\BDBL {}Lindahl, E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2013}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {GROMACS 4.5: a high-throughput and highly parallel open
+  source molecular simulation toolkit} {Gromacs 4.5: a high-throughput and
+  highly parallel open source molecular simulation toolkit}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Bioinformatics}{29}{7}{845-854}.
+\newblock
+\begin{APACrefURL}
+  \url{http://bioinformatics.oxfordjournals.org/content/29/7/845.abstract}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1093/bioinformatics/btt055} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Pérez-Sánchez%
+, Gomes%
+\BCBL {}\ \BBA {} Jorge%
+}{%
+Pérez-Sánchez%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2013}}%
+}]{%
+mjsilica}
+\APACinsertmetastar {%
+mjsilica}%
+\begin{APACrefauthors}%
+Pérez-Sánchez, G.%
+, Gomes, J\BPBI R\BPBI B.%
+\BCBL {}\ \BBA {} Jorge, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2013}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Modeling Self-Assembly of Silica/Surfactant
+  Mesostructures in the Templated Synthesis of Nanoporous Solids} {Modeling
+  self-assembly of silica/surfactant mesostructures in the templated synthesis
+  of nanoporous solids}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Langmuir}{29}{7}{2387-2396}.
+\newblock
+\begin{APACrefURL} \url{http://dx.doi.org/10.1021/la3046274} \end{APACrefURL}
+\newblock
+\APACrefnote{PMID: 23343439}
+\newblock
+\begin{APACrefDOI} \doi{10.1021/la3046274} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Tanev%
+, Liang%
+\BCBL {}\ \BBA {} Pinnavaia%
+}{%
+Tanev%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {1997}}%
+}]{%
+msuv}
+\APACinsertmetastar {%
+msuv}%
+\begin{APACrefauthors}%
+Tanev, P\BPBI T.%
+, Liang, Y.%
+\BCBL {}\ \BBA {} Pinnavaia, T\BPBI J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1997}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Assembly of Mesoporous Lamellar Silicas with
+  Hierarchical Particle Architectures} {Assembly of mesoporous lamellar silicas
+  with hierarchical particle architectures}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of the American Chemical
+  Society}{119}{37}{8616-8624}.
+\newblock
+\begin{APACrefURL} \url{http://dx.doi.org/10.1021/ja970228v} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1021/ja970228v} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Tolbert%
+, Firouzi%
+, Stucky%
+\BCBL {}\ \BBA {} Chmelka%
+}{%
+Tolbert%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {1997}}%
+}]{%
+silica1}
+\APACinsertmetastar {%
+silica1}%
+\begin{APACrefauthors}%
+Tolbert, S\BPBI H.%
+, Firouzi, A.%
+, Stucky, G\BPBI D.%
+\BCBL {}\ \BBA {} Chmelka, B\BPBI F.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1997}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Magnetic Field Alignment of Ordered Silicate-Surfactant
+  Composites and Mesoporous Silica} {Magnetic field alignment of ordered
+  silicate-surfactant composites and mesoporous silica}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Science}{278}{5336}{264-268}.
+\newblock
+\begin{APACrefURL} \url{http://www.jstor.org/stable/2894713} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.2307/2894713} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Tresset%
+}{%
+Tresset%
+}{%
+{\protect \APACyear {2009}}%
+}]{%
+lipid}
+\APACinsertmetastar {%
+lipid}%
+\begin{APACrefauthors}%
+Tresset, G.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2009}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The multiple faces of self-assembled lipidic systems}
+  {The multiple faces of self-assembled lipidic systems}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{PMC Biophysics}{2}{1}{}.
+\newblock
+\begin{APACrefURL} \url{http://dx.doi.org/10.1186/1757-5036-2-3}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1186/1757-5036-2-3} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}
