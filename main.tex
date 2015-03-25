@@ -152,7 +152,7 @@ A vast range of silica materials are examples of this phenomena, such as MCM-41 
 
 %  background discussion\\
 %  significance of the work\\
-A major concern is that even though MD uses sophisticated software prepared to simulate enormous systems with thousands of atoms, using all capacities of robust hardware that are available, such as high-speed multi-core processors in conjunction with GPUs designed specifically to process data from arrays \cite{gromacs}, they hardly can achieve long time horizons and are commonly limited to a few $\mu s$ depending on the size of the system. For this reason, several techniques have been develop to optimize the performance of the simulations such as united-atoms and coarse-grain models \cite{someone}. The work presented on following experiments are an attempt to create a cross-link method to upscale silica crystal-liquid phase interactions \cite{silica1} from the atomistic model to a mesoscale model with the advent of coarse-grain technique. The methodology applied to reach the desired model is based on work previously done by \citeA{dmpc} which introduced the MagiC software package \cite{magic} that in conjunction MD simulation software, in this case GROMACS \cite{gromacs}, will provide a suitable approximation to self-assembly of amphiphilic molecules in presence of silica. Further explanations of the process are described on Experimental Methods section.
+A major concern is that even though MD uses sophisticated software prepared to simulate enormous systems with thousands of atoms, using all capacities of hardware available, such as high-speed multi-core processors in conjunction with GPUs designed specifically to process data from arrays \cite{gromacs}, they hardly can achieve long time horizons and are commonly limited to a few $\mu s$ depending on the size of the system. For this reason, several techniques have been develop to optimize the performance of the simulations such as united-atoms and coarse-grain models \cite{someone}. The work presented on following experiments are an attempt to create a cross-link method to upscale silica crystal-liquid phase interactions \cite{silica1} from the atomistic model to a mesoscale model with the advent of coarse-grain technique. The methodology applied to reach the desired model is based on work previously done by \citeA{dmpc} which introduced the MagiC software package \cite{magic} that in conjunction MD simulation software, in this case GROMACS \cite{gromacs}, will provide a suitable approximation to self-assembly of amphiphilic molecules in presence of silica. Further explanations of the process are described on Experimental Methods section.
 
 %  scope of the work\\
 %  limts of the work\\
@@ -163,13 +163,11 @@ For the scope of this project, a bolaamphiphilic molecule 1,12-diaminododecane (
 %  how it relates to the others\\
 Moreover, previous works conducted by \cite{mjsilica} with a coarse-grained model of surfactant in presence of silica with explicit water were successful in describe rod-like structures detected on MCM-41 materials, demonstrating the capacities of up-scaling this type of systems. Hence, a implicit solvent scheme might exhibit similar behaviour since DMDD is to a certain extent a similar surfactant, although for this work variations on PH of solvent media are not considered. As a final objective at the end of this project, a implicit water coarse-grain model for DMDD will be generated and properly validated based on MD simulations and thermodynamic properties,in order to provide a good approximation to interactions with silica oligomers in a mesoscale model.
 
-
 %  continuity?(maybe silica interactions...)\\
-
-but now i want this instead .
 
 \section{Experimental Methods}
 
+\subsection{Theoretical Basis}
 About gromacs\\
  --MD\\
  --MC\\
@@ -179,14 +177,34 @@ About MagiC\\
  --IBI + IMC\\
  --MPI and sample size\\
  --Convergence\\
-Experiment 1 \\
+ 
+\subsection{Methods Description} 
+The experimental process of this project is divided in 3 main parts: Firstly, develop a efficient coarse-grain model and validate its use. Secondly, analyse the relationship between concentration  of all-atoms simulation and concentration of coarse-grained simulation. Then finally, create and reproduce a Silica surfactant mesoscale system. 
+
+In order to maintain standard parameters for all GROMACS simulations, all-atoms simulations that were used for coarse-grained reference were run in NPT ensemble. All simulation boxes were created using genbox (GROMACS package utility), first by inserting the desired number of surfactant molecules and then adding the solvent at the adequate ratio. The molecules were designed based on OPLS-AA forcefield \cite{opls} parameters, %because?%
+therefore the surfactant DMDD was created with aid of co-workers and water type was TIP4P \cite{tip4p}. %because?% 
+Moreover, no initial configuration was determined, such as a pre self-assembled system, to ensure stochastic nature of the system.  
+
+Initially, all boxes received a energy minimization step in order to avoid system blow-up deal to possible extreme potential energy spots created during box generation, because due to random displacement of molecules some of them could overlap others and then cause a destabilization of the system. After, an equilibration step was necessary to reach desired initial temperature and pressure conditions for the MD simulation. During equilibration temperature coupling was kept as $298$ $K$ using a v-rescaling thermostat \cite{vthermostat} with time constant of $0.01$ $ps$ and pressure coupling was kept at $1$ $bar$ using a Berendsen barostat \cite{bbarostat} with time constant of $0.5$  $ps$.
+\subsection{Experiment 1}
  --Objective\\
+ \begin{figure}[ht]
+	\includegraphics[width=1.0 \textwidth]{./images/M1ab}
+	\caption{A) Schematic of M1 molecule split plan, Carbon atoms represented in black, Nitrogen in green and Hydrogen in gray. B)Final coarse-grain model for M1. This model aggregated the three most polar heavy atoms on the tips and four apolar heavy atoms at the center. In order to avoid electrostatic interactions on the IMC process and further simulation the heavy atoms groups (heavy atom + hydrogen) were kept thus  final charge remain unchanged in each bead}
+	\label{Fig:mol1}
+\end{figure}
+ \begin{figure}[ht]
+	\includegraphics[width=1.0 \textwidth]{./images/M2ab}
+	\caption{A) Schematic of M2 molecule split plan, Carbon atoms represented in black, Nitrogen in green and Hydrogen in gray. B)Final coarse-grain model for M2. Heavy atom were grouped pairwise in such a manner that amphiphilic parts were kept as distinct as possible. It is important to notice the necessity of two carbon bead types CE and CI}
+		\label{Fig:mol2}
+\end{figure}
+ 
  --Model 1 vs Model 2 \\
  --gromacs Simulation Set-up\\
  --MagiC CG M1 and M2 topology generation+Ref RDFs\\
  --IMC process\\
- --gromacs Set-up Reproduction Tests\\
-Experiment 2\\
+ --gromacs Set-up Reproduction Tests
+\subsection{Experiment 2}
  --Objective\\
  --gromacs Set-up Up-scaling \\
  --gromacs Set-up Self-assembly Model X(best)\\
@@ -199,12 +217,12 @@ Experiment 2\\
    ------1k(?) up-scale @ high  \\
   ----AA High, CG High\\
    ------1k(?) up-scale @ high\\
-   ------1k(?) up-scale @ high\\
-Experiment 3\\
+   ------1k(?) up-scale @ high
+\subsection{Experiment 3}
  --Silica addition\\
   ----MagiC CG silica topology \\
   ----gromacs Set-up Self-assembly Model X + Si\\
-   ------1000, 10000 (Maybe more?)\\
+   ------1000, 10000 (Maybe more?)
  
 \section{Results}
 

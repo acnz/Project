@@ -3,8 +3,14 @@
 \contentsline {section}{\numberline {2}Acknowledgements}{iii}{section.2}
 \contentsline {section}{\numberline {3}Introduction}{1}{section.3}
 \contentsline {section}{\numberline {4}Experimental Methods}{1}{section.4}
-\contentsline {section}{\numberline {5}Results}{2}{section.5}
-\contentsline {section}{\numberline {6}Discussion}{2}{section.6}
-\contentsline {section}{\numberline {7}Conclusion}{3}{section.7}
-\contentsline {section}{\numberline {8}Nomenclature}{3}{section.8}
-\contentsline {section}{\numberline {9}Appendix}{1}{section.9}
+\contentsline {subsection}{\numberline {4.1}Theoretical Basis}{1}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Methods Description}{2}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Experiment 1}{2}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Experiment 2}{3}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Experiment 3}{3}{subsection.4.5}
+\contentsline {section}{\numberline {5}Results}{3}{section.5}
+\contentsline {section}{\numberline {6}Discussion}{4}{section.6}
+\contentsline {section}{\numberline {7}Conclusion}{4}{section.7}
+\contentsline {section}{\numberline {8}Nomenclature}{4}{section.8}
+\contentsline {section}{\numberline {9}References}{4}{section.9}
+\contentsline {section}{\numberline {10}Appendix}{1}{section.10}
