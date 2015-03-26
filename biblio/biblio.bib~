@@ -173,13 +173,6 @@ eprint = {
 
 }
 
-@manual{gromanual,
-	title		= {Gromacs User Manual version 4.5.6},
-	author		= {van der Spoel, D. and Lindahl, E. and Hess, B. and van Buuren, A. R. and Apol, E. and Meulenhoff, P. J. and Tieleman, D. P. and Sijbers, A. L. T. M. and Feenstra, K. A. and van Drunen, R. and Berendsen, H. J. C.},
-	organization	= {www.gromacs.org},
-	year		= {2010}
-}
-
 @article{someone,
 author = {Need, Articles and Someone, To Cite },
 title = {Mock article: You need to read more},

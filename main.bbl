@@ -349,4 +349,31 @@ Tresset, G.%
 \begin{APACrefDOI} \doi{10.1186/1757-5036-2-3} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
+\bibitem [\protect \citeauthoryear {%
+van~der Spoel%
+\ \protect \BOthers {.}}{%
+van~der Spoel%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2010}}%
+}]{%
+gromanual}
+\APACinsertmetastar {%
+gromanual}%
+\begin{APACrefauthors}%
+van~der Spoel, D.%
+, Lindahl, E.%
+, Hess, B.%
+, van Buuren, A\BPBI R.%
+, Apol, E.%
+, Meulenhoff, P\BPBI J.%
+\BDBL {}Berendsen, H\BPBI J\BPBI C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2010}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Gromacs User Manual version 4.5.6} {Gromacs user manual
+  version 4.5.6}{\BBCQ}\ [\bibcomputersoftwaremanual].
+\PrintBackRefs{\CurrentBib}
+
 \end{thebibliography}

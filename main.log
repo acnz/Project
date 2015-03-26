@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.6.12)  25 MAR 2015 16:40
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.6.12)  26 MAR 2015 17:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -862,6 +862,9 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \tymax=\dimen150
 \TY@tablewidth=\dimen151
 )
+(/usr/share/texlive/texmf-dist/tex/latex/tools/indentfirst.sty
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+)
 (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
 \Gm@cnth=\count130
@@ -906,28 +909,28 @@ Package: authblk 2001/02/27 1.3 (PWD)
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 73.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 73.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 74.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 74.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 73.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 74.
 
 (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -960,7 +963,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \microtypecontext on input line 73.
+LaTeX Info: Redefining \microtypecontext on input line 74.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -977,7 +980,7 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (RS)
 )
 \AtBeginShipoutBox=\box32
-Package hyperref Info: Link coloring OFF on input line 73.
+Package hyperref Info: Link coloring OFF on input line 74.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -987,9 +990,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count142
 )
-LaTeX Info: Redefining \ref on input line 73.
-LaTeX Info: Redefining \pageref on input line 73.
-LaTeX Info: Redefining \nameref on input line 73.
+LaTeX Info: Redefining \ref on input line 74.
+LaTeX Info: Redefining \pageref on input line 74.
+LaTeX Info: Redefining \nameref on input line 74.
 
 (./main.out) (./main.out)
 \@outlinefile=\write3
@@ -1040,38 +1043,38 @@ LaTeX Info: Redefining \BHBI on input line 130.
 File: ./images/StrathLogo.png Graphic file (type png)
 
 <use ./images/StrathLogo.png>
-Package pdftex.def Info: ./images/StrathLogo.png used on input line 82.
+Package pdftex.def Info: ./images/StrathLogo.png used on input line 83.
 (pdftex.def)             Requested size: 441.01773pt x 100.49126pt.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 101.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 102.
 
  (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 101.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 102.
 
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 101
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 102
 .
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 101
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 102
 .
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 101.
+(Font)              <10> on input line 102.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 101.
+(Font)              <7> on input line 102.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 101.
-LaTeX Font Info:    Try loading font information for U+msa on input line 101.
+(Font)              <5> on input line 102.
+LaTeX Font Info:    Try loading font information for U+msa on input line 102.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1079,7 +1082,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 101.
+LaTeX Font Info:    Try loading font information for U+msb on input line 102.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1087,7 +1090,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 101.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 102.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -1098,74 +1101,89 @@ dfTeX warning (ext4): destination with the same identifier (name{page.i}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.121 \newpage
+l.122 \newpage
                [1] (./main.toc)
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
  [2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 170--179
+
+LaTeX Warning: Citation `martini' undefined on input line 159.
+
+[1]
+Underfull \hbox (badness 10000) in paragraph at lines 178--179
 
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 180--182
 
- [1]
-
-LaTeX Warning: Citation `opls' undefined on input line 183.
+ []
 
 
-LaTeX Warning: Citation `tip4p' undefined on input line 184.
+Underfull \hbox (badness 10000) in paragraph at lines 183--189
+
+ []
 
 
-LaTeX Warning: Citation `vthermostat' undefined on input line 187.
+LaTeX Warning: Citation `opls' undefined on input line 193.
 
 
-LaTeX Warning: Citation `bbarostat' undefined on input line 187.
+LaTeX Warning: Citation `tip4p' undefined on input line 194.
 
-<./images/M1ab.png, id=161, 1656.1875pt x 521.95pt>
+
+LaTeX Warning: Citation `vthermostat' undefined on input line 197.
+
+
+LaTeX Warning: Citation `bbarostat' undefined on input line 197.
+
+<./images/M1ab.png, id=166, 1656.1875pt x 521.95pt>
 File: ./images/M1ab.png Graphic file (type png)
  <use ./images/M1ab.png>
-Package pdftex.def Info: ./images/M1ab.png used on input line 191.
+Package pdftex.def Info: ./images/M1ab.png used on input line 201.
 (pdftex.def)             Requested size: 441.01773pt x 138.98509pt.
 
-<./images/M2ab.png, id=162, 1656.1875pt x 501.875pt>
+<./images/M2ab.png, id=167, 1656.1875pt x 501.875pt>
 File: ./images/M2ab.png Graphic file (type png)
  <use ./images/M2ab.png>
-Package pdftex.def Info: ./images/M2ab.png used on input line 196.
+Package pdftex.def Info: ./images/M2ab.png used on input line 206.
 (pdftex.def)             Requested size: 441.01773pt x 133.63951pt.
 
-[2pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 238--257
+
+ []
+
+[3pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.206 \subsection
-                 {Experiment 2} <./images/M1ab.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 228--247
-
- []
-
-[3pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
-has been already used, duplicate ignored
+l.257 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.247 
-       <./images/M2ab.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 256--270
+l.257 
+       <./images/M1ab.png> <./images/M2ab.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 266--280
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 274--277
+Underfull \hbox (badness 10000) in paragraph at lines 284--287
 
  []
 
 
-Overfull \hbox (2.59055pt too wide) in paragraph at lines 282--282
+Overfull \hbox (2.59055pt too wide) in paragraph at lines 292--292
 []$\OML/lmm/m/it/10 C[]$|  
+ []
+
+
+Overfull \hbox (15.01237pt too wide) in paragraph at lines 292--293
+[][] 
  []
 
 (./main.bbl
@@ -1178,33 +1196,33 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
  [4]) [5]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 392.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 402.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.392 \end{document}
+l.402 \end{document}
                      [1]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 392.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 402.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 392.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 392.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 402.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 402.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 475ACDB8EA0AC8B5AB5218B90263276A;786.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 392.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 402.
  ) 
 Here is how much of TeX's memory you used:
- 11031 strings out of 493304
- 164105 string characters out of 6139871
- 292053 words of memory out of 5000000
- 14102 multiletter control sequences out of 15000+600000
- 76358 words of font info for 96 fonts, out of 8000000 for 9000
+ 11043 strings out of 493304
+ 164374 string characters out of 6139871
+ 292230 words of memory out of 5000000
+ 14111 multiletter control sequences out of 15000+600000
+ 76275 words of font info for 95 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 36i,11n,43p,1383b,476s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,11n,43p,1383b,470s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{cite.bbarostat} has been referenced but does not 
 exist, replaced by a fixed one
 
@@ -1217,6 +1235,9 @@ pdfTeX warning (dest): name{cite.tip4p} has been referenced but does not exist,
 pdfTeX warning (dest): name{cite.opls} has been referenced but does not exist, 
 replaced by a fixed one
 
+pdfTeX warning (dest): name{cite.martini} has been referenced but does not exis
+t, replaced by a fixed one
+
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvip
 s/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/t
 exmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/l
@@ -1226,10 +1247,10 @@ mbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf
 type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></
 usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/
 public/lm/lmtt10.pfb>
-Output written on main.pdf (10 pages, 1269014 bytes).
+Output written on main.pdf (10 pages, 1270914 bytes).
 PDF statistics:
- 263 PDF objects out of 1000 (max. 8388607)
- 230 compressed objects within 3 object streams
- 42 named destinations out of 1000 (max. 500000)
+ 270 PDF objects out of 1000 (max. 8388607)
+ 237 compressed objects within 3 object streams
+ 44 named destinations out of 1000 (max. 500000)
  24200 words of extra memory for PDF output out of 24883 (max. 10000000)
 
