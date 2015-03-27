@@ -1,6 +1,41 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
+Arnarez%
+\ \protect \BOthers {.}}{%
+Arnarez%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
+}]{%
+drymartini}
+\APACinsertmetastar {%
+drymartini}%
+\begin{APACrefauthors}%
+Arnarez, C.%
+, Uusitalo, J\BPBI J.%
+, Masman, M\BPBI F.%
+, Ingólfsson, H\BPBI I.%
+, de Jong, D\BPBI H.%
+, Melo, M\BPBI N.%
+\BDBL {}Marrink, S\BPBI J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Dry Martini, a Coarse-Grained Force Field for Lipid
+  Membrane Simulations with Implicit Solvent} {Dry martini, a coarse-grained
+  force field for lipid membrane simulations with implicit solvent}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Chemical Theory and
+  Computation}{11}{1}{260-275}.
+\newblock
+\begin{APACrefURL} \url{http://dx.doi.org/10.1021/ct500477k} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1021/ct500477k} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Jin%
 \ \protect \BOthers {.}}{%
 Jin%
