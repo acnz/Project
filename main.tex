@@ -35,6 +35,7 @@
 \bibliographystyle{apacite}
 \usepackage[flushleft]{threeparttable}
 \usepackage{tabulary}
+\usepackage{indentfirst}
 
 \setlength{\columnsep}{20pt}
 
@@ -147,34 +148,72 @@ Miguel \textsc{Jorge}
 %“Introduction” is not used because it is superfluous; opening paragraphs are usually introductory	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  %clear statement of the problem + reasons for studying it\\
+ 
 Molecular Dynamics (MD) and Monte Carlo (MC) have been powerful tools to simulate molecular interactions of surfactants in solvent systems, allowing a deeper understanding of self-assembly process of this sort of material \cite{someone}. Therefore, these structural conformations are specially useful to design bio-inspired silica materials \cite{bioinsp} since with the addition of silica they remain behaving as scaffolds to mesoporous or nanoporous structures that are maintained even after surfactant removal, silica oligomer polymerization and calcination \cite{silica1}.
 A vast range of silica materials are examples of this phenomena, such as MCM-41 as reported by \citeA{mcm}, HR \cite{hrib}, MSU-V \cite{msuv} and many others, in which the self-assembly structure depend on the type of surfactant and concentration of the substances involved. Moreover, most of the experimental methods used to obtain data are based on observation and interpretation of final silica structure by using X-ray diffraction (XRD) and transmission electron microscopy (TEM), thus initial self-assembled conformations are predicted as a reflex of the final results and little is known about the mechanistic of this process. However, by using MD simulations it is possible to observe and analyse these initial steps of self-assembly and further predict, with more accuracy, properties and framework provided by surfactant \cite{lipid} to generate silica structures.
 
 %  background discussion\\
 %  what has been done by others(cite works)\\
-A major concern is that even though MD uses sophisticated software prepared to simulate enormous systems with thousands of atoms, using all capacities of hardware available, such as high-speed multi-core processors in conjunction with GPUs designed specifically to process data from arrays \cite{gromacs}, they hardly can achieve long time horizons and are commonly limited to a few $\mu s$ depending on the size of the system. For this reason, several techniques have been develop to optimize the performance of the simulations such as united-atoms and coarse-grain models \cite{someone}. 
+A major concern is that even though MD uses sophisticated software prepared to simulate enormous systems with thousands of atoms, using all capacities of hardware available, such as high-speed multi-core processors in conjunction with GPUs designed specifically to process data from arrays \cite{gromacs}, they hardly can achieve long time horizons and are commonly limited to a few $\mu s$ depending on the size of the system. For this reason, several techniques have been develop to optimize the performance of the simulations such as coarse-grain models \cite{someone}. Briefly, the idea behind using this technique is to fit parameters of heavy atoms groups with similar properties in a bigger "bead", which includes atomic masses and electrostatic charges lumped in approximated values. For example, by merging carbon heavy atoms, that means carbon atom and its hydrogen atoms, at a lipid tail in groups of three or four since they have similar hydrophobic properties. 
 
 %  how mine differs from the others\\
 %  how it relates to the others\\
-Moreover, previous works conducted by \cite{mjsilica} with a coarse-grained model of surfactant in presence of silica with explicit water were successful in describe rod-like structures detected on MCM-41 materials, demonstrating the capacities of up-scaling this type of systems. Hence, a implicit solvent scheme might exhibit similar behaviour since DMDD is to a certain extent a similar surfactant, although for this work variations on PH of solvent media are not considered.
+In order to provide topologies to GROMACS simulations several force-fields, for exemple MARTINI \cite{martini}, use Lennard-Jones potentials fitted to a range of pre-defined bead types to describe coarse-grain models. Furthermore, not only intramolecular beads are possible, but also intermolecular beads can be specified, such as multiple solvent molecules merged in a single bead or ions surround by water molecules. Previous works conducted by \cite{mjsilica} with this method recreated a model of surfactant in presence of silica with explicit water that was successful in describing rod-like self-assembly structures detected on MCM-41 materials, demonstrating the capacities of up-scaling this type of systems. Nevertheless, solvent presence demands most of the computational resources, hence  implicit solvent scheme has been focus of many studies \cite{gromacs}.
+
+Different concepts has been applied to develop a suitable model for implicit solvents, studies conducted by \citeA{drymartini} developed the Dry MARTITNI force-field by modifying parameters of its predecessor, in such manner that solvent interactions became incorporated in these values and then solvent beads are no longer necessary. Another method, described by \cite{magic} is able to recreate a implicit solvent system from interaction potentials generated from a bottom-up approach, that means by using an all-atoms simulation to generate parameters for the coarse-grain model. It is supposed  that thermodynamic changes on the system, originated from solvent interaction with amphiphilic molecules, are incorporated on the approximated potentials. Therefore, changes in parameters as concentration may not affect coarse-grained model performance on recreating self-assembly structures \cite{dmpc}.
 
 %  significance of the work\\
 %  scope of the work\\
 %  limts of the work\\
-The work presented on following experiments are an attempt to create a cross-link method to upscale silica crystal-liquid phase interactions \cite{silica1} from the atomistic model to a mesoscale model with the advent of coarse-grain technique. The methodology applied to reach the desired model is based on work previously done by \citeA{dmpc} which introduced the MagiC software package \cite{magic} that in conjunction MD simulation software, in this case GROMACS \cite{gromacs}, will provide a suitable approximation to self-assembly of amphiphilic molecules in presence of silica. Further explanations of the process are described on Experimental Methods section. 
-
-For the scope of this project, a bolaamphiphilic molecule 1,12-diaminododecane (DMDD) has been chosen as surfactant because that as seen in previous research by \citeA{msuv} it self-assembly in multilamelar vesicles that in presence of a silica precursor is capable of generating a mesoporous structure with remarkable properties. In order to validate this structure formation and further framework formation for silica oligomers, a coarse-grain approximation is suitable option since amphiphilic molecules interaction with solvents can be described efficiently with Lennard-Jones potentials interactions. Even though using an implicit solvent, interaction potentials generated from a bottom-up approach are applicable for a coarse-grain model \cite{dmpc}. It is supposed  that thermodynamic changes on the system, originated from solvent interaction with amphiphilic molecules, are incorporated on the approximated potentials. Therefore, changes in parameters as concentration may not affect coarse-grained model performance on recreating self-assembly structures.  As a final objective at the end of this project, a implicit water coarse-grain model for DMDD will be generated and properly validated based on MD simulations and thermodynamic properties,in order to provide a good approximation to interactions with silica oligomers in a mesoscale model. 
+The work presented on following experiments are an attempt to create a cross-link method to upscale silica crystal-liquid phase interactions \cite{silica1} from the atomistic model to a mesoscale model with the advent of this later coarse-grain technique. The methodology applied to reach the desired model is based on the MagiC software package \cite{magic} that in conjunction MD simulation software, in this case GROMACS \cite{gromacs}, will provide a suitable approximation to self-assembly of amphiphilic molecules in presence of silica. Further explanations of the process are described on Experimental Methods section. For the scope of this project, a bolaamphiphilic molecule 1,12-diaminododecane (DMDD) has been chosen as surfactant because that as seen in previous research by \citeA{msuv} it self-assembly in multilamelar vesicles that in presence of a silica precursor is capable of generating a mesoporous structure with remarkable properties. In order to validate this structure formation and further framework formation for silica oligomers, a coarse-grain approximation is suitable option since amphiphilic molecules interaction with solvents can be described efficiently with tabulated Lennard-Jones potentials interactions. As a final objective at the end of this project, a implicit water coarse-grain model for DMDD will be generated and properly validated based on MD simulations and thermodynamic properties,in order to provide a good approximation to interactions with silica oligomers in a mesoscale model. 
 %  continuity?(maybe silica interactions...)\\
 \section{Experimental Methods}
 \subsection{Theoretical Basis}
-About gromacs\\
- --MD\\
- --MC\\
+This work is based on two molecular simulation techniques the former, called Molecular Dynamics, accounts for integration of Newton forces in order to describe positions and velocities of particles in the system. The latter, called Monte Carlo method, is a powerful statistical tool based on stochastic inputs to measure properties of many systems, in this case thermodynamic equilibrium of molecular systems. Following sections will describe the mechanistic behind each technique and further explain how they are used in simulation software.
+\subsubsection*{Molecular Dynamics simulation}
+
+Molecular Dynamics is a simulation method 
+
+\subsubsection*{Monte Carlo simulation}
+Monte Carlo is  a simulation method based on statistical probability of existence of a system at thermodynamic equilibrium. This happens when free energy reaches a minimum by calculating the energy for each particle's microscopic state. Given a system of $ \mathcal{N}$ particles, temperature $T$ and volume $V$, thus it can be denoted as a canonical ensemble, it is possible to assume that  the free Helmholtz energy of the system is:
+\begin{equation}
+A = U - TS
+\label{eqn:freeE}
+\end{equation}
+Where $S$ is the entropy and $U$ is the internal energy, meaning that not only a minimum in free energy can arise from a minimum in total energy, but also an increase in entropy of the system can contribute to this energy minimization. A system can be described by a group of coordinates, in this case to give a simplified idea assume a group of distance vectors $\lambda = (	\vec{r}_1,\vec{r}_2, \ldots, \vec{r}_\mathcal{N} )$ from system origin. For an arbitrary $\lambda$ the probability of a single particle of the system to statistically occupy that position is described by using a probability distribution function \cite{satoh}:
+\begin{equation}
+\rho(\lambda) = \dfrac{\exp{\left(-\dfrac{U(\lambda)}{kT}\right)}}{\displaystyle \int_V \dots   \int_V \exp{\left(-\dfrac{U(\lambda)}{kT}\right)}\,d\vec{r}_1 \,d\vec{r}_2 \ldots \,d\vec{r}_\mathcal{N} }
+\label{eqn:rho}
+\end{equation}
+
+Whether the system configuration is generated with considerable number of microstates that satisfies this probability, the final configuration would have a real physical meaning. But, as soon as it is almost impossible to define an analytical solution to this equation if $\mathcal{N}$ is too large another method became necessary to use Monte Carlo simulations in molecular dynamics. The Metropolis method \cite{metropolis} allowed the use of Monte Carlo technique by introducing the following concept: given 2 different microstates, the probability to change from state 1 to 2 is defined by:
+
+\begin{equation}
+ P_{1\mapsto2} = \left\{
+\begin{array}{c l}     
+    1 & for \ \frac{\rho(\lambda_2)}{\rho(\lambda_1)}\geqslant1\\
+    \dfrac{\rho(\lambda_2)}{\rho(\lambda_1)} & for \ \frac{\rho(\lambda_2)}{\rho(\lambda_1)}<1
+\end{array}\right.
+\label{eqn:metrop}
+\end{equation}
+
+ Therefore, the integral term in eq.(\ref{eqn:rho}) vanishes and it is clear to observe that when $U(\lambda_1) \geqslant U(\lambda_2)$ the system will certainly change to this new microstate since it has lower energy, however in the case of $U(\lambda_1) < U(\lambda_2)$ the system has a certain probability of changing to this new microstate indicating an increase of entropy in the system. So, by applying stochastic inputs for particle displacements and acceptance values for eq.(\ref{eqn:metrop}), with a large number of Monte Carlo steps the system will eventually reach a minimum in free energy.
+  Moreover, when this system reaches equilibrium it is possible to calculate accurately microstate dependent properties via ensemble averages. That means with $n$ samples of Monte Carlo steps, the average of a $ \xi $ property can be obtained by:
+ 
+ \begin{equation}
+\left\langle \xi\right\rangle  = \displaystyle \sum_{i=1}^{n} \dfrac{\xi_i}{n}
+\label{eqn:average}
+\end{equation}
+
+It is important to notice that Monte Carlo simulations do not consider dynamic properties of the system such as kinetic energy, and therefore only Molecular Dynamics can account such things. Finally, now that both molecular simulation methods had been properly introduced it is possible to proceed to an overview of both simulation software used on this project. Together they can unite the benefits of both simulation methods, in order to recreate a suitable coarse-grain model for Molecular Dynamics.
+ 
+ --gromacs\cite{gromanual}\\
+ 
  --MPI and GPU\\
 About MagiC\\
  --General idea\\
  --IBI + IMC\\
- --MPI and sample size\\
+ --Parallelism and sample size\\
  --Convergence\\
  
 \subsection{Methods Description} 

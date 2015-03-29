@@ -1,6 +1,41 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
+Arnarez%
+\ \protect \BOthers {.}}{%
+Arnarez%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
+}]{%
+drymartini}
+\APACinsertmetastar {%
+drymartini}%
+\begin{APACrefauthors}%
+Arnarez, C.%
+, Uusitalo, J\BPBI J.%
+, Masman, M\BPBI F.%
+, Ingólfsson, H\BPBI I.%
+, de Jong, D\BPBI H.%
+, Melo, M\BPBI N.%
+\BDBL {}Marrink, S\BPBI J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Dry Martini, a Coarse-Grained Force Field for Lipid
+  Membrane Simulations with Implicit Solvent} {Dry martini, a coarse-grained
+  force field for lipid membrane simulations with implicit solvent}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Chemical Theory and
+  Computation}{11}{1}{260-275}.
+\newblock
+\begin{APACrefURL} \url{http://dx.doi.org/10.1021/ct500477k} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1021/ct500477k} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Jin%
 \ \protect \BOthers {.}}{%
 Jin%
@@ -64,6 +99,43 @@ Kresge, C\BPBI T.%
 \begin{APACrefURL} \url{http://dx.doi.org/10.1039/C3CS60016E} \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.1039/C3CS60016E} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Metropolis%
+, Rosenbluth%
+, Rosenbluth%
+, Teller%
+\BCBL {}\ \BBA {} Teller%
+}{%
+Metropolis%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {1953}}%
+}]{%
+metropolis}
+\APACinsertmetastar {%
+metropolis}%
+\begin{APACrefauthors}%
+Metropolis, N.%
+, Rosenbluth, A\BPBI W.%
+, Rosenbluth, M\BPBI N.%
+, Teller, A\BPBI H.%
+\BCBL {}\ \BBA {} Teller, E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1953}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Equation of State Calculations by Fast Computing
+  Machines} {Equation of state calculations by fast computing machines}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Journal of Chemical Physics}{21}{6}{1087-1092}.
+\newblock
+\begin{APACrefURL}
+  \url{http://scitation.aip.org/content/aip/journal/jcp/21/6/10.1063/1.1699114}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{http://dx.doi.org/10.1063/1.1699114} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -255,6 +327,41 @@ Pérez-Sánchez, G.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Satoh%
+}{%
+Satoh%
+}{%
+{\protect \APACyear {2011}}%
+}]{%
+satoh}
+\APACinsertmetastar {%
+satoh}%
+\begin{APACrefauthors}%
+Satoh, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {1 - Outline of Molecular Simulation and Microsimulation
+  Methods} {1 - outline of molecular simulation and microsimulation
+  methods}.{\BBCQ}
+\newblock
+\BIn{} A.~Satoh\ (\BED), \APACrefbtitle {Introduction to Practice of Molecular
+  Simulation} {Introduction to practice of molecular simulation}\ (\BPG~1 -
+  27).
+\newblock
+\APACaddressPublisher{London}{Elsevier}.
+\newblock
+\begin{APACrefURL}
+  \url{http://www.sciencedirect.com/science/article/pii/B978012385148200001X}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{http://dx.doi.org/10.1016/B978-0-12-385148-2.00001-X}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Tanev%
 , Liang%
 \BCBL {}\ \BBA {} Pinnavaia%
@@ -347,6 +454,33 @@ Tresset, G.%
   \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.1186/1757-5036-2-3} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+van~der Spoel%
+\ \protect \BOthers {.}}{%
+van~der Spoel%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2010}}%
+}]{%
+gromanual}
+\APACinsertmetastar {%
+gromanual}%
+\begin{APACrefauthors}%
+van~der Spoel, D.%
+, Lindahl, E.%
+, Hess, B.%
+, van Buuren, A\BPBI R.%
+, Apol, E.%
+, Meulenhoff, P\BPBI J.%
+\BDBL {}Berendsen, H\BPBI J\BPBI C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2010}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Gromacs User Manual version 4.5.6} {Gromacs user manual
+  version 4.5.6}{\BBCQ}\ [\bibcomputersoftwaremanual].
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}
