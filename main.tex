@@ -172,7 +172,35 @@ The work presented on following experiments are an attempt to create a cross-lin
 This work is based on two molecular simulation techniques the former, called Molecular Dynamics, accounts for integration of Newton forces in order to describe positions and velocities of particles in the system. The latter, called Monte Carlo method, is a powerful statistical tool based on stochastic inputs to measure properties of many systems, in this case thermodynamic equilibrium of molecular systems. Following sections will describe the mechanistic behind each technique and further explain how they are used in simulation software.
 \subsubsection*{Molecular Dynamics simulation}
 
-Molecular Dynamics is a simulation method 
+Molecular Dynamics is a simulation method that originates from dynamic nature of atomic interactions. Generally, a system of atoms can be treated as a multi-particle system ruled by Newton's Law. Considering a system with $\mathcal{N}$ atoms for each $i$th particle of the system the follow differential equation:
+\begin{equation}
+m_i\dfrac{\,d^2\vec{r}_i(t)}{\,dt^2} = \vec{F}_i(t)
+\label{eqn:newton}
+\end{equation}
+Where $\vec{r} = (x,y,z)$ is the position vector and $F = (F_x, F_y, F_z)$ are the force components. Therefore, for this $\mathcal{N}$ particle system, it is necessary to solve $3\mathcal{N}$ differential equations in order to fully describe it analytically at any $t$. Since any molecular system involves an enormous number of molecules, solving these equations analytically is impracticable and simulation methods are necessary.The derivatives terms need to be numerically calculated and as soon as simulation efficiency is a major concern, a suitable approximation to the second derivative of position is the Taylor's expansion, taking the x coordinate as an example, for a given $\Delta t$ is:
+\begin{equation}
+x(t+\Delta t) = x(t) + \Delta t \dfrac{\,dx(t)}{\,dt} + \dfrac{1}{2!}{\Delta t}^2 \dfrac{\,d^2x(t)}{\,dt^2} + \dfrac{1}{3!}{\Delta t}^3 \dfrac{\,d^3x(t)}{\,dt^3} + \ldots
+\label{eqn:taylor1}
+\end{equation}
+\begin{equation}
+x(t-\Delta t) = x(t) - \Delta t \dfrac{\,dx(t)}{\,dt} + \dfrac{1}{2!}{\Delta t}^2 \dfrac{\,d^2x(t)}{\,dt^2} - \dfrac{1}{3!}{\Delta t}^3 \dfrac{\,d^3x(t)}{\,dt^3} + \ldots
+\label{eqn:taylor2}
+\end{equation}
+\begin{equation}
+\dfrac{\,d^2x(t)}{\,dt^2} = \dfrac{x(t+\Delta t) - 2 x(t) + x(t-\Delta t)}{{\Delta t}^2} +  \mathcal{O}(\Delta t^4)
+\label{eqn:dx2}
+\end{equation}
+Hence, by neglecting the error of order $\mathcal{O}(\Delta t^4)$, it is possible to use equations Eqn.(\ref{eqn:newton}) and Eqn.(\ref{eqn:dx2}) to derive the called "Verlet method" where position and velocity vectors for each $i$th atom on next step ($t+\Delta t$) are calculated using previous and current step:
+\begin{equation}
+\vec{r}_i(t+\Delta t) = 2 \vec{r}_i(t) - \vec{r}_i(t-\Delta t) + \dfrac{{\Delta t}^2}{m_i}\vec{F}_i(t)
+\label{eqn:verletr}
+\end{equation}
+\begin{equation}
+\dfrac{ = 2 \vec{r}_i(t) \vec{r}_i(t+\Delta t) - \vec{r}_i(t-\Delta t)}{{\Delta t}^2} + \dfrac{{\Delta t}^2}{m_i}\vec{F}_i(t)
+\label{eqn:verletv}
+\end{equation}
+ 
+
 
 \subsubsection*{Monte Carlo simulation}
 Monte Carlo is  a simulation method based on statistical probability of existence of a system at thermodynamic equilibrium. This happens when free energy reaches a minimum by calculating the energy for each particle's microscopic state. Given a system of $ \mathcal{N}$ particles, temperature $T$ and volume $V$, thus it can be denoted as a canonical ensemble, it is possible to assume that  the free Helmholtz energy of the system is:
@@ -207,7 +235,7 @@ Whether the system configuration is generated with considerable number of micros
 
 It is important to notice that Monte Carlo simulations do not consider dynamic properties of the system such as kinetic energy, and therefore only Molecular Dynamics can account such things. Finally, now that both molecular simulation methods had been properly introduced it is possible to proceed to an overview of both simulation software used on this project. Together they can unite the benefits of both simulation methods, in order to recreate a suitable coarse-grain model for Molecular Dynamics.
  
- --gromacs\cite{gromanual}\\
+ --gromacs\cite{gromanual}
  
  --MPI and GPU\\
 About MagiC\\
