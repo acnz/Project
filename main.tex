@@ -177,29 +177,43 @@ Molecular Dynamics is a simulation method that originates from dynamic nature of
 m_i\dfrac{\,d^2\vec{r}_i(t)}{\,dt^2} = \vec{F}_i(t)
 \label{eqn:newton}
 \end{equation}
+
 Where $\vec{r} = (x,y,z)$ is the position vector and $F = (F_x, F_y, F_z)$ are the force components. Therefore, for this $\mathcal{N}$ particle system, it is necessary to solve $3\mathcal{N}$ differential equations in order to fully describe it analytically at any $t$. Since any molecular system involves an enormous number of molecules, solving these equations analytically is impracticable and simulation methods are necessary.The derivatives terms need to be numerically calculated and as soon as simulation efficiency is a major concern, a suitable approximation to the second derivative of position is the Taylor's expansion, taking the x coordinate as an example, for a given $\Delta t$ is:
 \begin{equation}
-x(t+\Delta t) = x(t) + \Delta t \dfrac{\,dx(t)}{\,dt} + \dfrac{1}{2!}{\Delta t}^2 \dfrac{\,d^2x(t)}{\,dt^2} + \dfrac{1}{3!}{\Delta t}^3 \dfrac{\,d^3x(t)}{\,dt^3} + \ldots
+x(t+\Delta t) = x(t) + \Delta t \dfrac{\,dx(t)}{\,dt} + \dfrac{1}{2!}{\Delta t}^2 \dfrac{\,d^2x(t)}{\,dt^2} + \dfrac{1}{3!}{\Delta t}^3 \dfrac{\,d^3x(t)}{\,dt^3} +  \mathcal{O}(\Delta t^4)
 \label{eqn:taylor1}
 \end{equation}
 \begin{equation}
-x(t-\Delta t) = x(t) - \Delta t \dfrac{\,dx(t)}{\,dt} + \dfrac{1}{2!}{\Delta t}^2 \dfrac{\,d^2x(t)}{\,dt^2} - \dfrac{1}{3!}{\Delta t}^3 \dfrac{\,d^3x(t)}{\,dt^3} + \ldots
+x(t-\Delta t) = x(t) - \Delta t \dfrac{\,dx(t)}{\,dt} + \dfrac{1}{2!}{\Delta t}^2 \dfrac{\,d^2x(t)}{\,dt^2} - \dfrac{1}{3!}{\Delta t}^3 \dfrac{\,d^3x(t)}{\,dt^3} +  \mathcal{O}(\Delta t^4)
 \label{eqn:taylor2}
 \end{equation}
 \begin{equation}
-\dfrac{\,d^2x(t)}{\,dt^2} = \dfrac{x(t+\Delta t) - 2 x(t) + x(t-\Delta t)}{{\Delta t}^2} +  \mathcal{O}(\Delta t^4)
+\dfrac{\,d^2x(t)}{\,dt^2} = \dfrac{x(t+\Delta t) - 2 x(t) + x(t-\Delta t)}{{\Delta t}^2} +  \mathcal{O}(\Delta t^2)
 \label{eqn:dx2}
 \end{equation}
-Hence, by neglecting the error of order $\mathcal{O}(\Delta t^4)$, it is possible to use equations Eqn.(\ref{eqn:newton}) and Eqn.(\ref{eqn:dx2}) to derive the called "Verlet method" where position and velocity vectors for each $i$th atom on next step ($t+\Delta t$) are calculated using previous and current step:
+
+Hence, by neglecting the error of order $\mathcal{O}(\Delta t^2)$, it is possible to use equations Eqn.(\ref{eqn:newton}) and Eqn.(\ref{eqn:dx2}) to derive the called "Verlet method" where position and velocity vectors for each $i$th atom on next step ($t+\Delta t$) are calculated using previous and current step:
 \begin{equation}
 \vec{r}_i(t+\Delta t) = 2 \vec{r}_i(t) - \vec{r}_i(t-\Delta t) + \dfrac{{\Delta t}^2}{m_i}\vec{F}_i(t)
 \label{eqn:verletr}
 \end{equation}
 \begin{equation}
-\dfrac{ = 2 \vec{r}_i(t) \vec{r}_i(t+\Delta t) - \vec{r}_i(t-\Delta t)}{{\Delta t}^2} + \dfrac{{\Delta t}^2}{m_i}\vec{F}_i(t)
+\vec{v}_i(t) =  \dfrac{\vec{r}_i(t+\Delta t) - \vec{r}_i(t-\Delta t)}{2{\Delta t}}
 \label{eqn:verletv}
 \end{equation}
- 
+
+In order to improve accuracy on Verlet method, another approach can be made by accounting a new force term in the velocity. This term is calculated from the updated position vector, and this improved velocity term is used to calculate the new position in the next step, creating a preciser step cycle with more stability. This set of equations are called "Velocity Verlet method" and they are described as:
+\begin{equation}
+\vec{r}_i(t+\Delta t) = \vec{r}_i(t) + \vec{v}_i(t)\Delta t + \dfrac{\vec{F}_i(t)}{2m_i}{\Delta t}^2
+\label{eqn:vverletr}
+\end{equation}
+\begin{equation}
+\vec{v}_i(t+\Delta t) = \vec{v}_i(t) + \dfrac{\vec{F}_i(t+\Delta t)+\vec{F}_i(t)}{2m_i}\Delta t
+\label{eqn:vverletv}
+\end{equation}
+
+As a final variation for Verlet method one can derive the "Leap frog method", in which considers half-step when calculating the velocity term. Even though the use of this technique leads to a more stable and acurate behaviour when compared to Verlet method, it is noticeable that velocity and position are not in the same time steps, therefore it is not possible to calculate the total energy at a given $t$ just kinetic or potential energy separately. By applying first-order derivatives with half-steps, one can derive the following equations:
+
 
 
 \subsubsection*{Monte Carlo simulation}
