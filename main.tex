@@ -11,6 +11,7 @@
                
                                
 \usepackage{amsmath,amssymb,amsthm}
+\usepackage{xfrac}
 \usepackage{mathrsfs}
 \usepackage{mathtools}
 \usepackage{grffile}  
@@ -172,7 +173,7 @@ The work presented on following experiments are an attempt to create a cross-lin
 This work is based on two molecular simulation techniques the former, called Molecular Dynamics, accounts for integration of Newton forces in order to describe positions and velocities of particles in the system. The latter, called Monte Carlo method, is a powerful statistical tool based on stochastic inputs to measure properties of many systems, in this case thermodynamic equilibrium of molecular systems. Following sections will describe the mechanistic behind each technique and further explain how they are used in simulation software.
 \subsubsection*{Molecular Dynamics simulation}
 
-Molecular Dynamics is a simulation method that originates from dynamic nature of atomic interactions. Generally, a system of atoms can be treated as a multi-particle system ruled by Newton's Law. Considering a system with $\mathcal{N}$ atoms for each $i$th particle of the system the follow differential equation:
+Molecular Dynamics is a simulation method that originates from dynamic nature of atomic interactions. Generally, a system of atoms can be treated as a multi-particle system ruled by Newton's Law \cite{umd}. Considering a system with $\mathcal{N}$ atoms for each $i$th particle of the system the follow differential equation:
 \begin{equation}
 m_i\dfrac{\,d^2\vec{r}_i(t)}{\,dt^2} = \vec{F}_i(t)
 \label{eqn:newton}
@@ -202,7 +203,7 @@ Hence, by neglecting the error of order $\mathcal{O}(\Delta t^2)$, it is possibl
 \label{eqn:verletv}
 \end{equation}
 
-In order to improve accuracy on Verlet method, another approach can be made by accounting a new force term in the velocity. This term is calculated from the updated position vector, and this improved velocity term is used to calculate the new position in the next step, creating a preciser step cycle with more stability. This set of equations are called "Velocity Verlet method" and they are described as:
+In order to improve accuracy on Verlet method, another approach can be made by accounting a new force term in the velocity. This term is calculated from the updated position vector, and this improved velocity term is used to calculate the new position in the next step, creating a preciser step cycle with more stability\cite{satoh}. This set of equations are called "Velocity Verlet method" and they are described as:
 \begin{equation}
 \vec{r}_i(t+\Delta t) = \vec{r}_i(t) + \vec{v}_i(t)\Delta t + \dfrac{\vec{F}_i(t)}{2m_i}{\Delta t}^2
 \label{eqn:vverletr}
@@ -212,9 +213,17 @@ In order to improve accuracy on Verlet method, another approach can be made by a
 \label{eqn:vverletv}
 \end{equation}
 
-As a final variation for Verlet method one can derive the "Leap frog method", in which considers half-step when calculating the velocity term. Even though the use of this technique leads to a more stable and acurate behaviour when compared to Verlet method, it is noticeable that velocity and position are not in the same time steps, therefore it is not possible to calculate the total energy at a given $t$ just kinetic or potential energy separately. By applying first-order derivatives with half-steps, one can derive the following equations:
+As a final variation for Verlet method one can derive the "Leap frog method", in which considers half-step when calculating the velocity term. Even though the use of this technique leads to a more stable and accurate behaviour when compared to Verlet method, it is noticeable that velocity and position are not in the same time steps, therefore it is not possible to calculate the total energy at a given $t$, just kinetic or potential energy separately \cite{umd}. By applying first-order derivatives with half-steps, one can obtain the following equations:
+\begin{equation}
+\vec{r}_i(t+\Delta t) = \vec{r}_i(t) + \vec{v}_i(t+\sfrac{\Delta t}{2})\Delta t
+\label{eqn:leapfrogr}
+\end{equation}
+\begin{equation}
+\vec{v}_i(t+\sfrac{\Delta t}{2}) = \vec{v}_i(t-\sfrac{\Delta t}{2}) + \dfrac{\vec{F}_i(t)}{m_i}\Delta t
+\label{eqn:leapfrogv}
+\end{equation}
 
-
+The force term for each step is a key factor to define whether Molecular Dynamics are realistic or not. They are strictly related to the force-field adopted to describe molecular interactions, since they provide parameters to describe Lennard-Jones potentials in which forces can be calculated at any system configuration. Eventually, as seen in innovative methods such as the used on this project, the potential values can also be provided by tables generated specifically for each molecular interaction, explanations about this technique will be given on further sections. Molecular dynamics technique enable the use of thermostats and barostats to control dynamic behaviour of temperature and pressure of the system, recreating different types of thermodynamic ensemble. Hence, at equilibrated states, system properties can be obtained as a temporal average of instantaneous values and those averages can be compared to real experimental data in order to validate simulations.
 
 \subsubsection*{Monte Carlo simulation}
 Monte Carlo is  a simulation method based on statistical probability of existence of a system at thermodynamic equilibrium. This happens when free energy reaches a minimum by calculating the energy for each particle's microscopic state. Given a system of $ \mathcal{N}$ particles, temperature $T$ and volume $V$, thus it can be denoted as a canonical ensemble, it is possible to assume that  the free Helmholtz energy of the system is:
@@ -222,6 +231,7 @@ Monte Carlo is  a simulation method based on statistical probability of existenc
 A = U - TS
 \label{eqn:freeE}
 \end{equation}
+
 Where $S$ is the entropy and $U$ is the internal energy, meaning that not only a minimum in free energy can arise from a minimum in total energy, but also an increase in entropy of the system can contribute to this energy minimization. A system can be described by a group of coordinates, in this case to give a simplified idea assume a group of distance vectors $\lambda = (	\vec{r}_1,\vec{r}_2, \ldots, \vec{r}_\mathcal{N} )$ from system origin. For an arbitrary $\lambda$ the probability of a single particle of the system to statistically occupy that position is described by using a probability distribution function \cite{satoh}:
 \begin{equation}
 \rho(\lambda) = \dfrac{\exp{\left(-\dfrac{U(\lambda)}{kT}\right)}}{\displaystyle \int_V \dots   \int_V \exp{\left(-\dfrac{U(\lambda)}{kT}\right)}\,d\vec{r}_1 \,d\vec{r}_2 \ldots \,d\vec{r}_\mathcal{N} }
@@ -247,16 +257,21 @@ Whether the system configuration is generated with considerable number of micros
 \label{eqn:average}
 \end{equation}
 
-It is important to notice that Monte Carlo simulations do not consider dynamic properties of the system such as kinetic energy, and therefore only Molecular Dynamics can account such things. Finally, now that both molecular simulation methods had been properly introduced it is possible to proceed to an overview of both simulation software used on this project. Together they can unite the benefits of both simulation methods, in order to recreate a suitable coarse-grain model for Molecular Dynamics.
+It is important to notice that Monte Carlo simulations do not consider dynamic properties of the system such as kinetic energy, and therefore only Molecular Dynamics can account such things\cite{satoh}. Finally, now that both molecular simulation methods had been properly introduced it is possible to proceed to an overview of both simulation software used on this project. Together they can unite the benefits of both simulation methods, in order to recreate a suitable coarse-grain model for Molecular Dynamics.
+
+\subsubsection*{About GROMACS}
+
+\cite{gromanual}
  
- --gromacs\cite{gromanual}
+ --MPI and GPU
+\subsubsection*{About MagiC}
+ --General idea
  
- --MPI and GPU\\
-About MagiC\\
- --General idea\\
- --IBI + IMC\\
- --Parallelism and sample size\\
- --Convergence\\
+ --IBI + IMC
+ 
+ --Parallelism and sample size
+ 
+ --Convergence
  
 \subsection{Methods Description} 
 The experimental process of this project is divided in 3 main parts: Firstly, develop a efficient coarse-grain model and validate its use. Secondly, analyse the relationship between concentration  of all-atoms simulation and concentration of coarse-grained simulation. Then finally, create and reproduce a Silica surfactant mesoscale system. 

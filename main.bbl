@@ -36,6 +36,33 @@ Arnarez, C.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Frenkel%
+\ \BBA {} Smit%
+}{%
+Frenkel%
+\ \BBA {} Smit%
+}{%
+{\protect \APACyear {2001}}%
+}]{%
+umd}
+\APACinsertmetastar {%
+umd}%
+\begin{APACrefauthors}%
+Frenkel, D.%
+\BCBT {}\ \BBA {} Smit, B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2001}.
+\newblock
+\APACrefbtitle {Understanding Molecular Simulatio: From Algorithms to
+  Applications} {Understanding molecular simulatio: From algorithms to
+  applications}.
+\newblock
+\APACaddressPublisher{}{Elsevier Science}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Jin%
 \ \protect \BOthers {.}}{%
 Jin%
@@ -99,6 +126,45 @@ Kresge, C\BPBI T.%
 \begin{APACrefURL} \url{http://dx.doi.org/10.1039/C3CS60016E} \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.1039/C3CS60016E} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Marrink%
+, Risselada%
+, Yefimov%
+, Tieleman%
+\BCBL {}\ \BBA {} de Vries%
+}{%
+Marrink%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2007}}%
+}]{%
+martini}
+\APACinsertmetastar {%
+martini}%
+\begin{APACrefauthors}%
+Marrink, S\BPBI J.%
+, Risselada, H\BPBI J.%
+, Yefimov, S.%
+, Tieleman, D\BPBI P.%
+\BCBL {}\ \BBA {} de Vries, A\BPBI H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2007}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The MARTINI Force Field: Coarse Grained Model for
+  Biomolecular Simulations} {The martini force field: Coarse grained model for
+  biomolecular simulations}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Journal of Physical Chemistry
+  B}{111}{27}{7812-7824}.
+\newblock
+\begin{APACrefURL} \url{http://dx.doi.org/10.1021/jp071097f} \end{APACrefURL}
+\newblock
+\APACrefnote{PMID: 17569554}
+\newblock
+\begin{APACrefDOI} \doi{10.1021/jp071097f} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -331,7 +397,7 @@ Satoh%
 }{%
 Satoh%
 }{%
-{\protect \APACyear {2011}}%
+{\protect \APACyear {2010}}%
 }]{%
 satoh}
 \APACinsertmetastar {%
@@ -341,24 +407,15 @@ Satoh, A.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2011}{}{}.
+\APACrefYear{2010}.
 \newblock
-{\BBOQ}\APACrefatitle {1 - Outline of Molecular Simulation and Microsimulation
-  Methods} {1 - outline of molecular simulation and microsimulation
-  methods}.{\BBCQ}
+\APACrefbtitle {Introduction to Practice of Molecular Simulation: Molecular
+  Dynamics, Monte Carlo, Brownian Dynamics, Lattice Boltzmann and Dissipative
+  Particle Dynamics} {Introduction to practice of molecular simulation:
+  Molecular dynamics, monte carlo, brownian dynamics, lattice boltzmann and
+  dissipative particle dynamics}.
 \newblock
-\BIn{} A.~Satoh\ (\BED), \APACrefbtitle {Introduction to Practice of Molecular
-  Simulation} {Introduction to practice of molecular simulation}\ (\BPG~1 -
-  27).
-\newblock
-\APACaddressPublisher{London}{Elsevier}.
-\newblock
-\begin{APACrefURL}
-  \url{http://www.sciencedirect.com/science/article/pii/B978012385148200001X}
-  \end{APACrefURL}
-\newblock
-\begin{APACrefDOI} \doi{http://dx.doi.org/10.1016/B978-0-12-385148-2.00001-X}
-  \end{APACrefDOI}
+\APACaddressPublisher{}{Elsevier Science}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
