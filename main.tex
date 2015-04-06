@@ -20,12 +20,14 @@
 \usepackage{dsfont}
 
 \usepackage[]{subfigure}
+\usepackage{wrapfig}
+\usepackage{multicol}
 
 \usepackage{verbatim}
 \usepackage{setspace}
 
 \usepackage{color}
-\usepackage{hyperref}
+\usepackage[]{hyperref}
 
 \usepackage{accents}
 \usepackage{textcomp}
@@ -259,29 +261,69 @@ Whether the system configuration is generated with considerable number of micros
 
 It is important to notice that Monte Carlo simulations do not consider dynamic properties of the system such as kinetic energy, and therefore only Molecular Dynamics can account such things\cite{satoh}. Finally, now that both molecular simulation methods had been properly introduced it is possible to proceed to an overview of both simulation software used on this project. Together they can unite the benefits of both simulation methods, in order to recreate a suitable coarse-grain model for Molecular Dynamics.
 
-\subsubsection{About GROMACS}
+\subsubsection*{About GROMACS}
 
- GROMACS (\textbf{Gro}ningen \textbf{Ma}chine for \textbf{C}hemical \textbf{S}imulations) \cite{gromanual} is a Molecular Dynamics and energy minimization software created at the University of Groningen (the Netherlands), and currently has been developed and updated by Royal Institute of Technology and Uppsala University (Sweden). GROMACS is a widely used tool in the branch of computational chemistry because it is flexible and efficient. Its flexibly comes from capacity of simulating multiscale molecular models, from atomistic to mesoscale depending on topology described by the user. The efficiency originates from the computational optimisation, by this meaning not only that GROMACS can achieve impressive simulation speed in large system using supercomputing or clusters, but also it can run small simulations in any ordinary computers with great performance.
+ GROMACS (\textbf{Gro}ningen \textbf{Ma}chine for \textbf{C}hemical \textbf{S}imulations) \cite{gromanual} is a Molecular Dynamics and energy minimization software created at the University of Groningen (the Netherlands), and currently has been developed and updated by Royal Institute of Technology and Uppsala University (Sweden). GROMACS is a widely used tool in the branch of computational chemistry because it is flexible and efficient. Its flexibly comes from the capacity of simulating multiscale molecular models, from atomistic to mesoscale depending on topology described by the user. The efficiency originates from the computational optimisation, by this meaning not only that GROMACS can achieve impressive simulation speed in large system using supercomputing or clusters, but also it can run small simulations in any ordinary computers with great performance.
  
- --force fields, Topologies, Lennad-jones, tables.
+ In order to interpret interatomic interactions, that means forces between each pair of atoms, GROMACS uses pre-defined parameters called Topologies in which the user can describe almost any molecule using force fields or tabled potentials. Data given in this description includes information regarding atoms' type, mass and charge. Furthermore, it includes detailed description of each angle and dihedral for the molecule. There are several Force-fields available for usage depending on the desired objective of the simulation, their role is to be a database that describes interactions potential, hence their applicability is suitable to almost any system from all-atoms to coarse-grain descriptions it is just necessary for the user to describe a realistic model.
  
- bla bla
+  When dealing of simulations of complex systems, realism means more computational power expended trying to achieve it\cite{satoh}, therefore a major concern is how to achieve longer time horizons without loosing precision. A good example is the Lennard-Jones potential for Van der Waals forces, used by OPLS-AA Force-field \cite{opls}, which is the one chosen for all-atomic simulations in this project. This type of potential approximation for a given atom $i$ in relation to atom $j$ is defined simply by two parameters  $\epsilon$ and $\sigma$ as it can be seen in Eq.\ref{eqn:ljpot}:
+
+\begin{equation}
+\mathcal{U}_{LJ}(r_{ij}) = 4\epsilon_{ij}\left(\left( \dfrac{\sigma_{ij}}{r_{ij}}\right)^{12} - \left( \dfrac{\sigma_{ij}}{r_{ij}}\right)^6\right) 
+\label{eqn:ljpot}
+\end{equation}
+
+ \begin{figure}[ht]
+  \begin{center}
+	\includegraphics[width=0.6 \textwidth]{./graphs/lj}
+	\caption{Example of Lennard-Jones Potential(with reduced units)}
+	\label{gfx:ljg}
+	\end{center}
+	\end{figure}
+
+Where the forces used in Molecular Dynamics equations come from derivative of this potential for each pair of particles:
+\begin{equation}
+\vec{F}_{ij} = \nabla\mathcal{U}_{LJ}(r_{ij}) = \left( \dfrac{\partial\mathcal{U}_{LJ}(r_{ij})}{\partial x}\hat{x} + \dfrac{\partial\mathcal{U}_{LJ}(r_{ij})}{\partial y}\hat{y}+\dfrac{\partial\mathcal{U}_{LJ}(r_{ij})}{\partial z}\hat{z}\right) 
+\label{eqn:ljf}
+\end{equation}
+
+For every simulation time-step, GROMACS recalculates bonded potentials from Topology, and non-bonded potentials from the summation of Lennard-Jones and short-range Coulomb potentials. As shown in Fig.(\ref{gfx:ljg}) whether $r_{ij} \rightarrow \infty$ $\Rightarrow$ $\mathcal{U}_{LJ} \rightarrow 0$ and a similar behaviour occurs for Coulomb forces. Hence, GROMACS generates a neighbour list of atoms determined by a cut-off radius for each particle, by this means avoiding having to spend a lot of computational power calculating numbers with negligible value. Moreover, this feature allows the use of periodic boundary conditions that recreates a continuous media environment for simulation boxes bigger than  two times the cut-off radius, since particles can not interact with itself. 
+
+Although speed efficiency is a concern it is not only the unique preoccupation, it is also necessary to control environment variables such as     temperature and pressure, in order to maintain the simulation within physical limits and that demands computational resources. GROMACS is capable of using three types of thermostat which are Berendsen ,v-rescaling and Nosé-Hoover  and three types of barostat Berendsen, Parrinello-Rahman and MTTK \cite{gromanual}. Furthermore, other computational expensive technique is the use of Particle-mesh Ewald (PME) summation method to deal with long-range electrostatic interactions, which is indispensable in ionic environments. All these tools makes GROMACS not only fast but also reliable for Molecular Dynamics simulation, and for this reason the aim of this project is to demonstrate the capacity of this software to simulate realistic multi-scale molecular models.
   
- --MPI and GPU
+\subsubsection*{About MagiC}
+
+MagiC is software package developed by \citeA{magic}, which is a systematic method to generate coarse-grain models from all-atomic simulations using Iterative Boltzmann Inversion (IBI) and Inverse Monte Carlo (IMC). As described in Fig.(\ref{Fig:magic}) method consists in a three step process, where the input is the trajectory file of an equilibrated all-atoms simulation from GROMACS, and outputs are a set of tabled potentials and a Topology for a coarse-grained model that uses these potentials to run Molecular Dynamics simulations using GROMACS. 
+ \begin{figure}[ht]
+  \begin{center}
+	\includegraphics[width=1 \textwidth]{./images/magic}
+	\caption{MagiC}
+	\label{Fig:magic}
+	\end{center}
+	\end{figure}
+
+ The first step uses CGtraj (written in Fortran 90), where the trajectory of the all-atoms simulation is recalculated based on a bead mapping described by the user. Basically, it analyses the group of atoms in each bead and assign the position of this bead as the center of mass, charge as summation of all charges and mass as summation of atomic masses, thus giving as output a representation of the input system as if it was an "ideal" coarse-grain model. Next, this rewritten trajectory is used as input to RDF (written in Python), where several reference Radial Distributions Functions are created for each bond, angle and pairwise intermolecular interaction, as specified by user. These reference RDFs in conjunction with the coarse-grain topology are the  inputs to the MagiC kernel (written in Fortran 90), which is the key step of the process, where the final output might be a suitable coarse-grain model ready for GROMACS simulation.
  
- bla bla
+ In the kernel is where the actual inversion precesses occurs, as schematised in Fig.(\ref{Fig:kernel}). Whether using IMC or IBI, a couple of millions of Metropolis Monte Carlo steps are simulated using a set of trial potentials to create several samples of averaged thermodynamics properties. Then, these averages are applied in the equations of the chosen inversion method in order to refine the trial potentials that will be used on the next inversion step.
+ \begin{figure}[ht!]
+  \begin{center}
+	\includegraphics[width=0.3 \textwidth]{./images/wip}
+	\caption{MagiC kernel work-flow scheme}
+	\label{Fig:kernel}
+  \end{center}
+\end{figure}
  
- --How it is usefull to the project!
+ The Iterative Boltzmann Inversion is a reasonable methodology to apply in the initials iterations, since it has fast convergence. The process derives from ... \cite{ibi}
  
-bla bla  
-\subsubsection{About MagiC}
- --General idea
+ Regarding the Inversion Monte Carlo process it follows the methodology described by \citeA{imc}. Given a space of Hamiltonians:
+ \begin{equation}
+\mathcal{H}(q) = \displaystyle \sum_{n} \mathcal{U}_n\mathcal{S}_n(q)
+\label{eqn:hami}
+\end{equation}
  
- --IBI + IMC
+ --Parallelism and Convergence
  
- --Parallelism and sample size
- 
- --Convergence
 \subsection{Methods Description} 
 The experimental process of this project is divided in 3 main parts: Firstly, develop a efficient coarse-grain model and validate its use. Secondly, analyse the relationship between concentration  of all-atoms simulation and concentration of coarse-grained simulation. Then finally, create and reproduce a Silica surfactant mesoscale system. 
 
@@ -382,7 +424,7 @@ Experiment 3\\
  
 \section{Nomenclature} 
    \begin{tabulary}{1.0\textwidth}{LCL}
-   $H$ &   & Hamiltonian hdasdgfag \cite{magic}a asdfasdfas dfadsfasdfasdfsdfa gsdfhg as djfg ajdf jasdfj adjhg asdjhgfajksdfaj,jahdskjfas\\
+   $\mathcal{H}$ &   & Hamiltonian \\
    $C_n$ &   & Molar concentration of species n ($mM$) \\
    \end{tabulary}
 
@@ -391,65 +433,67 @@ Experiment 3\\
 \newpage
 \section{Appendix}
 \setcounter{page}{1}
-%\begin{equation}
-%E_c=\frac{1}{2}mv^2
-%\label{eqn:bua}
-%\end{equation}
-%
-%\begin{table*}[ht!] 
-%  \centering
-%\begin{threeparttable}
-%
-%  \caption{Table generated by Excel2LaTeX from sheet 'Sheet1'}
-%
-%    \begin{tabular}{rrrrrr}
-%    \toprule
-%    Model & Depth & Width & Angle & Factor 1 & Factor 2 \\
-%	& (mm) & (mm) & (°)  &  &  \\
-%    \midrule
-%    111   & 1,00  & 1,50  & 10\tnote{a}   & 357.921 & 532.289 \\
-%    112   & 1,00  & 1,50  & 15   & 382.379 & 567.234 \\
-%    113   & 1,00  & 1,50  & 20   & 383.863 & 569.600 \\
-%    121   & 1,00  & 2,00  & 10   & 398.199 & 590.473 \\
-%    122   & 1,00  & 2,00  & 15   & 486.306 & 710.483 \\
-%    123   & 1,00  & 2,00  & 20   & 430.330 & 636.471 \\
-%    131   & 1,00  & 2,50  & 10   & 441.735 & 654.499 \\
-%    132   & 1,00  & 2,50  & 15   & 460.925 & 681.645 \\
-%    133   & 1,00  & 2,50  & 20   & 469.115 & 693.700 \\
-%    211   & 1,25  & 1,50  & 10   & 374.784 & 557.029 \\
-%    212   & 1,25  & 1,50  & 15   & 399.053\tnote{b} & 591.402 \\
-%    213   & 1,25  & 1,50  & 20   & 411.377 & 609.042 \\
-%    221   & 1,25  & 2,00  & 10   & 415.050 & 615.336 \\
-%    222   & 1,25  & 2,00  & 15   & 430.991 & 638.237 \\
-%    223   & 1,25  & 2,00  & 20   & 455.857 & 673.613 \\
-%    231   & 1,25  & 2,50  & 10   & 472.885 & 698.958 \\
-%    232   & 1,25  & 2,50  & 15   & 484.567 & 715.341 \\
-%    233   & 1,25  & 2,50  & 20  & 497.320 & 733.923 \\
-%    311   & 1,50  & 1,50  & 10   & 385.110 & 572.665 \\
-%    312   & 1,50  & 1,50  & 15   & 406.144 & 602.130 \\
-%    313   & 1,50  & 1,50  & 20   & 480.613 & 706.960 \\
-%    321   & 1,50  & 2,00  & 10   & 490.910 & 722.194 \\
-%    322   & 1,50  & 2,00  & 15   & 513.846 & 754.804 \\
-%    323   & 1,50  & 2,00  & 20   & 529.291 & 777.175 \\
-%    331   & 1,50  & 2,50  & 10   & 542.184 & 796.618 \\
-%    332   & 1,50  & 2,50  & 15   & 510.958 & 753.298 \\
-%    333   & 1,50  & 2,50  & 20   & 527.253 & 776.981 \\
-%         \midrule
-%          &       &       & Sum: & 12.138.966 & 17.932.100 \\
-%    \bottomrule
-%    \end{tabular}%
-%    \begin{tablenotes}
-%    	\item[a] This should be cited with a \citeA{lyuba2013}
-%    	\item[b] And this is another note
-%    \end{tablenotes}
-%  \label{tab:addlabel}%
-%\end{threeparttable} 
-%\end{table*}
-%
-%\begin{figure}[ht]
-%	\includegraphics[width=0.48 \textwidth]{./images/Eye}
-%	\caption{The eye of a cocodile}
-%	\label{Fig:Boxplot}
-%\end{figure}
+\begin{equation}
+E_c=\frac{1}{2}mv^2
+\label{eqn:bua}
+\end{equation}
+
+\begin{table*}[ht!] 
+  \centering
+\begin{threeparttable}
+
+  \caption{Table generated by Excel2LaTeX from sheet 'Sheet1'}
+
+    \begin{tabular}{rrrrrr}
+    \toprule
+    Model & Depth & Width & Angle & Factor 1 & Factor 2 \\
+	& (mm) & (mm) & (°)  &  &  \\
+    \midrule
+    111   & 1,00  & 1,50  & 10\tnote{a}   & 357.921 & 532.289 \\
+    112   & 1,00  & 1,50  & 15   & 382.379 & 567.234 \\
+    113   & 1,00  & 1,50  & 20   & 383.863 & 569.600 \\
+    121   & 1,00  & 2,00  & 10   & 398.199 & 590.473 \\
+    122   & 1,00  & 2,00  & 15   & 486.306 & 710.483 \\
+    123   & 1,00  & 2,00  & 20   & 430.330 & 636.471 \\
+    131   & 1,00  & 2,50  & 10   & 441.735 & 654.499 \\
+    132   & 1,00  & 2,50  & 15   & 460.925 & 681.645 \\
+    133   & 1,00  & 2,50  & 20   & 469.115 & 693.700 \\
+    211   & 1,25  & 1,50  & 10   & 374.784 & 557.029 \\
+    212   & 1,25  & 1,50  & 15   & 399.053\tnote{b} & 591.402 \\
+    213   & 1,25  & 1,50  & 20   & 411.377 & 609.042 \\
+    221   & 1,25  & 2,00  & 10   & 415.050 & 615.336 \\
+    222   & 1,25  & 2,00  & 15   & 430.991 & 638.237 \\
+    223   & 1,25  & 2,00  & 20   & 455.857 & 673.613 \\
+    231   & 1,25  & 2,50  & 10   & 472.885 & 698.958 \\
+    232   & 1,25  & 2,50  & 15   & 484.567 & 715.341 \\
+    233   & 1,25  & 2,50  & 20  & 497.320 & 733.923 \\
+    311   & 1,50  & 1,50  & 10   & 385.110 & 572.665 \\
+    312   & 1,50  & 1,50  & 15   & 406.144 & 602.130 \\
+    313   & 1,50  & 1,50  & 20   & 480.613 & 706.960 \\
+    321   & 1,50  & 2,00  & 10   & 490.910 & 722.194 \\
+    322   & 1,50  & 2,00  & 15   & 513.846 & 754.804 \\
+    323   & 1,50  & 2,00  & 20   & 529.291 & 777.175 \\
+    331   & 1,50  & 2,50  & 10   & 542.184 & 796.618 \\
+    332   & 1,50  & 2,50  & 15   & 510.958 & 753.298 \\
+    333   & 1,50  & 2,50  & 20   & 527.253 & 776.981 \\
+         \midrule
+          &       &       & Sum: & 12.138.966 & 17.932.100 \\
+    \bottomrule
+    \end{tabular}%
+    \begin{tablenotes}
+    	\item[a] This should be cited with a \citeA{magic}
+    	\item[b] And this is another note
+    \end{tablenotes}
+  \label{tab:addlabel}%
+\end{threeparttable} 
+\end{table*}
+
+\begin{figure}[ht!]
+  \begin{center}
+	\includegraphics[width=0.3 \textwidth]{./images/wip}
+	\caption{Work in Progress}
+	\label{Fig:Boxplot}
+  \end{center}
+\end{figure}
 
 \end{document}

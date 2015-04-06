@@ -174,10 +174,10 @@ eprint = {
 }
 
 @manual{gromanual,
-	title		= {Gromacs User Manual version 4.5.6},
+	title		= {Gromacs User Manual version 4.6.5},
 	author		= {van der Spoel, D. and Lindahl, E. and Hess, B. and van Buuren, A. R. and Apol, E. and Meulenhoff, P. J. and Tieleman, D. P. and Sijbers, A. L. T. M. and Feenstra, K. A. and van Drunen, R. and Berendsen, H. J. C.},
 	organization	= {www.gromacs.org},
-	year		= {2010}
+	year		= {2013}
 }
 
 @book{satoh,
@@ -190,7 +190,7 @@ eprint = {
 }
 
 @book{umd,
-  title={Understanding Molecular Simulation: From Algorithms to Applications},
+  title={Understanding Molecular Simulatio: From Algorithms to Applications},
   author={Frenkel, D. and Smit, B.},
   isbn={9780080519982},
   series={Computational science series},
@@ -212,7 +212,7 @@ eprint = {
 
 @article{martini,
 author = {Marrink, Siewert J. and Risselada, H. Jelger and Yefimov, Serge and Tieleman, D. Peter and de Vries, Alex H.},
-title = {The MARTINI Force Field:  Coarse Grained Model for Biomolecular Simulations},
+title = {The MARTINI Force Field: Coarse Grained Model for Biomolecular Simulations},
 journal = {The Journal of Physical Chemistry B},
 volume = {111},
 number = {27},
@@ -230,6 +230,30 @@ eprint = {
     
 }
 
+}
+
+@article{opls,
+author = {Jorgensen, William L. and Maxwell, David S. and Tirado-Rives, Julian},
+title = {Development and Testing of the OPLS All-Atom Force Field on Conformational Energetics and Properties of Organic Liquids},
+journal = {Journal of the American Chemical Society},
+volume = {118},
+number = {45},
+pages = {11225-11236}, 
+year = {1996} }
+
+@article{imc,
+  title = {Calculation of effective interaction potentials from radial distribution functions: A reverse Monte Carlo approach},
+  author = {Lyubartsev, Alexander P. and Laaksonen, Aatto},
+  journal = {Phys. Rev. E},
+  volume = {52},
+  issue = {4},
+  pages = {3730--3737},
+  numpages = {0},
+  year = {1995},
+  month = {Oct},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevE.52.3730},
+  url = {http://link.aps.org/doi/10.1103/PhysRevE.52.3730}
 }
 
 @article{someone,
