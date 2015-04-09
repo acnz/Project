@@ -99,6 +99,44 @@ Jin, H.%
 
 \bibitem [\protect \citeauthoryear {%
 Jorgensen%
+, Chandrasekhar%
+, Madura%
+, Impey%
+\BCBL {}\ \BBA {} Klein%
+}{%
+Jorgensen%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {1983}}%
+}]{%
+tip4p}
+\APACinsertmetastar {%
+tip4p}%
+\begin{APACrefauthors}%
+Jorgensen, W\BPBI L.%
+, Chandrasekhar, J.%
+, Madura, J\BPBI D.%
+, Impey, R\BPBI W.%
+\BCBL {}\ \BBA {} Klein, M\BPBI L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1983}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Comparison of simple potential functions for simulating
+  liquid water} {Comparison of simple potential functions for simulating liquid
+  water}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Journal of Chemical Physics}{79}{2}{926-935}.
+\newblock
+\begin{APACrefURL}
+  \url{http://scitation.aip.org/content/aip/journal/jcp/79/2/10.1063/1.445869}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{http://dx.doi.org/10.1063/1.445869} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Jorgensen%
 , Maxwell%
 \BCBL {}\ \BBA {} Tirado-Rives%
 }{%

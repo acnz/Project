@@ -256,6 +256,30 @@ year = {1996} }
   url = {http://link.aps.org/doi/10.1103/PhysRevE.52.3730}
 }
 
+@article{ibi,
+   author = "Moore, Timothy C. and Iacovella, Christopher R. and McCabe, Clare",
+   title = "Derivation of coarse-grained potentials via multistate iterative Boltzmann inversion",
+   journal = "The Journal of Chemical Physics",
+   year = "2014",
+   volume = "140",
+   number = "22", 
+   eid = 224104,
+   pages = "-",
+   url = "http://scitation.aip.org/content/aip/journal/jcp/140/22/10.1063/1.4880555",
+   doi = "http://dx.doi.org/10.1063/1.4880555" 
+}
+@article{tip4p,
+   author = "Jorgensen, William L. and Chandrasekhar, Jayaraman and Madura, Jeffry D. and Impey, Roger W. and Klein, Michael L.",
+   title = "Comparison of simple potential functions for simulating liquid water",
+   journal = "The Journal of Chemical Physics",
+   year = "1983",
+   volume = "79",
+   number = "2", 
+   eid = ,
+   pages = "926-935",
+   url = "http://scitation.aip.org/content/aip/journal/jcp/79/2/10.1063/1.445869",
+   doi = "http://dx.doi.org/10.1063/1.445869" 
+}
 @article{someone,
 author = {Need, Articles and Someone, To Cite },
 title = {Mock article: You need to read more},
