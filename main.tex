@@ -350,16 +350,44 @@ Both of the previous methods described rely on a considerably large mount of Mon
 \subsection{Methods Description} 
 The experimental process of this project is divided in 3 main parts: Firstly, develop a efficient coarse-grain model and validate its use. Secondly, analyse the relationship between concentration  of all-atoms simulation and concentration of coarse-grained simulation. Then finally, create and reproduce a Silica surfactant mesoscale system. 
 
-In order to maintain standard parameters for all GROMACS simulations, all-atoms simulations that were used for coarse-grained reference were run in NPT ensemble. All simulation boxes were created using genbox (GROMACS package utility), first by inserting the desired number of surfactant molecules and then adding the solvent at the adequate ratio. The molecules were designed based on OPLS-AA forcefield \cite{opls} parameters, %because?%
-therefore the surfactant DMDD was created with aid of co-workers and water type was TIP4P \cite{tip4p}. %because?% 
+In order to maintain standard parameters for all GROMACS simulations, all-atoms simulations that were used for coarse-grained reference were run in NPT ensemble. All simulation boxes were created using genbox (GROMACS package utility), first by inserting the desired number of surfactant molecules and then adding the solvent at the adequate ratio. The molecules were designed based on OPLS-AA forcefield \cite{opls} parameters. %because?%
+The surfactant DMDD was created with aid of co-workers and water type was TIP4P \cite{tip4p}. %because?% 
 Moreover, no initial configuration was determined, such as a pre self-assembled system, to ensure stochastic nature of the system.  
 
-Initially, all boxes received a energy minimization step in order to avoid system blow-up deal to possible extreme potential energy spots created during box generation, because due to random displacement of molecules some of them could overlap others and then cause a destabilization of the system. After, an equilibration step was necessary to reach desired initial temperature and pressure conditions for the MD simulation. During equilibration temperature coupling was kept as $298$ $K$ using a v-rescaling thermostat \cite{vthermostat} with time constant of $0.01$ $ps$ and pressure coupling was kept at $1$ $bar$ using a Berendsen barostat \cite{bbarostat} with time constant of $0.5$  $ps$.
+Initially, all boxes received a energy minimization step in order to avoid system blow-up deal to possible extreme potential energy spots created during box generation. That is because during random displacement of molecules some of them could overlap others and then cause a destabilization of the system. After, an equilibration step was necessary to reach desired initial temperature and pressure conditions for the MD simulation. During equilibration temperature coupling was kept at $298\ K$ using a v-rescaling thermostat \cite{vtstat} with time constant of $0.01\ ps$ and pressure coupling was kept at $1\ bar$ using a Berendsen barostat \cite{bbtat} with time constant of $0.5\ ps$.  The simulation was run for $200\ ps$ with time step of $0.5\ fs$ using leap-frog algorithm.
+
+Regarding the concentration of surfactant in each box, four all-atom boxes were created with composition and size described in Table (\ref{tab:boxes}). The utility of each box will be described further in each experiment section, however all of them followed the same ensemble with temperature kept at $298\ K$ by a Nosé-Hoover thermostat \cite{nosetstat} and pressure kept at $1\ bar$ by a Parrinello-Rahman barostat \cite{prbstat}. Moreover, simulation time was also standardized. Every simulation lasted $350\ ns$ with a time step of $0.1\ fs$ using leap-frog algorithm. But for the sake of experiments using MagiC, the first $50\ ns$ of the simulations were disregarded because during this time the system still in equilibration, and therefore that would affect reference RDF values.
+
+\begin{table*}[ht!] 
+  \centering
+\begin{threeparttable}
+
+  \caption{Description of all-atom simulation boxes}
+
+    \begin{tabular}{rrrrrr}
+    \toprule
+    Box &  DMDD &  Water & Silica & Avg. size & Concentration \\
+	& (no. Molec.) & (no. Molec.) & (no. Molec.)  & (\AA) & (mM)\\
+    \midrule
+    1   & 30  & 1500  & -  & 38.2646 & 0.89\\
+    2   & 30  & 670  & -   &  31.3201 & 1.62\\
+    3   & 45\tnote{a}  & 240  & -  & 28.2972 & 3.30\\
+    4   & 30  & 670  &  30  & ??? & ???\\
+    \bottomrule
+    \end{tabular}%
+    \begin{tablenotes}
+    	\item[a] Necessary change, otherwise box size would be too small for the experiments, however concentration is the same as a 30-160 box.
+    \end{tablenotes}
+  \label{tab:boxes}%
+\end{threeparttable} 
+\end{table*}
+
 \subsection{Experiment 1}
- --Objective\\
+ Since the main objective of this project is to probe the effectiveness of coarse-grain models generated using MagiC, this first experiment is an attempt to understand and analyse to what extent bead size influence on the process of coarse-graining. Hence, two models were proposed: Model 1 (M1) described in Fig.(\ref{Fig:mol1}) and Model 2 (M2) described in Fig. (\ref{Fig:mol2}).
+ 
  \begin{figure}[ht]
 	\includegraphics[width=1.0 \textwidth]{./images/M1ab}
-	\caption{A) Schematic of M1 molecule split plan, Carbon atoms represented in black, Nitrogen in green and Hydrogen in gray. B)Final coarse-grain model for M1. This model aggregated the three most polar heavy atoms on the tips and four apolar heavy atoms at the center. In order to avoid electrostatic interactions on the IMC process and further simulation the heavy atoms groups (heavy atom + hydrogen) were kept thus  final charge remain unchanged in each bead}
+	\caption{A) Schematic of M1 molecule split plan, Carbon atoms represented in black, Nitrogen in green and Hydrogen in gray. B)Final coarse-grain model for M1. This model aggregated the three most polar heavy atoms on the tips and four apolar heavy atoms at the center.}
 	\label{Fig:mol1}
 \end{figure}
  \begin{figure}[ht]
@@ -367,6 +395,8 @@ Initially, all boxes received a energy minimization step in order to avoid syste
 	\caption{A) Schematic of M2 molecule split plan, Carbon atoms represented in black, Nitrogen in green and Hydrogen in gray. B)Final coarse-grain model for M2. Heavy atom were grouped pairwise in such a manner that amphiphilic parts were kept as distinct as possible. It is important to notice the necessity of two carbon bead types CE and CI}
 		\label{Fig:mol2}
 \end{figure}
+ 
+ The differences between M1 and M2 are an effort to distinguish at different level of detail the amphiphilic nature of the DMDD. In order to avoid electrostatic interactions on the IMC process and further GROMACS simulations, the heavy atoms groups (heavy atom + hydrogen) were kept together, thus  final charge remain neutral in each bead. Hence, forces will only arise from Van der Waals interactions and implications of inverse process will originate from  degrees of freedom deal to number of beads.
  
  --Model 1 vs Model 2 \\
  --gromacs Simulation Set-up\\
@@ -378,9 +408,27 @@ Initially, all boxes received a energy minimization step in order to avoid syste
  --gromacs Set-up Up-scaling \\
  --gromacs Set-up Self-assembly Model X(best)\\
   ----AA Low, CG Low\\
+   \begin{figure}[ht!]
+  \begin{center}
+	\includegraphics[width=1 \textwidth]{./graphs/rdfL}
+	\caption{rdfLow}
+		\includegraphics[width=1 \textwidth]{./graphs/GyraL}
+	\caption{Gyration Low}
+	\label{gfx:rdfLow}
+	\end{center}
+	\end{figure}
    ------1k(?) up-scale @ low\\
    ------1k(?) up-scale @ high\\
   ----AA Ideal, CG ideal\\
+     \begin{figure}[ht!]
+  \begin{center}
+	\includegraphics[width=1 \textwidth]{./graphs/rdfI}
+	\caption{rdfIdeal}
+		\includegraphics[width=1 \textwidth]{./graphs/GyraI}
+	\caption{Gyration Ideal}
+	\label{gfx:rdfI}
+	\end{center}
+	\end{figure}
    ------1k(?) up-scale @ low\\
    ------1k(?) up-scale @ ideal\\
    ------1k(?) up-scale @ high  \\
