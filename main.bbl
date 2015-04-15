@@ -344,7 +344,31 @@ Mirzoev%
 \ \BBA {} Lyubartsev%
 }{%
 {\protect \APACyear {2014}}%
-}]{%
+{\protect \APACexlab {{\protect \BCnt {1}}}}}]{%
+magicmanu}
+\APACinsertmetastar {%
+magicmanu}%
+\begin{APACrefauthors}%
+Mirzoev, A.%
+\BCBT {}\ \BBA {} Lyubartsev, A\BPBI P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014{\protect \BCnt {1}}}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {MAGIC: User manual. Version 1.0.3} {Magic: User manual.
+  version 1.0.3}{\BBCQ}\ [\bibcomputersoftwaremanual].
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Mirzoev%
+\ \BBA {} Lyubartsev%
+}{%
+Mirzoev%
+\ \BBA {} Lyubartsev%
+}{%
+{\protect \APACyear {2014}}%
+{\protect \APACexlab {{\protect \BCnt {2}}}}}]{%
 dmpc}
 \APACinsertmetastar {%
 dmpc}%
@@ -354,7 +378,7 @@ Mirzoev, A.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2014}{}{}.
+\APACrefYearMonthDay{2014{\protect \BCnt {2}}}{}{}.
 \newblock
 {\BBOQ}\APACrefatitle {Systematic implicit solvent coarse graining of
   dimyristoylphosphatidylcholine lipids} {Systematic implicit solvent coarse

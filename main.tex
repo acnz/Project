@@ -348,6 +348,7 @@ For each inversion step $k$, Monte Carlos simulations are run using a set of pot
 Both of the previous methods described rely on a considerably large mount of Monte Carlo simulation steps. That is due to the fact that the closer the set of potentials gets to solution the harder it becomes to distinguish between statistical noise and a suitable potential correction. For his reason, MagiC has a built-in capacity of running parallel Monte Carlo simulation as it an be see on Fig.(\ref{Fig:kernel}), which which enable the user to reach the order of billions of simulation steps in a feasible timespan. Moreover, there is not an unique solution for a given RDF \cite{ibi} and eventually solution can possible diverge at a certain point. Therefore, a satisfactory result depend on analysis of all outputs from inverse steps in order to guarantee convergence. Further explanations regrading functionalities and parameters for MagiC and GROMACS will be provided the next section.   
  
 \subsection{Methods Description} 
+\subsubsection*{GROMACS All-Atom simulations}
 The experimental process of this project is divided in 3 main parts: Firstly, develop a efficient coarse-grain model and validate its use. Secondly, analyse the relationship between concentration  of all-atoms simulation and concentration of coarse-grained simulation. Then finally, create and reproduce a Silica surfactant mesoscale system. 
 
 In order to maintain standard parameters for all GROMACS simulations, all-atoms simulations that were used for coarse-grained reference were run in NPT ensemble. All simulation boxes were created using genbox (GROMACS package utility), first by inserting the desired number of surfactant molecules and then adding the solvent at the adequate ratio. The molecules were designed based on OPLS-AA forcefield \cite{opls} parameters. %because?%
@@ -356,15 +357,14 @@ Moreover, no initial configuration was determined, such as a pre self-assembled 
 
 Initially, all boxes received a energy minimization step in order to avoid system blow-up deal to possible extreme potential energy spots created during box generation. That is because during random displacement of molecules some of them could overlap others and then cause a destabilization of the system. After, an equilibration step was necessary to reach desired initial temperature and pressure conditions for the MD simulation. During equilibration temperature coupling was kept at $298\ K$ using a v-rescaling thermostat \cite{vtstat} with time constant of $0.01\ ps$ and pressure coupling was kept at $1\ bar$ using a Berendsen barostat \cite{bbtat} with time constant of $0.5\ ps$.  The simulation was run for $200\ ps$ with time step of $0.5\ fs$ using leap-frog algorithm.
 
-Regarding the concentration of surfactant in each box, four all-atom boxes were created with composition and size described in Table (\ref{tab:boxes}). The utility of each box will be described further in each experiment section, however all of them followed the same ensemble with temperature kept at $298\ K$ by a Nosé-Hoover thermostat \cite{nosetstat} and pressure kept at $1\ bar$ by a Parrinello-Rahman barostat \cite{prbstat}. Moreover, simulation time was also standardized. Every simulation lasted $350\ ns$ with a time step of $0.1\ fs$ using leap-frog algorithm. But for the sake of experiments using MagiC, the first $50\ ns$ of the simulations were disregarded because during this time the system still in equilibration, and therefore that would affect reference RDF values.
-
+Regarding the concentration of surfactant in each box, four all-atom boxes were created with composition and size described in Table (\ref{tab:boxes}). 
 \begin{table*}[ht!] 
   \centering
 \begin{threeparttable}
 
   \caption{Description of all-atom simulation boxes}
 
-    \begin{tabular}{rrrrrr}
+    \begin{tabular}{cccccc}
     \toprule
     Box &  DMDD &  Water & Silica & Avg. size & Concentration \\
 	& (no. Molec.) & (no. Molec.) & (no. Molec.)  & (\AA) & (mM)\\
@@ -382,7 +382,10 @@ Regarding the concentration of surfactant in each box, four all-atom boxes were 
 \end{threeparttable} 
 \end{table*}
 
-\subsection{Experiment 1}
+The utility of each box will be described further in each experiment section. Even though they have different structural parameters, all of them followed the same ensemble with temperature kept at $298\ K$ by a Nosé-Hoover thermostat \cite{nosetstat} and pressure kept at $1\ bar$ by a Parrinello-Rahman barostat \cite{prbstat}. Moreover, simulation time was also standardized. Every simulation lasted $350\ ns$ with a time step of $0.1\ fs$ using leap-frog algorithm. But for the sake of experiments using MagiC, the first $50\ ns$ of the simulations were disregarded because during this time the system still in equilibration, and therefore that would affect reference RDF values.
+
+
+\subsubsection*{Experiment 1}
  Since the main objective of this project is to probe the effectiveness of coarse-grain models generated using MagiC, this first experiment is an attempt to understand and analyse to what extent bead size influence on the process of coarse-graining. Hence, two models were proposed: Model 1 (M1) described in Fig.(\ref{Fig:mol1}) and Model 2 (M2) described in Fig. (\ref{Fig:mol2}).
  
  \begin{figure}[ht]
@@ -396,14 +399,36 @@ Regarding the concentration of surfactant in each box, four all-atom boxes were 
 		\label{Fig:mol2}
 \end{figure}
  
- The differences between M1 and M2 are an effort to distinguish at different level of detail the amphiphilic nature of the DMDD. In order to avoid electrostatic interactions on the IMC process and further GROMACS simulations, the heavy atoms groups (heavy atom + hydrogen) were kept together, thus  final charge remain neutral in each bead. Hence, forces will only arise from Van der Waals interactions and implications of inverse process will originate from  degrees of freedom deal to number of beads.
+ The differences between M1 and M2 are an effort to distinguish at different level of detail the amphiphilic nature of the DMDD. In order to avoid electrostatic interactions on the IMC process and further GROMACS simulations, the heavy atom groups (heavy atom + hydrogen) were kept together, thus  final charge remain neutral in each bead. Hence, forces will only arise from Van der Waals interactions and implications of inverse process might originate from  degrees of freedom deal to number of beads.
  
- --Model 1 vs Model 2 \\
- --gromacs Simulation Set-up\\
- --MagiC CG M1 and M2 topology generation+Ref RDFs\\
+ In order to fully describe the system, MagiC will generate potential tables for interaction between each bead. The first type of table are for each bound type, for example on M1, there are two different tables: one for N-C bond and other for C-C bond. However, as soon as the molecule is symmetric the two external N-C bonds uses the same potential table. Secondly, it generates tables for each angle type, following the symmetry rule. And finally, each type interatomic pair interaction has its own table, i.e. on M1 there are three: N-N, N-C and C-C. A more detailed description for both models is exposed in Table (\ref{tab:potdes}).
+  
+ \begin{table*}[ht!] 
+  \centering
+\begin{threeparttable}
+
+  \caption{Description of coarse-grain models}
+
+    \begin{tabular}{c|c|c|c}
+    \toprule
+    &  Bonds & Angles & Interatomic \\
+    \midrule
+    Model 1   & [N-C] [C-C]  & [N-$\widehat{C}$-C]  & [N-N] [N-C] [C-C]  \\
+    \midrule
+      			& [N-CE]  & [N-$\widehat{CE}$-CI]  & [N-N] [N-CE]   \\
+      Model 2	& [CE-CI] &  [CE-$\widehat{CI}$-CI] &  [N-CI] [CE-CE]   \\
+     			 & [CI-CI]  &  [CI-$\widehat{CI}$-CI] &  [CE-CI] [CI-CI]  \\
+    \bottomrule
+    \end{tabular}%
+  \label{tab:potdes}%
+\end{threeparttable} 
+\end{table*}
+
+ When using MagiC package the model description begins at the "CGtraj" step, where the user need to describe what are the bead types for the model and which atoms will be inside each bead. These informations must be part of input file of "CGtraj", following the strict guidelines of MagiC Manual \cite{magicmanu}. At the second step is where bonds, angles, and interatomic interactions must be described in the input file for "rdf-2.0" utility, following as well MagiC Manual guidelines \cite{magicmanu}.  That is because at this point MagiC will generate reference RDF's used in inversion process for each potential table. Additional information regarding model description in input files for M1 and M2 can be found on Appendix (see Section \ref{sec:appendix}).
+ 
  --IMC process\\
  --gromacs Set-up Reproduction Tests
-\subsection{Experiment 2}
+\subsubsection*{Experiment 2}
  --Objective\\
  --gromacs Set-up Up-scaling \\
  --gromacs Set-up Self-assembly Model X(best)\\
@@ -435,7 +460,7 @@ Regarding the concentration of surfactant in each box, four all-atom boxes were 
   ----AA High, CG High\\
    ------1k(?) up-scale @ high\\
    ------1k(?) up-scale @ high
-\subsection{Experiment 3}
+\subsubsection*{Experiment 3}
  --Silica addition\\
   ----MagiC CG silica topology \\
   ----gromacs Set-up Self-assembly Model X + Si\\
@@ -504,6 +529,7 @@ Experiment 3\\
 \vfill
 \newpage
 \section{Appendix}
+\label{sec:appendix}
 \setcounter{page}{1}
 \begin{equation}
 E_c=\frac{1}{2}mv^2
