@@ -5,9 +5,13 @@
 \contentsline {section}{\numberline {4}Experimental Methods}{2}{section.4}
 \contentsline {subsection}{\numberline {4.1}Theoretical Basis}{2}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Methods Description}{7}{subsection.4.2}
-\contentsline {section}{\numberline {5}Results}{9}{section.5}
+\contentsline {section}{\numberline {5}Results}{10}{section.5}
+\contentsline {subsection}{\numberline {5.1}GROMACS simulations}{10}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Experiment 1}{10}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Experiment 2}{10}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Experiment 3}{10}{subsection.5.4}
 \contentsline {section}{\numberline {6}Discussion}{10}{section.6}
 \contentsline {section}{\numberline {7}Conclusion}{10}{section.7}
-\contentsline {section}{\numberline {8}Nomenclature}{10}{section.8}
-\contentsline {section}{\numberline {9}References}{10}{section.9}
+\contentsline {section}{\numberline {8}Nomenclature}{11}{section.8}
+\contentsline {section}{\numberline {9}References}{11}{section.9}
 \contentsline {section}{\numberline {10}Appendix}{1}{section.10}

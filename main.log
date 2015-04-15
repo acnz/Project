@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.3.2)  15 APR 2015 14:13
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.6.12)  15 APR 2015 17:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1051,48 +1051,73 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip69
 )
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count161
+\lst@gtempboxa=\box72
+\lst@token=\toks32
+\lst@length=\count162
+\lst@currlwidth=\dimen177
+\lst@column=\count163
+\lst@pos=\count164
+\lst@lostspace=\dimen178
+\lst@width=\dimen179
+\lst@newlines=\count165
+\lst@lineno=\count166
+\lst@maxwidth=\dimen180
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
+\c@lstnumber=\count167
+\lst@skipnumbers=\count168
+\lst@framebox=\box73
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2013/08/26 1.5b listings configuration
+))
+Package: listings 2013/08/26 1.5b (Carsten Heinz)
+
 (/usr/share/texlive/texmf-dist/tex/latex/bezos/accents.sty
 Package: accents 2006/05/12 v1.3 Math Accent Tools
-\cc@skew=\dimen177
-\cc@wd=\dimen178
-\cc@code=\count161
-\cc@group=\count162
-\cc@skewchar=\count163
+\cc@skew=\dimen181
+\cc@wd=\dimen182
+\cc@code=\count169
+\cc@group=\count170
+\cc@skewchar=\count171
 )
 (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
-\bigstrutjot=\dimen179
+\bigstrutjot=\dimen183
 )
 (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
-\heavyrulewidth=\dimen180
-\lightrulewidth=\dimen181
-\cmidrulewidth=\dimen182
-\belowrulesep=\dimen183
-\belowbottomsep=\dimen184
-\aboverulesep=\dimen185
-\abovetopsep=\dimen186
-\cmidrulesep=\dimen187
-\cmidrulekern=\dimen188
-\defaultaddspace=\dimen189
-\@cmidla=\count164
-\@cmidlb=\count165
-\@aboverulesep=\dimen190
-\@belowrulesep=\dimen191
-\@thisruleclass=\count166
-\@lastruleclass=\count167
-\@thisrulewidth=\dimen192
+\heavyrulewidth=\dimen184
+\lightrulewidth=\dimen185
+\cmidrulewidth=\dimen186
+\belowrulesep=\dimen187
+\belowbottomsep=\dimen188
+\aboverulesep=\dimen189
+\abovetopsep=\dimen190
+\cmidrulesep=\dimen191
+\cmidrulekern=\dimen192
+\defaultaddspace=\dimen193
+\@cmidla=\count172
+\@cmidlb=\count173
+\@aboverulesep=\dimen194
+\@belowrulesep=\dimen195
+\@thisruleclass=\count174
+\@lastruleclass=\count175
+\@thisrulewidth=\dimen196
 )
 (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count168
-\float@exts=\toks32
-\float@box=\box72
-\@float@everytoks=\toks33
-\@floatcapt=\box73
+\c@float@type=\count176
+\float@exts=\toks33
+\float@box=\box74
+\@float@everytoks=\toks34
+\@floatcapt=\box75
 )
 (/usr/share/texlive/texmf-dist/tex/latex/apacite/apacite.sty
 Package: apacite 2013/07/21 v6.03 APA citation
-\c@BibCnt=\count169
+\c@BibCnt=\count177
 \bibleftmargin=\skip70
 \bibindent=\skip71
 \bibparsep=\skip72
@@ -1101,43 +1126,43 @@ Package: apacite 2013/07/21 v6.03 APA citation
 )
 (/usr/share/texlive/texmf-dist/tex/latex/threeparttable/threeparttable.sty
 Package: threeparttable 2003/06/13  v 3.0
-\@tempboxb=\box74
+\@tempboxb=\box76
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tabulary/tabulary.sty
 Package: tabulary 2008/12/01 v0.9 tabulary package (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen193
-\extrarowheight=\dimen194
-\NC@list=\toks34
+\col@sep=\dimen197
+\extrarowheight=\dimen198
+\NC@list=\toks35
 \extratabsurround=\skip75
 \backup@length=\skip76
 )
-\TY@count=\count170
-\TY@linewidth=\dimen195
-\tymin=\dimen196
-\tymax=\dimen197
-\TY@tablewidth=\dimen198
+\TY@count=\count178
+\TY@linewidth=\dimen199
+\tymin=\dimen200
+\tymax=\dimen201
+Normal \dimen register pool exhausted, switching to extended pool.
+\TY@tablewidth=\dimen256
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/indentfirst.sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
-\Gm@cnth=\count171
-\Gm@cntv=\count172
-\c@Gm@tempcnt=\count173
-\Gm@bindingoffset=\dimen199
-\Gm@wd@mp=\dimen200
-\Gm@odd@mp=\dimen201
-Normal \dimen register pool exhausted, switching to extended pool.
-\Gm@even@mp=\dimen256
-\Gm@layoutwidth=\dimen257
-\Gm@layoutheight=\dimen258
-\Gm@layouthoffset=\dimen259
-\Gm@layoutvoffset=\dimen260
-\Gm@dimlist=\toks35
+\Gm@cnth=\count179
+\Gm@cntv=\count180
+\c@Gm@tempcnt=\count181
+\Gm@bindingoffset=\dimen257
+\Gm@wd@mp=\dimen258
+\Gm@odd@mp=\dimen259
+\Gm@even@mp=\dimen260
+\Gm@layoutwidth=\dimen261
+\Gm@layoutheight=\dimen262
+\Gm@layouthoffset=\dimen263
+\Gm@layoutvoffset=\dimen264
+\Gm@dimlist=\toks36
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 \fancy@headwidth=\skip77
@@ -1162,9 +1187,9 @@ Package: abstract 2009/06/08 v1.2a configurable abstracts
 Package: authblk 2001/02/27 1.3 (PWD)
 \affilsep=\skip91
 \@affilsep=\skip92
-\c@Maxaffil=\count174
-\c@authors=\count175
-\c@affil=\count176
+\c@Maxaffil=\count182
+\c@authors=\count183
+\c@affil=\count184
 ) (./main.aux
 
 LaTeX Warning: Label `eqn:inv2' multiply defined.
@@ -1172,44 +1197,44 @@ LaTeX Warning: Label `eqn:inv2' multiply defined.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 77.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 77.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 78.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 78.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 77.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 78.
 
 (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count177
-\scratchdimen=\dimen261
-\scratchbox=\box75
-\nofMPsegments=\count178
-\nofMParguments=\count179
-\everyMPshowfont=\toks36
-\MPscratchCnt=\count180
-\MPscratchDim=\dimen262
-\MPnumerator=\count181
-\makeMPintoPDFobject=\count182
-\everyMPtoPDFconversion=\toks37
+\scratchcounter=\count185
+\scratchdimen=\dimen265
+\scratchbox=\box77
+\nofMPsegments=\count186
+\nofMParguments=\count187
+\everyMPshowfont=\toks37
+\MPscratchCnt=\count188
+\MPscratchDim=\dimen266
+\MPnumerator=\count189
+\makeMPintoPDFobject=\count190
+\everyMPtoPDFconversion=\toks38
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -1225,7 +1250,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \microtypecontext on input line 77.
+LaTeX Info: Redefining \microtypecontext on input line 78.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1241,8 +1266,8 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-\AtBeginShipoutBox=\box76
-Package hyperref Info: Link coloring OFF on input line 77.
+\AtBeginShipoutBox=\box78
+Package hyperref Info: Link coloring OFF on input line 78.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1250,17 +1275,18 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count183
+\c@section@level=\count191
 )
-LaTeX Info: Redefining \ref on input line 77.
-LaTeX Info: Redefining \pageref on input line 77.
-LaTeX Info: Redefining \nameref on input line 77.
+LaTeX Info: Redefining \ref on input line 78.
+LaTeX Info: Redefining \pageref on input line 78.
+LaTeX Info: Redefining \nameref on input line 78.
 
 (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
-\c@maskedRefs=\count184
+\c@lstlisting=\count192
+\c@maskedRefs=\count193
 
 (/usr/share/texlive/texmf-dist/tex/latex/apacite/english.apc
 File: english.apc 2013/07/21 v6.03 apacite language file
@@ -1301,42 +1327,42 @@ LaTeX Info: Redefining \BHBI on input line 130.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<./images/StrathLogo.png, id=52, 598.3956pt x 136.3494pt>
+<./images/StrathLogo.png, id=68, 598.3956pt x 136.3494pt>
 File: ./images/StrathLogo.png Graphic file (type png)
 
 <use ./images/StrathLogo.png>
-Package pdftex.def Info: ./images/StrathLogo.png used on input line 86.
+Package pdftex.def Info: ./images/StrathLogo.png used on input line 87.
 (pdftex.def)             Requested size: 441.01773pt x 100.49126pt.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 105.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 106.
 
  (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 105.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 106.
 
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 105
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 106
 .
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 105
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 106
 .
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 105.
+(Font)              <10> on input line 106.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 105.
+(Font)              <7> on input line 106.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 105.
-LaTeX Font Info:    Try loading font information for U+msa on input line 105.
+(Font)              <5> on input line 106.
+LaTeX Font Info:    Try loading font information for U+msa on input line 106.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1344,7 +1370,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 105.
+LaTeX Font Info:    Try loading font information for U+msb on input line 106.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1352,7 +1378,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 105.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 106.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -1363,29 +1389,29 @@ dfTeX warning (ext4): destination with the same identifier (name{page.i}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.125 \newpage
+l.127 \newpage
                [1] (./main.toc)
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
  [2] [3] [1] [2]
-LaTeX Font Info:    Calculating math sizes for size <6.99997> on input line 220
+LaTeX Font Info:    Calculating math sizes for size <6.99997> on input line 222
 .
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6.99997> on input line 220.
+(Font)              <6.99997> on input line 222.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <4.89995> on input line 220.
+(Font)              <4.89995> on input line 222.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <3.49998> on input line 220.
+(Font)              <3.49998> on input line 222.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <3.49998> not available
-(Font)              size <5> substituted on input line 220.
+(Font)              size <5> substituted on input line 222.
 
-[3] <./graphs/lj.pdf, id=206, 433.62pt x 289.08pt>
+[3] <./graphs/lj.pdf, id=226, 433.62pt x 289.08pt>
 File: ./graphs/lj.pdf Graphic file (type pdf)
  <use ./graphs/lj.pdf>
-Package pdftex.def Info: ./graphs/lj.pdf used on input line 279.
+Package pdftex.def Info: ./graphs/lj.pdf used on input line 281.
 (pdftex.def)             Requested size: 264.61333pt x 176.41792pt.
 
 [4pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
@@ -1393,18 +1419,18 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.289 \end{equation}
+l.291 \end{equation}
                      <./graphs/lj.pdf>]
-<./images/magic.png, id=270, 1678.27pt x 431.6125pt>
+<./images/magic.png, id=290, 1678.27pt x 431.6125pt>
 File: ./images/magic.png Graphic file (type png)
  <use ./images/magic.png>
-Package pdftex.def Info: ./images/magic.png used on input line 300.
+Package pdftex.def Info: ./images/magic.png used on input line 302.
 (pdftex.def)             Requested size: 441.01773pt x 113.41522pt.
 
-<./images/wip.jpg, id=278, 488.82625pt x 438.63875pt>
+<./images/wip.jpg, id=298, 488.82625pt x 438.63875pt>
 File: ./images/wip.jpg Graphic file (type jpg)
  <use ./images/wip.jpg>
-Package pdftex.def Info: ./images/wip.jpg used on input line 311.
+Package pdftex.def Info: ./images/wip.jpg used on input line 313.
 (pdftex.def)             Requested size: 132.30666pt x 118.72183pt.
 
 [5pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
@@ -1412,9 +1438,9 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.316 
+l.318 
        <./images/magic.png>]
-LaTeX Font Info:    Try loading font information for OT1+lmss on input line 331
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 333
 .
  (/usr/share/texmf/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1429,103 +1455,117 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.346 \end{equation}
+l.348 \end{equation}
                      <./images/wip.jpg>]
 
-LaTeX Warning: Citation `vtstat' undefined on input line 358.
+LaTeX Warning: Citation `vtstat' undefined on input line 360.
 
 
-LaTeX Warning: Citation `bbtat' undefined on input line 358.
+LaTeX Warning: Citation `bbtat' undefined on input line 360.
 
 
-LaTeX Warning: Citation `nosetstat' undefined on input line 385.
+LaTeX Warning: Citation `nosetstat' undefined on input line 387.
 
 
-LaTeX Warning: Citation `prbstat' undefined on input line 385.
+LaTeX Warning: Citation `prbstat' undefined on input line 387.
 
 [7pdfTeX warning (ext4): destination with the same identifier (name{table.1}) h
 as been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.390 
-      ] <./images/M1ab.png, id=344, 1656.1875pt x 521.95pt>
+l.392 
+      ] <./images/M1ab.png, id=364, 1656.1875pt x 521.95pt>
 File: ./images/M1ab.png Graphic file (type png)
 
 <use ./images/M1ab.png>
-Package pdftex.def Info: ./images/M1ab.png used on input line 392.
+Package pdftex.def Info: ./images/M1ab.png used on input line 394.
 (pdftex.def)             Requested size: 441.01773pt x 138.98509pt.
- <./images/M2ab.png, id=345, 1656.1875pt x 501.875pt>
+ <./images/M2ab.png, id=365, 1656.1875pt x 501.875pt>
 File: ./images/M2ab.png Graphic file (type png)
 
 <use ./images/M2ab.png>
-Package pdftex.def Info: ./images/M2ab.png used on input line 397.
+Package pdftex.def Info: ./images/M2ab.png used on input line 399.
 (pdftex.def)             Requested size: 441.01773pt x 133.63951pt.
  [8pdfTeX warning (ext4): destination with the same identifier (name{figure.4})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.428 
+l.430 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.428 
+l.430 
        <./images/M1ab.png> <./images/M2ab.png>]
-<./graphs/rdfL.pdf, id=362, 578.16pt x 433.62pt>
+
+LaTeX Warning: Reference `tab:MCexp1' on page 9 undefined on input line 431.
+
+
+LaTeX Warning: Citation `dconst' undefined on input line 431.
+
+<./graphs/rdfL.pdf, id=387, 578.16pt x 433.62pt>
 File: ./graphs/rdfL.pdf Graphic file (type pdf)
  <use ./graphs/rdfL.pdf>
-Package pdftex.def Info: ./graphs/rdfL.pdf used on input line 438.
+Package pdftex.def Info: ./graphs/rdfL.pdf used on input line 441.
 (pdftex.def)             Requested size: 441.01773pt x 330.75882pt.
 
-<./graphs/GyraL.pdf, id=363, 578.16pt x 433.62pt>
-File: ./graphs/GyraL.pdf Graphic file (type pdf)
- <use ./graphs/GyraL.pdf>
-Package pdftex.def Info: ./graphs/GyraL.pdf used on input line 440.
+<./graphs/GyraL.png, id=388, 578.16pt x 433.62pt>
+File: ./graphs/GyraL.png Graphic file (type png)
+ <use ./graphs/GyraL.png>
+Package pdftex.def Info: ./graphs/GyraL.png used on input line 443.
 (pdftex.def)             Requested size: 441.01773pt x 330.75882pt.
 
 
-LaTeX Warning: Float too large for page by 27.39703pt on input line 444.
+LaTeX Warning: Float too large for page by 27.39703pt on input line 447.
 
-<./graphs/rdfI.pdf, id=364, 578.16pt x 433.62pt>
+<./graphs/rdfI.pdf, id=389, 578.16pt x 433.62pt>
 File: ./graphs/rdfI.pdf Graphic file (type pdf)
  <use ./graphs/rdfI.pdf>
-Package pdftex.def Info: ./graphs/rdfI.pdf used on input line 450.
+Package pdftex.def Info: ./graphs/rdfI.pdf used on input line 453.
 (pdftex.def)             Requested size: 441.01773pt x 330.75882pt.
 
-<./graphs/GyraI.pdf, id=365, 578.16pt x 433.62pt>
-File: ./graphs/GyraI.pdf Graphic file (type pdf)
- <use ./graphs/GyraI.pdf>
-Package pdftex.def Info: ./graphs/GyraI.pdf used on input line 452.
+<./graphs/GyraI.png, id=390, 578.16pt x 433.62pt>
+File: ./graphs/GyraI.png Graphic file (type png)
+ <use ./graphs/GyraI.png>
+Package pdftex.def Info: ./graphs/GyraI.png used on input line 455.
 (pdftex.def)             Requested size: 441.01773pt x 330.75882pt.
 
 
-LaTeX Warning: Float too large for page by 27.39703pt on input line 456.
+LaTeX Warning: Float too large for page by 27.39703pt on input line 459.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 471--490
+Underfull \hbox (badness 10000) in paragraph at lines 475--479
 
  []
 
-[9pdfTeX warning (ext4): destination with the same identifier (name{table.2}) h
-as been already used, duplicate ignored
+
+Underfull \vbox (badness 5161) has occurred while \output is active []
+
+ [9pdfTeX warning (ext4): destination with the same identifier (name{table.2}) 
+has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.490 
-      ]
-Underfull \hbox (badness 10000) in paragraph at lines 499--513
+l.479 \subsection
+                 {Experiment 2}]
+Underfull \hbox (badness 10000) in paragraph at lines 490--494
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 517--520
+Underfull \hbox (badness 10000) in paragraph at lines 502--516
 
  []
 
-(./main.bbl
+
+Underfull \hbox (badness 10000) in paragraph at lines 520--523
+
+ []
+
+(./main.bbl [10]
 LaTeX Font Info:    Try loading font information for T1+lmtt on input line 33.
  (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1534,8 +1574,8 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [10]) [11]
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 548.
+ [11]) [12]
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 551.
 
 
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
@@ -1543,80 +1583,90 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 File: ./images/wip.jpg Graphic file (type jpg)
  <use ./images/wip.jpg>
-Package pdftex.def Info: ./images/wip.jpg used on input line 591.
+Package pdftex.def Info: ./images/wip.jpg used on input line 594.
 (pdftex.def)             Requested size: 132.30666pt x 118.72183pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 597.
+
+Overfull \hbox (2.98679pt too wide) in paragraph at lines 611--612
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.597 \end{document}
-                     [1pdfTeX warning (ext4): destination with the same identif
-ier (name{table.3}) has been already used, duplicate ignored
+l.619 ns_type 
+                          =  grid ;! Way of creating neighbor list [1pdfTeX war
+ning (ext4): destination with the same identifier (name{table.3}) has been alre
+ady used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.597 \end{document}
-                    ]pdfTeX warning (ext4): destination with the same identifie
-r (name{page.2}) has been already used, duplicate ignored
+l.619 ns_type 
+                          =  grid ;! Way of creating neighbor list]
+Overfull \hbox (2.98679pt too wide) in paragraph at lines 621--622
+[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 634.
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.597 \end{document}
-                     [2pdfTeX warning (ext4): destination with the same identif
+l.634 \end{document}
+                     [2]pdfTeX warning (ext4): destination with the same identi
+fier (name{page.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.634 \end{document}
+                     [3pdfTeX warning (ext4): destination with the same identif
 ier (name{figure.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.597 \end{document}
+l.634 \end{document}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{figure.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.597 \end{document}
-                     <./graphs/rdfL.pdf> <./graphs/GyraL.pdf
-
-pdfTeX warning: pdflatex (file ./graphs/GyraL.pdf): PDF inclusion: multiple pdf
-s with page group included in a single page
->]pdfTeX warning (ext4): destination with the same identifier (name{page.3}) ha
-s been already used, duplicate ignored
+l.634 \end{document}
+                     <./graphs/rdfL.pdf> <./graphs/GyraL.png>]pdfTeX warning (e
+xt4): destination with the same identifier (name{page.4}) has been already used
+, duplicate ignored
 <to be read again> 
                    \relax 
-l.597 \end{document}
-                     [3pdfTeX warning (ext4): destination with the same identif
+l.634 \end{document}
+                     [4pdfTeX warning (ext4): destination with the same identif
 ier (name{figure.8}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.597 \end{document}
+l.634 \end{document}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{figure.9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.597 \end{document}
-                     <./graphs/rdfI.pdf> <./graphs/GyraI.pdf
-
-pdfTeX warning: pdflatex (file ./graphs/GyraI.pdf): PDF inclusion: multiple pdf
-s with page group included in a single page
->]pdfTeX warning (ext4): destination with the same identifier (name{page.4}) ha
-s been already used, duplicate ignored
+l.634 \end{document}
+                     <./graphs/rdfI.pdf> <./graphs/GyraI.png>]pdfTeX warning (e
+xt4): destination with the same identifier (name{page.5}) has been already used
+, duplicate ignored
 <to be read again> 
                    \relax 
-l.597 \end{document}
-                     [4pdfTeX warning (ext4): destination with the same identif
+l.634 \end{document}
+                     [5pdfTeX warning (ext4): destination with the same identif
 ier (name{figure.10}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.597 \end{document}
+l.634 \end{document}
                     ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 597.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 634.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 597.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 597.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 634.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 634.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7D8E13F5416424730542DD740CC559BA;600.
+(rerunfilecheck)             Checksum: 787CA7834D8A858E5060441D0A508124;855.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1628,18 +1678,21 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 597.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 634.
  ) 
 Here is how much of TeX's memory you used:
- 17380 strings out of 493304
- 298621 string characters out of 6139872
- 416318 words of memory out of 5000000
- 20227 multiletter control sequences out of 15000+600000
+ 19004 strings out of 493304
+ 319957 string characters out of 6139871
+ 465356 words of memory out of 5000000
+ 21799 multiletter control sequences out of 15000+600000
  134281 words of font info for 172 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 45i,16n,43p,10461b,477s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{cite.prbstat} has been referenced but does not ex
-ist, replaced by a fixed one
+ 45i,16n,43p,10461b,1804s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{cite.dconst} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.prbstat} has been referenced but does not exis
+t, replaced by a fixed one
 
 pdfTeX warning (dest): name{cite.nosetstat} has been referenced but does not ex
 ist, replaced by a fixed one
@@ -1665,10 +1718,10 @@ onts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.p
 fb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/t
 ype1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on main.pdf (19 pages, 3476330 bytes).
+Output written on main.pdf (21 pages, 1923834 bytes).
 PDF statistics:
- 735 PDF objects out of 1000 (max. 8388607)
- 488 compressed objects within 5 object streams
- 97 named destinations out of 1000 (max. 500000)
- 34451 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 706 PDF objects out of 1000 (max. 8388607)
+ 534 compressed objects within 6 object streams
+ 137 named destinations out of 1000 (max. 500000)
+ 34483 words of extra memory for PDF output out of 35830 (max. 10000000)
 

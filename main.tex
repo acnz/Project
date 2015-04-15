@@ -28,6 +28,7 @@
 
 \usepackage{color}
 \usepackage[]{hyperref}
+\usepackage{listings}
 
 \usepackage{accents}
 \usepackage{textcomp}
@@ -106,8 +107,9 @@ André \textsc{Crescenzo}
 ~
 \begin{minipage}{0.4\textwidth}
 \begin{flushright} \large
-\emph{Supervisor:} \\
-Miguel \textsc{Jorge} 
+\emph{Supervisors:} \\
+Miguel \textsc{Jorge} \\ 
+Alessia \textsc{Centi}
 \end{flushright}
 \end{minipage}\\[4cm]
 
@@ -369,10 +371,10 @@ Regarding the concentration of surfactant in each box, four all-atom boxes were 
     Box &  DMDD &  Water & Silica & Avg. size & Concentration \\
 	& (no. Molec.) & (no. Molec.) & (no. Molec.)  & (\AA) & (mM)\\
     \midrule
-    1   & 30  & 1500  & -  & 38.2646 & 0.89\\
-    2   & 30  & 670  & -   &  31.3201 & 1.62\\
-    3   & 45\tnote{a}  & 240  & -  & 28.2972 & 3.30\\
-    4   & 30  & 670  &  30  & ??? & ???\\
+    B1   & 30  & 1500  & -  & 38.2646 & 0.89\\
+    B2   & 30  & 670  & -   &  31.3201 & 1.62\\
+    B3   & 45\tnote{a}  & 240  & -  & 28.2972 & 3.30\\
+    B4   & 30  & 670  &  30  & ??? & ???\\
     \bottomrule
     \end{tabular}%
     \begin{tablenotes}
@@ -399,9 +401,9 @@ The utility of each box will be described further in each experiment section. Ev
 		\label{Fig:mol2}
 \end{figure}
  
- The differences between M1 and M2 are an effort to distinguish at different level of detail the amphiphilic nature of the DMDD. In order to avoid electrostatic interactions on the IMC process and further GROMACS simulations, the heavy atom groups (heavy atom + hydrogen) were kept together, thus  final charge remain neutral in each bead. Hence, forces will only arise from Van der Waals interactions and implications of inverse process might originate from  degrees of freedom deal to number of beads.
- 
- In order to fully describe the system, MagiC will generate potential tables for interaction between each bead. The first type of table are for each bound type, for example on M1, there are two different tables: one for N-C bond and other for C-C bond. However, as soon as the molecule is symmetric the two external N-C bonds uses the same potential table. Secondly, it generates tables for each angle type, following the symmetry rule. And finally, each type interatomic pair interaction has its own table, i.e. on M1 there are three: N-N, N-C and C-C. A more detailed description for both models is exposed in Table (\ref{tab:potdes}).
+ The differences between M1 and M2 are an effort to distinguish at different level of detail the amphiphilic nature of the DMDD. In order to avoid electrostatic interactions on the IMC process and further GROMACS simulations, the heavy atom groups (heavy atom + hydrogen) were kept together, thus  final charge remain neutral in each bead. Hence, forces will only arise from Van der Waals interactions and implications of inverse process might originate from  degrees of freedom deal to number of beads. The All-Atom simulation box chosen for this experiment was B1, because at this experiment concentration of reference was not a major concern, more information regarding this point is given at Experiment 2 (see Section \ref{subsec:resexp2})
+   
+ In order to fully describe the system, MagiC generates potential tables for interaction between each bead. The first type of table are for each bound type, for example on M1, there are two different tables: one for N-C bond and other for C-C bond. However, as soon as the molecule is symmetric the two external N-C bonds uses the same potential table. Secondly, it generates tables for each angle type, following the symmetry rule. And finally, each type interatomic pair interaction has its own table, i.e. on M1 there are three: N-N, N-C and C-C. A more detailed description for both models is exposed in Table (\ref{tab:potdes}).
   
  \begin{table*}[ht!] 
   \centering
@@ -424,10 +426,11 @@ The utility of each box will be described further in each experiment section. Ev
 \end{threeparttable} 
 \end{table*}
 
- When using MagiC package the model description begins at the "CGtraj" step, where the user need to describe what are the bead types for the model and which atoms will be inside each bead. These informations must be part of input file of "CGtraj", following the strict guidelines of MagiC Manual \cite{magicmanu}. At the second step is where bonds, angles, and interatomic interactions must be described in the input file for "rdf-2.0" utility, following as well MagiC Manual guidelines \cite{magicmanu}.  That is because at this point MagiC will generate reference RDF's used in inversion process for each potential table. Additional information regarding model description in input files for M1 and M2 can be found on Appendix (see Section \ref{sec:appendix}).
+ During the usage of MagiC package, the model description begun at the "CGtraj" step, where  not only the bead types for the model were described, but also which atoms would be inside each bead. These informations must be part of input file of "CGtraj", following the strict guidelines of MagiC Manual \cite{magicmanu}. In addition, it was at this moment that occurred the determination of implicit water condition, therefore during the recalculation of trajectories the water molecules were removed from the box. At the second step is where bonds, angles, and interatomic interactions were described in the input file for "rdf-2.0" utility, following as well MagiC Manual guidelines \cite{magicmanu}.  That is because at this point MagiC generated reference RDF's used in inversion process for each potential table. Additional information regarding model description in input files for M1 and M2 can be found on Appendix (see Section \ref{sec:appendix}).
  
- --IMC process\\
- --gromacs Set-up Reproduction Tests
+ Once reference RDFs and a Topology were specified the inversion step started. The parameters of each inversion step were based on work done by \citeA{dmpc}, in which similarly to this project also analyses the self-assembly of amphiphilic molecules. Nevertheless, considering that DMDD owns a much less complex molecular structure, the number of Monte Carlo simulation steps were considerably modified for each model. The simulations were run in parallel using up to 24 cores. Table (\ref{tab:MCexp1}) exposes the specific number of steps per core and whether it uses IBI or IMC method for inversion. Since the water is implicit, the dielectric constant for Monte Carlo simulations was set to experimental dielectric constant of water at $298\ K$ and $1\ bar$ which is $\varepsilon = 78$ \cite{dconst}. 
+ 
+ Finally, after each inversion step MagiC generates RDF based on ensemble averages calculated during Monte Carlo simulations and then it calculates the deviance between reference RDFs and invesion RDFs. When the deviance reached the desired convergence value, the potentials and topology were exported to GROMACS format. In order to compare to the atomistic model, a reproduction test was done using the same parameters of all-atom boxes, with the exception of dielectric constant that was changed to $\varepsilon = 78$ and 
 \subsubsection*{Experiment 2}
  --Objective\\
  --gromacs Set-up Up-scaling \\
@@ -467,13 +470,13 @@ The utility of each box will be described further in each experiment section. Ev
    ------1000, 10000 (Maybe more?)
  
 \section{Results}
-
-Experiment 1\\
+\subsection{GROMACS simulations}
+\subsection{Experiment 1}
  --Model 1 vs Model 2 \\
  --gromacs Simulation\\
  --IMC process Convergence\\
  --gromacs Reproduction Tests RDFs and Properties\\
-Experiment 2\\
+\subsection{Experiment 2}
  --Self-assembly vs concentration Model X\\
   ----Ideal con validation: Low, Ideal, High con comparison\\
    ------Ideal @ Low -> validate\\
@@ -482,12 +485,12 @@ Experiment 2\\
   ----Extremes evaluation:\\
   ------Low @ Low vs High @ Low -> compare\\
    ------High @ High vs Low @ High -> compare\\
-Experiment 3\\
+\label{subsec:resexp2}
+\subsection{Experiment 3}
  --Silica addition\\
   --CG silica Properties \\
   --Self-assembly Model X + Si\\
    -----1000, 10000 (Maybe more?)\\
-
 \section{Discussion}
 
 %The purpose of the discussion is to interpret and compare the results. Be objec
@@ -593,5 +596,39 @@ E_c=\frac{1}{2}mv^2
 	\label{Fig:Boxplot}
   \end{center}
 \end{figure}
-
+\begin{lstlisting}[frame=single]
+title               =  M1 reptest eq
+;cpp                 =  /usr/bin/cpp
+constraints         =  none
+integrator          =  md
+dt                  =  0.0005   ; ps ! 0.5 fs
+nsteps              =  20000; 200ps 
+tcoupl		    = v-rescale
+tau_t 		    =  0.5 ;! ps
+ref_t		    =  298.0 ;! K
+tc_grps		    =  System
+gen_vel		    =  yes ;! Generate initial velocities
+gen_temp            =  298.0 ;! Temperature to generate initial velocities
+comm_mode	    =  Linear ;! Remove COM move and rotation around
+nstcomm		    =  1000
+nstlist             =  10 ;! Frequency to update neighbor list
+nstxout		    =  10000  ;! Frequency to write output coord
+nstvout		    =  10000 ;! Frequency to write velocities 
+nstfout		    =  10000  ;! Frequency to write forces
+nstenergy	    =  1000  ;! Frequency to write energy
+ns_type             =  grid ;! Way of creating neighbor list
+pbc		    =  xyz
+rlist               =  1.5 ;!Cutoff distance for short-range neighbor list
+coulombtype         =  cut-off ; rcoulomb=rlist
+fourierspacing	    =  0.25 
+pme_order	    =  5
+rcoulomb            =  1.5 ;! Real-space electrostatic cutoff
+vdwtype		    =  User
+rvdw                =  1.5   ; Same as R_cutoff in MDynamix
+;dispcorr 	    =  Ener
+energygrps          =  N CE CI 
+energygrp_table     =  N N N CE N CI CE CE CE CI CI CI
+epsilon_r           = 78 ; ! relative dielectric constant
+table-extension     = 0.5
+\end{lstlisting}
 \end{document}
