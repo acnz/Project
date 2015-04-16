@@ -430,9 +430,15 @@ The utility of each box will be described further in each experiment section. Ev
  
  Once reference RDFs and a Topology were specified the inversion step started. The parameters of each inversion step were based on work done by \citeA{dmpc}, in which similarly to this project also analyses the self-assembly of amphiphilic molecules. Nevertheless, considering that DMDD owns a much less complex molecular structure, the number of Monte Carlo simulation steps were considerably modified for each model. The simulations were run in parallel using up to 24 cores. Table (\ref{tab:MCexp1}) exposes the specific number of steps per core and whether it uses IBI or IMC method for inversion. Since the water is implicit, the dielectric constant for Monte Carlo simulations was set to experimental dielectric constant of water at $298\ K$ and $1\ bar$ which is $\varepsilon = 78$ \cite{dconst}. 
  
- Finally, after each inversion step MagiC generates RDF based on ensemble averages calculated during Monte Carlo simulations and then it calculates the deviance between reference RDFs and invesion RDFs. When the deviance reached the desired convergence value, the potentials and topology were exported to GROMACS format. In order to compare to the atomistic model, a reproduction test was done using the same parameters of all-atom boxes, with the exception of dielectric constant that was changed to $\varepsilon = 78$ and 
+ Finally, after each inversion step MagiC generates RDF based on ensemble averages calculated during Monte Carlo simulations and then it calculates the deviance between reference RDFs and invesion RDFs. When the deviance reached the desired convergence value, the potentials and topology were exported to GROMACS format. In order to compare both models to the atomistic model, a reproduction test was done using the same parameters of all-atom boxes, with the exception of dielectric constant that was changed to $\varepsilon = 78$ and specification of each potential table required for GROMACS Simulation. Furthermore, since the charges of all beads is null, PME long-range electrostatics were replaced by cut-off scheme which increased simulation speed. An example of reproduction test input parameters can be found on Appendix (see Section \ref{sec:appendix}).
+
 \subsubsection*{Experiment 2}
- --Objective\\
+ Subsequently, this second experiment has two main objectives, both related to concentration of DMDD in the system. The former objective is focused mainly on influence of concentration variations over the inverse steps, that means how the complexity of the self-assembly 
+ structure affects convergence during IBI and IMC. The latter objective is to understand the relationship between the variation of DMDD concentration in the all-atom reference system and its effects in the self-assembly behaviour of the coarse-grain model chosen. Moreover, it will be an attempt to confirm the assumption that implicit water coarse-grain models can assume multiple concentrations, independently of the concentration chosen in the all-atoms reference, just by varying the size of simulation box.  
+ 
+ Therefore, the experiment begins with the development of two new coarse-grain models based on M1  from the previous experiment. However, at this moment 
+ 
+
  --gromacs Set-up Up-scaling \\
  --gromacs Set-up Self-assembly Model X(best)\\
   ----AA Low, CG Low\\
