@@ -384,7 +384,7 @@ Regarding the concentration of surfactant in each box, four all-atom boxes were 
 \end{threeparttable} 
 \end{table*}
 
-The utility of each box will be described further in each experiment section. Even though they have different structural parameters, all of them followed the same ensemble with temperature kept at $298\ K$ by a Nosé-Hoover thermostat \cite{nosetstat} and pressure kept at $1\ bar$ by a Parrinello-Rahman barostat \cite{prbstat}. Moreover, simulation time was also standardized. Every simulation lasted $350\ ns$ with a time step of $0.1\ fs$ using leap-frog algorithm. But for the sake of experiments using MagiC, the first $50\ ns$ of the simulations were disregarded because during this time the system still in equilibration, and therefore that would affect reference RDF values.
+The utility of each box will be described further in each experiment section. Even though they have different structural parameters, all of them followed the same ensemble with temperature kept at $298\ K$ by a Nosé-Hoover thermostat \cite{nosetstat} and pressure kept at $1\ bar$ by a Parrinello-Rahman barostat \cite{prbstat}. Moreover, simulation time was also standardized. Every simulation lasted $350\ ns$ with a time step of $1\ fs$ using leap-frog algorithm. But for the sake of experiments using MagiC, the first $50\ ns$ of the simulations were disregarded because during this time the system still in equilibration, and therefore that would affect reference RDF values.
 
 
 \subsubsection*{Experiment 1}
@@ -430,20 +430,87 @@ The utility of each box will be described further in each experiment section. Ev
  
  Once reference RDFs and a Topology were specified the inversion step started. The parameters of each inversion step were based on work done by \citeA{dmpc}, in which similarly to this project also analyses the self-assembly of amphiphilic molecules. Nevertheless, considering that DMDD owns a much less complex molecular structure, the number of Monte Carlo simulation steps were considerably modified for each model. The simulations were run in parallel using up to 24 cores. Table (\ref{tab:MCexp1}) exposes the specific number of steps per core and whether it uses IBI or IMC method for inversion. Since the water is implicit, the dielectric constant for Monte Carlo simulations was set to experimental dielectric constant of water at $298\ K$ and $1\ bar$ which is $\varepsilon = 78$ \cite{dconst}. 
  
+  \begin{table*}[ht!] 
+  \centering
+\begin{threeparttable}
+
+  \caption{Inversion Process description}
+
+    \begin{tabular}{c|c}
+		a & b \\ \hline
+		c & d \\
+    \end{tabular}%
+  \label{tab:MCexp1}%
+\end{threeparttable} 
+\end{table*}
+ 
  Finally, after each inversion step MagiC generates RDF based on ensemble averages calculated during Monte Carlo simulations and then it calculates the deviance between reference RDFs and invesion RDFs. When the deviance reached the desired convergence value, the potentials and topology were exported to GROMACS format. In order to compare both models to the atomistic model, a reproduction test was done using the same parameters of all-atom boxes, with the exception of dielectric constant that was changed to $\varepsilon = 78$ and specification of each potential table required for GROMACS Simulation. Furthermore, since the charges of all beads is null, PME long-range electrostatics were replaced by cut-off scheme which increased simulation speed. An example of reproduction test input parameters can be found on Appendix (see Section \ref{sec:appendix}).
 
 \subsubsection*{Experiment 2}
  Subsequently, this second experiment has two main objectives, both related to concentration of DMDD in the system. The former objective is focused mainly on influence of concentration variations over the inverse steps, that means how the complexity of the self-assembly 
  structure affects convergence during IBI and IMC. The latter objective is to understand the relationship between the variation of DMDD concentration in the all-atom reference system and its effects in the self-assembly behaviour of the coarse-grain model chosen. Moreover, it will be an attempt to confirm the assumption that implicit water coarse-grain models can assume multiple concentrations, independently of the concentration chosen in the all-atoms reference.
  
- This assumption derives from the concept that implicit water models can only assume an NVT ensemble, because pressure has no physical meaning deal to the absence of solvent. It is supposed that the entropy that comes from solvent interaction    just by varying the size of simulation box.  
+ This assumption derives from the concept that implicit water models can only assume an NVT ensemble, because deal to the absence of solvent, pressure has no physical meaning in these systems. It is supposed that the entropy from free energy (see Eq.(\ref{eqn:freeE})) that comes partially from solvent interaction is lumped into the potential obtained using the inversion process. However,   differently from temperature it is yet clear to what extent concentration has influence over entropy. Hence, in this case just by varying the size of simulation box, the implicit water system should approximately behave as if it was on a different concentration.
+  
+ The experiment begins with the development of two new coarse-grain models based on M1 from the previous experiment. However, at this moment the all-atoms box's concentrations were increased to $C_{B2} = 1.62\ mM$ and $C_{B3} = 3.30\ mM$, thus the Intermediate Concentration Model ($M_{I}$) and High Concentration Model ($M_{H}$) were created based on those concentrations respectively. Furthermore, for this experiment, M1 which has the lowest concentration will now be denominated as Low Concentration Model ($M_{L}$).
  
- The experiment begins with the development of two new coarse-grain models based on M1 from the previous experiment. However, at this moment the all-atoms box's concentrations were increased to $C_{B2} = 1.62\ mM$ and $C_{B3} = 3.30\ mM$, thus the Intermediate Concentration Model ($M_{I}$) and High Concentration Model ($M_{H}$) were created based on those concentrations respectively.
- 
+ To be more specific, in order to evaluate the efficiency of inversion method for different concentrations, $M_{I}$ followed almost the same process as like $M_{L}$ with the exception of number inverse steps and Monte Carlo simulations. But, in the other hand, $M_{H}$ had two modifications: the former was the inclusion of a higher number of DMDD molecules in the simulation box and the latter was a new technique adopted to optimize the Inversion process. The first alteration was an inevitable consequence of the increasing  concentration, because otherwise the number of molecules in the all-atom box would not be enough to fulfil the minimum requirements of box size to the adopted cut-off radius $R_{cut} = 1.3 \ nm$. The second alteration in the process of model creation was on the initial phase of inversion, because instead of using IBI to approximate suitable initial trial potentials, we used as a basis the final potential obtained for $M_{L}$. Further explanations regarding this technique are shown in  the Discussion section (See Section \ref{subsec:discexp2}).
+  
+  After, with the three models, a comparison test was made in order to observe wheter the systems behave similarly with the same box size, that means concentration. Nevertheless, since the surfactant self-assembly simulations were using coarse-grained models, the system had been up-scaled. Each simulation box contained $1000$ molecules of Coarse Grained DMDD and the size of the box's edge was determined by rescaling average box size from Table (\ref{tab:boxes}) using the following equation:  
+\begin{equation}
+L_{CG}=\sqrt[3]{\frac{N_{CG} {L_{AA}}^3}{N_{AA}}}
+\label{eqn:bsize}
+\end{equation}
+where $N$ is number of molecule and $L$ is the edge side. Full description of all nine simulation boxes is given in Table (\ref{tab:cgbox}). All the simulation parameters were the same as the reproduction tests of Experiment 1, however now the simulations were run using a higher timestep of $20\ fs$ until the moment that self-assembly structure had appeared to achieve a stable configuration.
+\begin{table*}[ht!] 
+  \centering
+\begin{threeparttable}
 
- --gromacs Set-up Up-scaling \\
- --gromacs Set-up Self-assembly Model X(best)\\
-  ----AA Low, CG Low\\
+  \caption{Description of coarse-grain simulation boxes}
+
+\begin{tabular}{|r|c|c|c||c|c|c||c|c|c|}
+\hline
+Box                  & $B_{L@L}$ & $B_{I@L}$ & $B_{H@L}$ & $B_{L@I}$ & $B_{I@I}$ & $B_{H@I}$ & $B_{L@H}$ & $B_{I@H}$ & $B_{H@H}$ \\ \hline
+Model                &     $M_{L}$      &   $M_{I}$       &      $M_{H}$     &     $M_{L}$      &     $M_{I}$      &       $M_{H}$    &      $M_{L}$     &   $M_{I}$        &     $M_{H}$      \\ \hline
+Size ($nm$)          &     12.3147      &      12.3147      &     12.3147      &     10.08      &      10.08          &      10.08          &      7.9556     &     7.9556     &     7.9556      \\ \hline
+Concentration ($mM$) &     0.89      &     0.89      &    0.89       &    1.62       &          1.62 &     1.62      &    3.30       &     3.30      &     3.30      \\ \hline
+Time ($ns$)          &           &           &           &           &           &           &           &           &           \\ \hline
+\end{tabular}
+  \label{tab:cgbox}%
+\end{threeparttable} 
+\end{table*}
+
+\subsubsection*{Experiment 3}
+
+Finally, this last part of the project is where silica is introduced to the system. For this propose an All-Atoms Silica oligomer molecule was developed based on OPLS-AA force field. The preferred Silica model have been successfully applied in previous works done by \cite{mjsilica}, therefore it provided a reliable representation of silica-surfactant interactions.
+   
+  ----MagiC CG silica topology \\
+  ----gromacs Set-up Self-assembly Model X + Si\\
+   ------1000, 10000 (Maybe more?)
+ 
+\section{Results}
+\subsection{GROMACS simulations}
+Regarding the All-Atom simulations, it is interesting to highlight the different types of self-assembled  structures obtained in each concentration, all of them having its own observable peculiarities. In order to obtain a cohesive comparison basis between themselves and their coarse-grain models, each one of the simulation boxes received its characterization based on their periodicity and coordination number.
+
+As a initial approach, a qualitative evaluation of the simulations is provided in Fig.(\ref{Fig:aabox}). With the aid of periodic replicas, this image reveals that only at a high concentration (\ref{Fig:aabox}c) it became possible to form a complete layer in all periodic directions. Contrastingly, the other two boxes only showed periodicity in one of the directions, perpendicular the normal vector of the formed layer. Concerning the dynamic behaviour of both systems, it is observable that this structure remain stable during all simulation and layer kept constantly rotating around the periodic axis, although meanwhile the high concentration layer seldom presented any rotation.   
+\begin{figure}[ht!]
+  \begin{center}
+	\includegraphics[width=1 \textwidth]{./images/AAPBC}
+	\caption{Snapshot of simulation boxes with periodic replicas. a) box at low concentration (B1), b) box intermediate concentration (B2) and c) box at high concentration (B3). The original images are the ones located inside the grid box surrounded by water. Nitrogen atoms are represented in green, Carbon in black, Hydrogen in gray and water molecules in transparent blue. }
+	\label{Fig:aabox}
+  \end{center}
+\end{figure}
+
+Next, another characteristic of the system is the Coordination number. In this case, the coordination number represent the number of molecules surrounding one single molecule. The formation of the layer independently of the concentration should have the same coordination number. 
+
+\subsection{Experiment 1}
+ --Model 1 vs Model 2 \\
+ --gromacs Simulation\\
+ --IMC process Convergence\\
+ --gromacs Reproduction Tests RDFs and Properties\\
+\subsection{Experiment 2}
+\label{subsec:resexp2}
+
    \begin{figure}[ht!]
   \begin{center}
 	\includegraphics[width=1 \textwidth]{./graphs/rdfL}
@@ -453,9 +520,7 @@ The utility of each box will be described further in each experiment section. Ev
 	\label{gfx:rdfLow}
 	\end{center}
 	\end{figure}
-   ------1k(?) up-scale @ low\\
-   ------1k(?) up-scale @ high\\
-  ----AA Ideal, CG ideal\\
+
      \begin{figure}[ht!]
   \begin{center}
 	\includegraphics[width=1 \textwidth]{./graphs/rdfI}
@@ -465,26 +530,7 @@ The utility of each box will be described further in each experiment section. Ev
 	\label{gfx:rdfI}
 	\end{center}
 	\end{figure}
-   ------1k(?) up-scale @ low\\
-   ------1k(?) up-scale @ ideal\\
-   ------1k(?) up-scale @ high  \\
-  ----AA High, CG High\\
-   ------1k(?) up-scale @ high\\
-   ------1k(?) up-scale @ high
-\subsubsection*{Experiment 3}
- --Silica addition\\
-  ----MagiC CG silica topology \\
-  ----gromacs Set-up Self-assembly Model X + Si\\
-   ------1000, 10000 (Maybe more?)
- 
-\section{Results}
-\subsection{GROMACS simulations}
-\subsection{Experiment 1}
- --Model 1 vs Model 2 \\
- --gromacs Simulation\\
- --IMC process Convergence\\
- --gromacs Reproduction Tests RDFs and Properties\\
-\subsection{Experiment 2}
+	
  --Self-assembly vs concentration Model X\\
   ----Ideal con validation: Low, Ideal, High con comparison\\
    ------Ideal @ Low -> validate\\
@@ -493,14 +539,14 @@ The utility of each box will be described further in each experiment section. Ev
   ----Extremes evaluation:\\
   ------Low @ Low vs High @ Low -> compare\\
    ------High @ High vs Low @ High -> compare\\
-\label{subsec:resexp2}
+
 \subsection{Experiment 3}
  --Silica addition\\
   --CG silica Properties \\
   --Self-assembly Model X + Si\\
    -----1000, 10000 (Maybe more?)\\
 \section{Discussion}
-
+\label{subsec:discexp2}
 %The purpose of the discussion is to interpret and compare the results. Be objec
 %tive; point out the features and limitations of the work. Relate your results to cur
 %rent knowledge in the field and to the original purpose in undertaking the project:
