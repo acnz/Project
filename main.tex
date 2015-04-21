@@ -490,9 +490,9 @@ Finally, this last part of the project is where silica is introduced to the syst
  
 \section{Results}
 \subsection{GROMACS simulations}
-Regarding the All-Atom simulations, it is interesting to highlight the different types of self-assembled  structures obtained in each concentration, all of them having its own observable peculiarities. In order to obtain a cohesive comparison basis between themselves and their coarse-grain models, each one of the simulation boxes received its characterization based on their periodicity and coordination number.
+Regarding the All-Atom simulations, it is interesting to highlight the different types of self-assembled  structures obtained in each concentration, all of them having its own observable peculiarities. In order to obtain a cohesive comparison basis between themselves and their coarse-grain models, each one of the simulation boxes received its characterization based on their periodicity and Radial Distribution Function.
 
-As a initial approach, a qualitative evaluation of the simulations is provided in Fig.(\ref{Fig:aabox}). With the aid of periodic replicas, this image reveals that only at a high concentration (\ref{Fig:aabox}c) it became possible to form a complete layer in all periodic directions. Contrastingly, the other two boxes only showed periodicity in one of the directions, perpendicular the normal vector of the formed layer. Concerning the dynamic behaviour of both systems, it is observable that this structure remain stable during all simulation and layer kept constantly rotating around the periodic axis, although meanwhile the high concentration layer seldom presented any rotation.   
+As a initial approach, a qualitative evaluation of the simulations is provided in Fig.(\ref{Fig:aabox}). With the aid of periodic replicas, this image reveals that only at a high concentration (\ref{Fig:aabox}c) it became possible to form a complete layer in all periodic directions. Contrastingly, the other two boxes only showed periodicity in one of the directions, perpendicular the normal vector of the formed layer. Concerning the dynamic behaviour of both systems, it is observable that this structure remain stable during all simulation and the layer kept constantly rotating around the periodic axis, although meanwhile the high concentration layer seldom presented any rotation.   
 \begin{figure}[ht!]
   \begin{center}
 	\includegraphics[width=1 \textwidth]{./images/AAPBC}
@@ -501,33 +501,53 @@ As a initial approach, a qualitative evaluation of the simulations is provided i
   \end{center}
 \end{figure}
 
-Next, another characteristic of the system is the Coordination number. In this case, the coordination number represent the number of molecules surrounding one single molecule. The formation of the layer independently of the concentration should have the same coordination number. This property can be measured directly by integrating the RDF of the N-N interactions within the range of the first peak using Equ. ()   because the N atoms, which are polar heads, are representatives the position of each molecule in the layer. 
+Next, another characteristic of the system is the Radial Distribution Function. The RDF of N-N interactions are a great representatives of the system because the N atoms, which are the polar heads, can provide informations about the position of each molecule in relation their neighbours. In this case, as it can be seen in Fig.(\ref{Fig:rdfAA}), the RDFs of all boxes are similar since the aggregation phenomena inquires that proximity between polar and apolar parts, remains at a distance where free energy is the lowest. The different values to the peaks, does not means that there are more N heads within a given radius. This value varies according to the bulk density of the box because the RDF values are normalized, that means a higher concentration implies in a higher number of atoms within a given range  therefore, a lower normalized peak.  
 
+As a final consideration, it is possible to observe that the peaks of the high concentration box are located in a slightly distinct position, and that may be a consequence of the lack of space inside the box. Moreover it seems that there is an ideal concentration between Intermediate and High concentration where one complete periodic layer should be formed without leftover molecules. A single layer is the desirable configuration since in a real system seldom will present any non-aggregated molecule. Therefore, for future experiments including silica this concentration will be adopted.
+\begin{figure}[H]
+  \begin{center}
+	\includegraphics[width=0.8 \textwidth]{./graphs/rdfAA}
+	\caption{Radial distribution function between N-N atoms. }
+	\label{Fig:rdfAA}
+  \end{center}
+\end{figure}
 \subsection{Experiment 1}
+
+
  --Model 1 vs Model 2 \\
  --gromacs Simulation\\
- --IMC process Convergence\\
+  --IMC process Convergence\\
  --gromacs Reproduction Tests RDFs and Properties\\
 \subsection{Experiment 2}
 \label{subsec:resexp2}
 
-   \begin{figure}[ht!]
+   \begin{figure}[H]
   \begin{center}
-	\includegraphics[width=1 \textwidth]{./graphs/rdfL}
+	\includegraphics[width=0.8 \textwidth]{./graphs/rdfL}
 	\caption{rdfLow}
-		\includegraphics[width=1 \textwidth]{./graphs/GyraL}
-	\caption{Gyration Low}
 	\label{gfx:rdfLow}
 	\end{center}
 	\end{figure}
-
-     \begin{figure}[ht!]
+	   \begin{figure}[H]
   \begin{center}
-	\includegraphics[width=1 \textwidth]{./graphs/rdfI}
+		\includegraphics[width=0.8 \textwidth]{./graphs/GyraL}
+	\caption{Gyration Low}
+	\label{gfx:gyrLow}
+	\end{center}
+	\end{figure}
+
+     \begin{figure}[H]
+  \begin{center}
+	\includegraphics[width=0.8 \textwidth]{./graphs/rdfI}
 	\caption{rdfIdeal}
-		\includegraphics[width=1 \textwidth]{./graphs/GyraI}
-	\caption{Gyration Ideal}
 	\label{gfx:rdfI}
+	\end{center}
+	\end{figure}
+	     \begin{figure}[H]
+  \begin{center}
+		\includegraphics[width=0.8 \textwidth]{./graphs/GyraI}
+	\caption{Gyration Ideal}
+	\label{gfx:gyrI}
 	\end{center}
 	\end{figure}
 	
