@@ -428,20 +428,39 @@ The utility of each box will be described further in each experiment section. Ev
 
  During the usage of MagiC package, the model description begun at the "CGtraj" step, where  not only the bead types for the model were described, but also which atoms would be inside each bead. These informations must be part of input file of "CGtraj", following the strict guidelines of MagiC Manual \cite{magicmanu}. In addition, it was at this moment that occurred the determination of implicit water condition, therefore during the recalculation of trajectories the water molecules were removed from the box. At the second step is where bonds, angles, and interatomic interactions were described in the input file for "rdf-2.0" utility, following as well MagiC Manual guidelines \cite{magicmanu}.  That is because at this point MagiC generated reference RDF's used in inversion process for each potential table. Additional information regarding model description in input files for M1 and M2 can be found on Appendix (see Section \ref{sec:appendix}).
  
- Once reference RDFs and a Topology were specified the inversion step started. The parameters of each inversion step were based on work done by \citeA{dmpc}, in which similarly to this project also analyses the self-assembly of amphiphilic molecules. Nevertheless, considering that DMDD owns a much less complex molecular structure, the number of Monte Carlo simulation steps were considerably modified for each model. The simulations were run in parallel using up to 24 cores. Table (\ref{tab:MCexp1}) exposes the specific number of steps per core and whether it uses IBI or IMC method for inversion. Since the water is implicit, the dielectric constant for Monte Carlo simulations was set to experimental dielectric constant of water at $298\ K$ and $1\ bar$ which is $\varepsilon = 78$ \cite{dconst}. 
+ Once reference RDFs and a Topology were specified the inversion step started. The parameters of each inversion step were based on work done by \citeA{dmpc}, in which similarly to this project also analyses the self-assembly of amphiphilic molecules. Nevertheless, considering that DMDD owns a much less complex molecular structure, the number of Monte Carlo simulation steps were considerably modified for each model. The simulations were run in parallel using up to 24 cores. Table (\ref{tab:MCexp1}) exposes the specific number of steps per core and whether it used IBI or IMC method for inversion. The ensemble  averages where calculated every 1000 Monte Carlo steps, after equilibration. Since the water is implicit, the dielectric constant for Monte Carlo simulations was set to experimental dielectric constant of water at $298\ K$ and $1\ bar$ which is $\varepsilon = 78$ \cite{dconst}. 
  
   \begin{table*}[ht!] 
   \centering
 \begin{threeparttable}
 
-  \caption{Inversion Process description}
+  \caption{Inversion Process description for M1 and M2}
 
-    \begin{tabular}{c|c}
-		a & b \\ \hline
-		c & d \\
-    \end{tabular}%
-  \label{tab:MCexp1}%
-\end{threeparttable} 
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\multirow{6}{*}{M1} & $N_{Inv}$   & 10       & 10       & 10       & 5        \\ \cline{2-6} 
+                    & Method      & IBI      & IMC      & IMC      & IMC      \\ \cline{2-6} 
+                    & $N_{Cores}$ & 8        & 8        & 8        & 8        \\ \cline{2-6} 
+                    & $N_{MCe}$   & 3000000  & 3750000  & 5625000  & 7500000  \\ \cline{2-6} 
+                    & $N_{MC}$    & 12000000 & 15000000 & 22500000 & 30000000 \\ \cline{2-6} 
+                    & $N_{Avg}$   & 72000    & 90000    & 135000   & 180000   \\ \hline
+\end{tabular}
+
+ 
+\end{threeparttable}
+\begin{threeparttable}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+\multirow{6}{*}{M2} & $N_{Inv}$   & 10      & 10       & 10       & 5        & 5         & 14        & 9         \\ \cline{2-9} 
+                    & Method      & IBI     & IMC      & IMC      & IMC      & IMC       & IMC       & IMC       \\ \cline{2-9} 
+                    & $N_{Cores}$ & 24      & 24       & 24       & 24       & 24        & 24        & 24        \\ \cline{2-9} 
+                    & $N_{MCe}$   & 1000000 & 10000000 & 20000000 & 30000000 & 40000000  & 30000000  & 30000000  \\ \cline{2-9} 
+                    & $N_{MC}$    & 4000000 & 30000000 & 60000000 & 90000000 & 120000000 & 250000000 & 300000000 \\ \cline{2-9} 
+                    & $N_{Avg}$   & 72000   & 480000   & 960000   & 1440000  & 1920000   & 5280000   & 6480000   \\ \hline
+                    
+\end{tabular} 
+ \label{tab:MCexp1}%
+\end{threeparttable}
 \end{table*}
  
  Finally, after each inversion step MagiC generates RDF based on ensemble averages calculated during Monte Carlo simulations and then it calculates the deviance between reference RDFs and invesion RDFs. When the deviance reached the desired convergence value, the potentials and topology were exported to GROMACS format. In order to compare both models to the atomistic model, a reproduction test was done using the same parameters of all-atom boxes, with the exception of dielectric constant that was changed to $\varepsilon = 78$ and specification of each potential table required for GROMACS Simulation. Furthermore, since the charges of all beads is null, PME long-range electrostatics were replaced by cut-off scheme which increased simulation speed. An example of reproduction test input parameters can be found on Appendix (see Section \ref{sec:appendix}).
@@ -454,7 +473,38 @@ The utility of each box will be described further in each experiment section. Ev
   
  The experiment begins with the development of two new coarse-grain models based on M1 from the previous experiment. However, at this moment the all-atoms box's concentrations were increased to $C_{B2} = 1.62\ mM$ and $C_{B3} = 3.30\ mM$, thus the Intermediate Concentration Model ($M_{I}$) and High Concentration Model ($M_{H}$) were created based on those concentrations respectively. Furthermore, for this experiment, M1 which has the lowest concentration will now be denominated as Low Concentration Model ($M_{L}$).
  
- To be more specific, in order to evaluate the efficiency of inversion method for different concentrations, $M_{I}$ followed almost the same process as like $M_{L}$ with the exception of number inverse steps and Monte Carlo simulations. But, in the other hand, $M_{H}$ had two modifications: the former was the inclusion of a higher number of DMDD molecules in the simulation box and the latter was a new technique adopted to optimize the Inversion process. The first alteration was an inevitable consequence of the increasing  concentration, because otherwise the number of molecules in the all-atom box would not be enough to fulfil the minimum requirements of box size to the adopted cut-off radius $R_{cut} = 1.3 \ nm$. The second alteration in the process of model creation was on the initial phase of inversion, because instead of using IBI to approximate suitable initial trial potentials, we used as a basis the final potential obtained for $M_{L}$. Further explanations regarding this technique are shown in  the Discussion section (See Section \ref{subsec:discexp2}).
+  A complete description regarding the Inversion process for both latter models is given in Table (\ref{tab:MCexp2}), showing the peculiarities of each one. To be more specific, in order to evaluate the efficiency of inversion method for different concentrations, $M_{I}$ followed almost the same process as like $M_{L}$ with the exception of number inverse steps and Monte Carlo simulations. But, in the other hand, $M_{H}$ had two modifications: the former was the inclusion of a higher number of DMDD molecules in the simulation box and the latter was a new technique adopted to optimize the Inversion process. The first alteration was an inevitable consequence of the increasing  concentration, because otherwise the number of molecules in the all-atom box would not be enough to fulfil the minimum requirements of box size to the adopted cut-off radius $R_{cut} = 1.3 \ nm$. The second alteration in the process of model creation was on the initial phase of inversion, because instead of using IBI to approximate suitable initial trial potentials, we used as a basis the final potential obtained for $M_{L}$. Further explanations regarding this technique are shown in  the Discussion section (See Section \ref{subsec:discexp2}).
+ \begin{table}[ht!] 
+
+  \caption{Inversion Process description for $M_{I}$ and $M_{H}$}
+\resizebox{\textwidth}{!}{\begin{threeparttable}
+
+  
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\multirow{6}{*}{$M_{I}$} & $N_{Inv}$   & 10      & 10      & 10      & 5        & 10       & 5        & 5        & 5         & 9         \\ \cline{2-11} 
+                         & Method      & IBI     & IMC     & IMC     & IMC      & IMC      & IMC      & IMC      & IMC       & IMC       \\ \cline{2-11} 
+                         & $N_{Cores}$ & 24      & 24      & 24      & 24       & 24       & 24       & 24       & 24        & 24        \\ \cline{2-11} 
+                         & $N_{MCe}$   & 1000000 & 1250000 & 1875000 & 2500000  & 10000000 & 20000000 & 30000000 & 40000000  & 50000000  \\ \cline{2-11} 
+                         & $N_{MC}$    & 4000000 & 5000000 & 7500000 & 10000000 & 30000000 & 60000000 & 80000000 & 100000000 & 150000000 \\ \cline{2-11} 
+                         & $N_{Avg}$   & 72000   & 90000   & 135000  & 180000   & 480000   & 960000   & 1200000  & 1440000   & 2400000   \\ \hline
+\end{tabular}
+  
+\vspace*{5pt}\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+\multirow{6}{*}{$M_{H}$} & $N_{Inv}$   & \multirow{6}{*}{\begin{tabular}[c]{@{}c@{}}(No IBI)\\ Initial trial potentials\\ extracted from M1\end{tabular}} & 10       & 10       & 5        & 10        & 3         \\ \cline{2-2} \cline{4-8} 
+                         & Method      &                                                                                                                  & IMC      & IMC      & IMC      & IMC       & IMC       \\ \cline{2-2} \cline{4-8} 
+                         & $N_{Cores}$ &                                                                                                                  & 8        & 8        & 8        & 8         & 8         \\ \cline{2-2} \cline{4-8} 
+                         & $N_{MCe}$   &                                                                                                                  & 10000000 & 20000000 & 30000000 & 33000000  & 40000000  \\ \cline{2-2} \cline{4-8} 
+                         & $N_{MC}$    &                                                                                                                  & 30000000 & 60000000 & 90000000 & 100000000 & 120000000 \\ \cline{2-2} \cline{4-8} 
+                         & $N_{Avg}$   &                                                                                                                  & 160000   & 320000   & 480000   & 536000    & 640000    \\ \hline
+\end{tabular}
+
+
+ \label{tab:MCexp2}%
+\end{threeparttable}}
+
+\end{table}
   
   After, with the three models, a comparison test was made in order to observe wheter the systems behave similarly with the same box size, that means concentration. Nevertheless, since the surfactant self-assembly simulations were using coarse-grained models, the system had been up-scaled. Each simulation box contained $1000$ molecules of Coarse Grained DMDD and the size of the box's edge was determined by rescaling average box size from Table (\ref{tab:boxes}) using the following equation:  
 \begin{equation}
@@ -513,11 +563,31 @@ As a final consideration, it is possible to observe that the peaks of the high c
 \end{figure}
 \subsection{Experiment 1}
 
+The Coarse-grain process adopted in this project rely deeply on visual and numerical analysis of the convergence process results. During all the experiments each inversion step was validated by comparing it with previous steps and with the behaviour observed in atomistic simulations. There is not any guarantee that the set of potentials generated after each step will necessarily reproduce a physically meaningful system.  That is because these potentials are made to reproduce the RDF obtained after inversion, and since the configuration of the system is a probabilistic event there is more than one way to represent a given RDF. Therefore, the smaller the deviation from reference RDFs, the greater the odds that the potential set will reproduce a behaviour with acceptable reliability. A good example of this phenomena in shown in Fig.(\ref{Fig:wrong}) were the deviance between reference RDF and Reproduction test RDF is visually low, however it is very clear that the system is not reflecting the expected result.
 
- --Model 1 vs Model 2 \\
- --gromacs Simulation\\
-  --IMC process Convergence\\
- --gromacs Reproduction Tests RDFs and Properties\\
+\begin{figure}[H]
+  \begin{center}
+	\includegraphics[width=0.3 \textwidth]{./images/wip}
+	\caption{Radial distribution function between N-N atoms. }
+	\label{Fig:wrong}
+  \end{center}
+\end{figure}
+
+Hence, before focusing on the analysis of the final coarse-grain model it is important to make an overview upon the whole Inversion process for both models. Starting with M1, it is possible to observe in Fig.(\ref{Fig:convM1}) that the process was very smooth. The trial potentials generated after each iteration went directly to a specific region, therefore meaning that the desired curve should be located somewhere within that area. The deviation graph provided a numerical basis to predict if it was necessary to increase the number of Monte Carlo steps. The sign was whenever the error fluctuation started to drift around a certain value, meaning that potential conversion had been affected by statistical noise.
+ 
+\begin{figure}[H]
+  \begin{center}
+	\includegraphics[width=1 \textwidth]{./graphs/ConvLow}
+	\caption{Graphical representation of the inversion process for M1. Graph 1 (top left) show potential progression at certain steps. Graph 2 (top right) show RDF progression at the same steps as the potential. For both graph equal colors represent the same step and the darker the line the higher the step. Graph 3 (bottom) shows the root mean square deviation between reference RDF and RDF of a given step. Notice that this graph is using logarithmic scale.}
+	\label{Fig:convM1}
+  \end{center}
+\end{figure} 
+
+The RDF progression graph also show a topical behaviour observed in all inversion processes, which is the presence of three distinct conversion phases. In M1's case, during the initial phase (under 13 steps) the RDF rapidly converged to a shape very similar to the reference, but looking at the potential curves it is clear that they were far from the final result. During the second phase (between 13 and 21 steps), the potential curves began to adopt the same aspect of the final curve, however the deviation increased or stagnated at a point whilst the RDF peaks and valleys became more sharp. Then finally the deviation suddenly started to decrease, consequently the RDFs and potentials began to converge to the desired region in a very slow pace. Even though for M1 these signs are not very clear, for other models such as $M_{I}$ this behaviour is well defined (See Section \ref{subsec:resexp2}).
+
+Subsequently, Fig. (\ref{Fig:convM2}) presents a similar overview for M2. It is important to keep in mind that even though they have the same name the N beads are completely different, therefore there are no similarities between those potential curves. 
+
+ it is possible to conclude that there is direct relationship between model 
 \subsection{Experiment 2}
 \label{subsec:resexp2}
 
