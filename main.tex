@@ -58,6 +58,7 @@
 \usepackage{authblk}
 
 
+
 \title{A Coarse-grain model for Bolaamphiphiles in presence  of Silica}
 \author[1,2]{André Crescenzo\thanks{ Corresponding author.\\ Email: \ \texttt{andre.crescenzo.2014@uni.strath.ac.uk}}}
 \author[1]{Alessia Centi\thanks{ Email: \ \texttt{alessia.centi@strath.ac.uk}}}
@@ -465,7 +466,9 @@ The utility of each box will be described further in each experiment section. Ev
 \end{threeparttable}
 \end{table*}
  
- Finally, after each inversion step MagiC generates RDF based on ensemble averages calculated during Monte Carlo simulations and then it calculates the deviance between reference RDFs and invesion RDFs. When the deviance reached the desired convergence value, the potentials and topology were exported to GROMACS format. In order to compare both models to the atomistic model, a reproduction test was done using the same parameters of all-atom boxes, with the exception of dielectric constant that was changed to $\varepsilon = 78$ and specification of each potential table required for GROMACS Simulation. Furthermore, since the charges of all beads is null, PME long-range electrostatics were replaced by cut-off scheme which increased simulation speed. An example of reproduction test input parameters can be found on Appendix (see Section \ref{sec:appendix}).
+ After each inversion step MagiC generates RDF based on ensemble averages calculated during Monte Carlo simulations and then it calculates the deviance between reference RDFs and invesion RDFs. When the deviance reached the desired convergence value, the potentials and topology were exported to GROMACS format. In order to compare both models to the atomistic model, a reproduction test was done using the same parameters of all-atom boxes, with the exception of dielectric constant that was changed to $\varepsilon = 78$ and specification of each potential table required for GROMACS Simulation. Furthermore, since the charges of all beads is null, PME long-range electrostatics were replaced by cut-off scheme which increased simulation speed and cut-off was increased to $R_{cut} = 1.8 \ nm$. An example of reproduction test input parameters can be found on Appendix (see Section \ref{sec:appendix}).
+ 
+ Finally regarding up-scaling tests, all simulations were made with the same machine using up to 24 cores, depending on the size of the system. All values were obtained from the prediction made by "mdrun" (GROMACS package utility) \cite{gromanual}, which provides an estimated average of simulation speed, however it is important to consider that it may vary throughout the whole simulation. The simulation parameters were the same as the reproduction tests, however now the simulations were run using a higher timestep of $20\ fs$. 
 
 \subsubsection*{Experiment 2}
  Subsequently, this second experiment has two main objectives, both related to concentration of DMDD in the system. The former objective is focused mainly on influence of concentration variations over the inverse steps, that means how the complexity of the self-assembly 
@@ -508,12 +511,12 @@ The utility of each box will be described further in each experiment section. Ev
 
 \end{table}
   
-  After, with the three models, a comparison test was made in order to observe wheter the systems behave similarly with the same box size, that means concentration. Nevertheless, since the surfactant self-assembly simulations were using coarse-grained models, the system had been up-scaled. Each simulation box contained $1000$ molecules of Coarse Grained DMDD and the size of the box's edge was determined by rescaling average box size from Table (\ref{tab:boxes}) using the following equation:  
+  After, with the three models, a comparison test was made in order to observe wheter the systems behave similarly with the same box size, that means concentration. Nevertheless, since the surfactant self-assembly simulations were using coarse-grained models, the system had been up-scaled. Each simulation box contained $1000$ molecules of Coarse-grained DMDD and the size of the box's edge was determined by rescaling average box size from Table (\ref{tab:boxes}) using the following equation:  
 \begin{equation}
 L_{CG}=\sqrt[3]{\frac{N_{CG} {L_{AA}}^3}{N_{AA}}}
 \label{eqn:bsize}
 \end{equation}
-where $N$ is number of molecule and $L$ is the edge side. Full description of all nine simulation boxes is given in Table (\ref{tab:cgbox}). All the simulation parameters were the same as the reproduction tests of Experiment 1, however now the simulations were run using a higher timestep of $20\ fs$ until the moment that self-assembly structure had appeared to achieve a stable configuration.
+where $N$ is number of molecule and $L$ is the edge side. Full description of all nine simulation boxes is given in Table (\ref{tab:cgbox}). All simulation parameters were exactly the same as used in Experiment 1 up-scaling simulations, but now the simulations were run until the moment that self-assembly structure had appeared to achieve a stable configuration.
 \begin{table*}[ht!] 
   \centering
 \begin{threeparttable}
@@ -545,9 +548,9 @@ Time ($ns$)          &           &           &           &           &          
 Regarding the All-Atom simulations, it is interesting to highlight the different types of self-assembled  structures obtained in each concentration, all of them having its own observable peculiarities. In order to obtain a cohesive comparison basis between themselves and their coarse-grain models, each one of the simulation boxes received its characterization based on their periodicity and Radial Distribution Function.
 
 As a initial approach, a qualitative evaluation of the simulations is provided in Fig.(\ref{Fig:aabox}). With the aid of periodic replicas, this image reveals that only at a high concentration (\ref{Fig:aabox}c) it became possible to form a complete layer in all periodic directions. Contrastingly, the other two boxes only showed periodicity in one of the directions, perpendicular the normal vector of the formed layer. Concerning the dynamic behaviour of both systems, it is observable that this structure remain stable during all simulation and the layer kept constantly rotating around the periodic axis, although meanwhile the high concentration layer seldom presented any rotation.   
-\begin{figure}[ht!]
+\begin{figure}[H]
   \begin{center}
-	\includegraphics[width=1 \textwidth]{./images/AAPBC}
+	\includegraphics[width=0.85 \textwidth]{./images/AAPBC}
 	\caption{Snapshot of simulation boxes with periodic replicas. a) box at low concentration (B1), b) box intermediate concentration (B2) and c) box at high concentration (B3). The original images are the ones located inside the grid box surrounded by water. Nitrogen atoms are represented in green, Carbon in black, Hydrogen in gray and water molecules in transparent blue. }
 	\label{Fig:aabox}
   \end{center}
@@ -589,7 +592,7 @@ The RDF progression graph had shown a topical behaviour observed in all inversio
 
 Subsequently, Fig. (\ref{Fig:convM2}) presents a similar overview for M2. It is important to keep in mind that even though they have the same name, the N beads are completely different for each model. Therefore there are no similarities between those potential curves, nevertheless the RDFs should be similar because the center of mass of both beads are very near. A key feature of this model is that it was the one who required the largest amount of Monte Carlo simulations for the Inversion steps. Just as shown in Table (\ref{tab:MCexp1}), some steps demanded over 6.4 billion steps in order to avoid statistical noise, thus taking a much longer time to reach errors at desired values.
 
-\begin{figure}[ht!]
+\begin{figure}[H]
   \begin{center}
 	\includegraphics[width=1 \textwidth]{./graphs/ConvM2}
 	\caption{Graphical representation of the inversion process for M2. Graph 1 (top left) show potential progression at certain steps. Graph 2 (top right) show RDF progression at the same steps as the potential. Both graphs are representing N-N interactions and equal colors represent at the same step furthermore, the darker the line color the higher the step. Graph 3 (bottom) shows the root mean square deviation between reference RDF and RDF of a given step (for all interactions). Notice that this graph is using logarithmic scale.}
@@ -602,7 +605,7 @@ steps 7 and 30 approximately, the deviance diverged considerably while potential
 
 \subsubsection*{Reproduction Tests}
  The efficiency of both models can be evaluated by making a side by side comparison between reproduction test results. Figures (\ref{Fig:M1M2rdf}) and (\ref{Fig:M1M2box}) promptly provide not only a quantitative, but also a qualitative validation both models' capacity of representing the atomistic system. It is important to notice that the RDFs should reproduce exactly the same RDF as the reference however, at some points they mismatch. This fact is directly related to two factors: level of convergence and cut-off radius adopted.
-     \begin{figure}[h]
+     \begin{figure}[ht!]
   \begin{center}
 	\includegraphics[width=1 \textwidth]{./graphs/rdfM1M2}
 	\caption{Radial distribution function between N-N beads/atoms. Left graph representing M1 and right graph representing M2}
@@ -614,7 +617,7 @@ Firstly since M2 is a more detailed  model, as expected the RDF aspect is more s
 
    
 
-     \begin{figure}[h]
+     \begin{figure}[ht!]
   \begin{center}
 	\includegraphics[width=0.4 \textwidth]{./images/wip}
 	\caption{rep boxes}
@@ -622,12 +625,42 @@ Firstly since M2 is a more detailed  model, as expected the RDF aspect is more s
   \end{center}
 \end{figure}
 
-Regarding the influence of the cut-off radius, 
+Regarding the influence of the cut-off radius, the simulation analysis using different Cut-offs in M2 demonstrated that long range interactions are important for coarse-grain models. Figure (\ref{Fig:M2cut}) provides a brief example about to what extent  $R_{cut}$ can influence the system's behaviour. Hence, differently from All-Atoms simulations long-range interatomic interactions carries a major responsibility regarding self-assembled structures, and the adoption of a short cut-off will cause loss of important information thus reproducing unrealistic results.
+
+ \begin{figure}[ht!]
+  \begin{center}
+	\includegraphics[width=0.4 \textwidth]{./images/wip}
+	\caption{M2cut}
+	\label{Fig:M1M2box}
+  \end{center}
+\end{figure}
+
+\subsubsection*{System up-scaling}
+
+A major concern for coarse-grain models is that even though they are made be a good approximation of atomic models, the should be designed in such a manner that the system can be up-scaled. Simulation speed and system size need to be optimized as much as possible without excessive information loss deal to lack of level of detail. Both models proposed for this experiment were able to breed reasonable results from reproduction test, then the last criteria to evaluate which is the most suitable model are the up-scaling capacities. Table (\ref{tab:upscale}) shows a comparison of multiple system sizes and respective simulation speed.
+
+\begin{table*}[ht!] 
+  \centering
+\begin{threeparttable}
+
+  \caption{System up-scaling for M1 and M2}
+
+\begin{tabular}{|r|c|c|c|c|c|}
+\hline
+a & b & b & b & b & b\\
+c & d & b & b & b & b\\
+ \hline
+\end{tabular}
+  \label{tab:upscale}%
+\end{threeparttable} 
+\end{table*}
+
+Decisively, M1 was the model chosen for further experiments since it seems to be in all cases much more efficient when up-scaling than M2. Although M2 is able to reproduce finer results, the error committed by using M1 can be neglected for the benefit of simulation speed. Moreover, the Inversion process presented a smoother behaviour requiring lesser amounts of Monte Carlo simulations.
 
 \subsection{Experiment 2}
 \label{subsec:resexp2}
 
-	   \begin{figure}[H]
+	   \begin{figure}
   \begin{center}
 		\includegraphics[width=0.8 \textwidth]{./graphs/GyraL}
 	\caption{Gyration Low}
@@ -635,14 +668,14 @@ Regarding the influence of the cut-off radius,
 	\end{center}
 	\end{figure}
 
-     \begin{figure}[H]
+     \begin{figure}
   \begin{center}
 	\includegraphics[width=0.8 \textwidth]{./graphs/rdfI}
 	\caption{rdfIdeal}
 	\label{gfx:rdfI}
 	\end{center}
 	\end{figure}
-	     \begin{figure}[H]
+	     \begin{figure}
   \begin{center}
 		\includegraphics[width=0.8 \textwidth]{./graphs/GyraI}
 	\caption{Gyration Ideal}
