@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.6.12)  29 APR 2015 17:46
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.3.2)  30 APR 2015 02:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1190,11 +1190,7 @@ Package: authblk 2001/02/27 1.3 (PWD)
 \c@Maxaffil=\count182
 \c@authors=\count183
 \c@affil=\count184
-) (./main.aux
-
-LaTeX Warning: Label `Fig:M1M2box' multiply defined.
-
-)
+) (./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
@@ -1211,7 +1207,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
 LaTeX Font Info:    ... okay on input line 80.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 80.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 80.
- (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 80.
@@ -1608,65 +1605,54 @@ Package pdftex.def Info: ./graphs/rdfM1M2.pdf used on input line 610.
                                                   \fi \fi 
 l.615 
        <./graphs/ConvM2.png>]
-<./images/wip.jpg, id=521, 488.82625pt x 438.63875pt>
-File: ./images/wip.jpg Graphic file (type jpg)
- <use ./images/wip.jpg>
-Package pdftex.def Info: ./images/wip.jpg used on input line 622.
-(pdftex.def)             Requested size: 176.40439pt x 158.29132pt.
+<./images/M1M2box.png, id=521, 1791.69376pt x 572.1375pt>
+File: ./images/M1M2box.png Graphic file (type png)
 
+<use ./images/M1M2box.png>
+Package pdftex.def Info: ./images/M1M2box.png used on input line 622.
+(pdftex.def)             Requested size: 441.01773pt x 140.8253pt.
 
-LaTeX Warning: Reference `Fig:M2cut' on page 15 undefined on input line 628.
+<./images/M2cut.png, id=523, 1077.7866pt x 621.522pt>
+File: ./images/M2cut.png Graphic file (type png)
+ <use ./images/M2cut.png>
+Package pdftex.def Info: ./images/M2cut.png used on input line 632.
+(pdftex.def)             Requested size: 441.01773pt x 254.31355pt.
 
-File: ./images/wip.jpg Graphic file (type jpg)
-<use ./images/wip.jpg>
-Package pdftex.def Info: ./images/wip.jpg used on input line 632.
-(pdftex.def)             Requested size: 176.40439pt x 158.29132pt.
- [15pdfTeX warning (ext4): destination with the same identifier (name{figure.11
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.641 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-12}) has been already used, duplicate ignored
+[15pdfTeX warning (ext4): destination with the same identifier (name{figure.11}
+) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.641 
-       <./graphs/rdfM1M2.pdf> <./images/wip.jpg>]
-Underfull \hbox (badness 2343) in paragraph at lines 653--653
-[]\T1/lmr/m/n/10 (+20) Table 6: []|System up-
- []
+l.636 \end{figure}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{figure.12}) has been already used, duplicate ignored
 
-<./graphs/GyraL.png, id=587, 578.16pt x 433.62pt>
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.636 \end{figure}
+                   <./graphs/rdfM1M2.pdf> <./images/M1M2box.png>]
+
+Package tabulary Warning: No suitable columns! on input line 652.
+
+<./graphs/GyraL.png, id=590, 578.16pt x 433.62pt>
 File: ./graphs/GyraL.png Graphic file (type png)
  <use ./graphs/GyraL.png>
-Package pdftex.def Info: ./graphs/GyraL.png used on input line 665.
+Package pdftex.def Info: ./graphs/GyraL.png used on input line 663.
 (pdftex.def)             Requested size: 352.81552pt x 264.60706pt.
 
-<./graphs/rdfI.pdf, id=588, 496.96916pt x 397.19173pt>
+<./graphs/rdfI.pdf, id=591, 496.96916pt x 397.19173pt>
 File: ./graphs/rdfI.pdf Graphic file (type pdf)
  <use ./graphs/rdfI.pdf>
-Package pdftex.def Info: ./graphs/rdfI.pdf used on input line 673.
+Package pdftex.def Info: ./graphs/rdfI.pdf used on input line 671.
 (pdftex.def)             Requested size: 352.81552pt x 281.99597pt.
 
-<./graphs/GyraI.png, id=589, 578.16pt x 433.62pt>
+<./graphs/GyraI.png, id=592, 578.16pt x 433.62pt>
 File: ./graphs/GyraI.png Graphic file (type png)
  <use ./graphs/GyraI.png>
-Package pdftex.def Info: ./graphs/GyraI.png used on input line 680.
+Package pdftex.def Info: ./graphs/GyraI.png used on input line 678.
 (pdftex.def)             Requested size: 352.81552pt x 264.60706pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 686--694
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 696--700
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 708--722
+Underfull \hbox (badness 10000) in paragraph at lines 684--692
 
  []
 
@@ -1675,40 +1661,47 @@ Underfull \hbox (badness 10000) in paragraph at lines 708--722
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.722 
+l.692 
       pdfTeX warning (ext4): destination with the same identifier (name{table.6
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.722 
-      ] [17pdfTeX warning (ext4): destination with the same identifier (name{fi
-gure.14}) has been already used, duplicate ignored
+l.692 
+       <./images/M2cut.png>] [17pdfTeX warning (ext4): destination with the sam
+e identifier (name{figure.14}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.722 
+l.692 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 15}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.722 
+l.692 
        <./graphs/GyraL.png> <./graphs/rdfI.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 726--729
+Underfull \hbox (badness 10000) in paragraph at lines 694--698
 
  []
 
-(./main.bbl
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [18pdfTeX warning (ext4): destination with the same identifier (name{figure.16
-}) has been already used, duplicate ignored
+Underfull \hbox (badness 10000) in paragraph at lines 706--720
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 724--727
+
+ []
+
+[18pdfTeX warning (ext4): destination with the same identifier (name{figure.16}
+) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1 \begin{thebibliography}{}
-                              <./graphs/GyraI.png>]
+l.727 
+       <./graphs/GyraI.png>] (./main.bbl
 LaTeX Font Info:    Try loading font information for T1+lmtt on input line 33.
 
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
@@ -1719,17 +1712,17 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
  [19]) [20]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 842.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 840.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.842 \end{document}
+l.840 \end{document}
                      [1]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 842.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 840.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 842.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 842.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 840.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 840.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 787CA7834D8A858E5060441D0A508124;855.
 
@@ -1741,18 +1734,18 @@ LaTeX Font Warning: Size substitutions with differences
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 842.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 840.
  ) 
 Here is how much of TeX's memory you used:
- 18743 strings out of 493304
- 317688 string characters out of 6139871
- 446699 words of memory out of 5000000
- 21549 multiletter control sequences out of 15000+600000
+ 18766 strings out of 493304
+ 317897 string characters out of 6139872
+ 447045 words of memory out of 5000000
+ 21572 multiletter control sequences out of 15000+600000
  134248 words of font info for 175 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 45i,20n,43p,10461b,484s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 45i,20n,43p,10461b,483s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{cite.dconst} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1783,10 +1776,10 @@ f/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy1
 0.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts
 /type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/symbols/msam10.pfb>
-Output written on main.pdf (25 pages, 5528524 bytes).
+Output written on main.pdf (25 pages, 7021828 bytes).
 PDF statistics:
- 791 PDF objects out of 1000 (max. 8388607)
- 568 compressed objects within 6 object streams
+ 795 PDF objects out of 1000 (max. 8388607)
+ 569 compressed objects within 6 object streams
  122 named destinations out of 1000 (max. 500000)
- 34001 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 34006 words of extra memory for PDF output out of 35830 (max. 10000000)
 

@@ -468,7 +468,7 @@ The utility of each box will be described further in each experiment section. Ev
  
  After each inversion step MagiC generates RDF based on ensemble averages calculated during Monte Carlo simulations and then it calculates the deviance between reference RDFs and invesion RDFs. When the deviance reached the desired convergence value, the potentials and topology were exported to GROMACS format. In order to compare both models to the atomistic model, a reproduction test was done using the same parameters of all-atom boxes, with the exception of dielectric constant that was changed to $\varepsilon = 78$ and specification of each potential table required for GROMACS Simulation. Furthermore, since the charges of all beads is null, PME long-range electrostatics were replaced by cut-off scheme which increased simulation speed and cut-off was increased to $R_{cut} = 1.8 \ nm$. An example of reproduction test input parameters can be found on Appendix (see Section \ref{sec:appendix}).
  
- Finally regarding up-scaling tests, all simulations were made with the same machine using up to 24 cores, depending on the size of the system. All values were obtained from the prediction made by "mdrun" (GROMACS package utility) \cite{gromanual}, which provides an estimated average of simulation speed, however it is important to consider that it may vary throughout the whole simulation. The simulation parameters were the same as the reproduction tests, however now the simulations were run using a higher timestep of $20\ fs$. 
+ Finally regarding up-scaling tests, all simulations were made with the same machine using up to 8 MPI threads, depending on the size of the system. All values were obtained from the prediction made by "mdrun" (GROMACS package utility) \cite{gromanual}, which provides an estimated average of simulation speed, however it is important to consider that it may vary throughout the whole simulation. The simulation parameters were the same as the reproduction tests, however now the simulations were run using a higher timestep of $20\ fs$ for M1 and $10\ fs$ for M2. 
 
 \subsubsection*{Experiment 2}
  Subsequently, this second experiment has two main objectives, both related to concentration of DMDD in the system. The former objective is focused mainly on influence of concentration variations over the inverse steps, that means how the complexity of the self-assembly 
@@ -619,8 +619,8 @@ Firstly since M2 is a more detailed  model, as expected the RDF aspect is more s
 
      \begin{figure}[ht!]
   \begin{center}
-	\includegraphics[width=0.4 \textwidth]{./images/wip}
-	\caption{rep boxes}
+	\includegraphics[width=1 \textwidth]{./images/M1M2box}
+	\caption{Snapshot of simulation boxes with periodic replicas. A) All-Atom reference at low concentration (B1), B) M1 reproduction test and c) M2 reproduction test.}
 	\label{Fig:M1M2box}
   \end{center}
 \end{figure}
@@ -629,30 +629,28 @@ Regarding the influence of the cut-off radius, the simulation analysis using dif
 
  \begin{figure}[ht!]
   \begin{center}
-	\includegraphics[width=0.4 \textwidth]{./images/wip}
-	\caption{M2cut}
-	\label{Fig:M1M2box}
+	\includegraphics[width=1 \textwidth]{./images/M2cut}
+	\caption{Graphical representation of the potential cut-off radius influence over simulation. Each box is using the respective cut-off. For the simulation any point after the dashed lines will be considered zero. }
+	\label{Fig:M2cut}
   \end{center}
 \end{figure}
 
 \subsubsection*{System up-scaling}
 
-A major concern for coarse-grain models is that even though they are made be a good approximation of atomic models, the should be designed in such a manner that the system can be up-scaled. Simulation speed and system size need to be optimized as much as possible without excessive information loss deal to lack of level of detail. Both models proposed for this experiment were able to breed reasonable results from reproduction test, then the last criteria to evaluate which is the most suitable model are the up-scaling capacities. Table (\ref{tab:upscale}) shows a comparison of multiple system sizes and respective simulation speed.
+A major concern for coarse-grain models is that even though they are made be a good approximation of atomic models, they should be designed in such a manner that the system can be up-scaled. Simulation speed and system size need to be optimized as much as possible without excessive information loss deal to lack of level of detail. In order to improve simulation performance, the time-step for each model was readjusted since it is related to the bond size. The movement of one bead in relation to its bonded pair must not exceed maximum bond distance. Therefore, a lower level of detail result in an increased bond size enabling the use of bigger time-steps. Both models proposed for this experiment were able to breed reasonable results from reproduction test, then the last criteria to evaluate which is the most suitable model are the up-scaling capacities. Table (\ref{tab:upscale}) shows a comparison of multiple system sizes and respective simulation speed. 
 
 \begin{table*}[ht!] 
   \centering
-\begin{threeparttable}
 
   \caption{System up-scaling for M1 and M2}
 
-\begin{tabular}{|r|c|c|c|c|c|}
+\begin{tabulary}{1.0\textwidth}{|l|c|c|c|c|c|}
 \hline
-a & b & b & b & b & b\\
-c & d & b & b & b & b\\
- \hline
-\end{tabular}
+Number of Molecules & 100 & 1000 & 5000 & 10000 & 20000 \\ \hline
+Simul. speed for M1 &  $ ~9086\ ns/day$  &   $ ~985\ ns/day$   &   $ ~235\ ns/day$   &   $  ~133\ ns/day$    &   $ ~67\ ns/day$    \\ \hline
+Simul. speed for M2 &  $ ~1458\ ns/day$  &   $ ~208\ ns/day$   &   $ ~62\ ns/day$   &   $ ~33\ ns/day$    &   $ ~15\ ns/day$    \\ \hline
+\end{tabulary}
   \label{tab:upscale}%
-\end{threeparttable} 
 \end{table*}
 
 Decisively, M1 was the model chosen for further experiments since it seems to be in all cases much more efficient when up-scaling than M2. Although M2 is able to reproduce finer results, the error committed by using M1 can be neglected for the benefit of simulation speed. Moreover, the Inversion process presented a smoother behaviour requiring lesser amounts of Monte Carlo simulations.
