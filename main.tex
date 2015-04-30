@@ -658,9 +658,28 @@ Decisively, M1 was the model chosen for further experiments since it seems to be
 \subsection{Experiment 2}
 \label{subsec:resexp2}
 
+\subsubsection*{Systematic Replication}
+
+A valuable advantage of using MagiC Coarse-grain method is that once a model is fully described  it becomes simple to replicate it using different references. The systematic procedure uses the same structural description to recreate a new model. Nevertheless, minor changes still necessary in the input files for the tools such as, the number of molecules in the system (solvent and solute), trajectory files from the new All-atom simulation and modifications in simulation box size. 
+
+However, the experiment proposed in this section revealed that major differences emerged during the Inversion process. The use of higher concentrations of surfactant in the reference simulation increased drastically the computational effort to obtain the set of potentials. Beginning with $M_{I}$, by observing Figure (\ref{convI}) and crossing with data provided in Table (\ref{tab:MCexp2}), the previous statement is readily confirmed. Moreover, the three phase behaviour is very evident throughout the process.
+
+Furthermore in the case of the high concentration model, the increased complexity demanded modifications to standard procedure as explaned in Methods section creation of new mdeveloped
+
+\subsubsection*{Potential Comparison}
+\subsubsection*{Interchangeability Test }
+
+  ----Ideal con validation: Low, Ideal, High con comparison\\
+   ------Ideal @ Low -> validate\\
+   ------Ideal @ Ideal -> evaluate\\
+   ------Ideal @ High -> validate\\
+  ----Extremes evaluation:\\
+  ------Low @ Low vs High @ Low -> compare\\
+   ------High @ High vs Low @ High -> compare\\
+
 	   \begin{figure}
   \begin{center}
-		\includegraphics[width=0.8 \textwidth]{./graphs/GyraL}
+		\includegraphics[width=0.4 \textwidth]{./graphs/GyraL}
 	\caption{Gyration Low}
 	\label{gfx:gyrLow}
 	\end{center}
@@ -681,20 +700,7 @@ Decisively, M1 was the model chosen for further experiments since it seems to be
 	\end{center}
 	\end{figure}
 	
- --Self-assembly vs concentration Model X\\
-  ----Ideal con validation: Low, Ideal, High con comparison\\
-   ------Ideal @ Low -> validate\\
-   ------Ideal @ Ideal -> evaluate\\
-   ------Ideal @ High -> validate\\
-  ----Extremes evaluation:\\
-  ------Low @ Low vs High @ Low -> compare\\
-   ------High @ High vs Low @ High -> compare\\
 
-\subsection{Experiment 3}
- --Silica addition\\
-  --CG silica Properties \\
-  --Self-assembly Model X + Si\\
-   -----1000, 10000 (Maybe more?)\\
 \section{Discussion}
 \label{subsec:discexp2}
 %The purpose of the discussion is to interpret and compare the results. Be objec
