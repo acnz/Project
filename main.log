@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.3.2)  30 APR 2015 14:18
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.6.12)  30 APR 2015 18:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1324,7 +1324,7 @@ LaTeX Info: Redefining \BHBI on input line 130.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<./images/StrathLogo.png, id=68, 598.3956pt x 136.3494pt>
+<./images/StrathLogo.png, id=64, 598.3956pt x 136.3494pt>
 File: ./images/StrathLogo.png Graphic file (type png)
 
 <use ./images/StrathLogo.png>
@@ -1405,7 +1405,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <3.49998> not available
 (Font)              size <5> substituted on input line 225.
 
-[3] <./graphs/lj.pdf, id=226, 433.62pt x 289.08pt>
+[3] <./graphs/lj.pdf, id=221, 433.62pt x 289.08pt>
 File: ./graphs/lj.pdf Graphic file (type pdf)
  <use ./graphs/lj.pdf>
 Package pdftex.def Info: ./graphs/lj.pdf used on input line 284.
@@ -1418,13 +1418,13 @@ has been already used, duplicate ignored
                                                   \fi \fi 
 l.294 \end{equation}
                      <./graphs/lj.pdf>]
-<./images/magic.png, id=290, 1678.27pt x 431.6125pt>
+<./images/magic.png, id=285, 1678.27pt x 431.6125pt>
 File: ./images/magic.png Graphic file (type png)
  <use ./images/magic.png>
 Package pdftex.def Info: ./images/magic.png used on input line 305.
 (pdftex.def)             Requested size: 441.01773pt x 113.41522pt.
 
-<./images/magiccore.pdf, id=298, 187.70125pt x 283.0575pt>
+<./images/magiccore.pdf, id=293, 187.70125pt x 283.0575pt>
 File: ./images/magiccore.pdf Graphic file (type pdf)
 
 <use ./images/magiccore.pdf>
@@ -1466,13 +1466,13 @@ LaTeX Warning: Citation `nosetstat' undefined on input line 390.
 
 LaTeX Warning: Citation `prbstat' undefined on input line 390.
 
-[7] <./images/M1ab.png, id=376, 1656.1875pt x 521.95pt>
+[7] <./images/M1ab.png, id=371, 1656.1875pt x 521.95pt>
 File: ./images/M1ab.png Graphic file (type png)
 
 <use ./images/M1ab.png>
 Package pdftex.def Info: ./images/M1ab.png used on input line 397.
 (pdftex.def)             Requested size: 441.01773pt x 138.98509pt.
- <./images/M2ab.png, id=377, 1656.1875pt x 501.875pt>
+ <./images/M2ab.png, id=372, 1656.1875pt x 501.875pt>
 File: ./images/M2ab.png Graphic file (type png)
 
 <use ./images/M2ab.png>
@@ -1522,7 +1522,7 @@ Overfull \hbox (35.09302pt too wide) in paragraph at lines 523--536
  [] 
  []
 
-[10] <./images/AAPBC.png, id=427, 2208.25pt x 682.55pt>
+[10] <./images/AAPBC.png, id=422, 2208.25pt x 682.55pt>
 File: ./images/AAPBC.png Graphic file (type png)
 
 <use ./images/AAPBC.png>
@@ -1547,13 +1547,13 @@ l.560
                                                   \fi \fi 
 l.560 
        <./images/AAPBC.png>]
-<./graphs/rdfAA.pdf, id=436, 502.65446pt x 397.19173pt>
+<./graphs/rdfAA.pdf, id=431, 502.65446pt x 397.19173pt>
 File: ./graphs/rdfAA.pdf Graphic file (type pdf)
 
 <use ./graphs/rdfAA.pdf>
 Package pdftex.def Info: ./graphs/rdfAA.pdf used on input line 564.
 (pdftex.def)             Requested size: 308.71106pt x 243.95328pt.
- <./images/wrongM2.png, id=438, 1967.35pt x 602.25pt>
+ <./images/wrongM2.png, id=433, 1967.35pt x 602.25pt>
 File: ./images/wrongM2.png Graphic file (type png)
 
 <use ./images/wrongM2.png>
@@ -1566,7 +1566,7 @@ Package pdftex.def Info: ./images/wrongM2.png used on input line 575.
                                                   \fi \fi 
 l.582 
        <./graphs/rdfAA.pdf>]
-<./graphs/ConvLow.png, id=497, 1189.8051pt x 729.4452pt>
+<./graphs/ConvLow.png, id=492, 1189.8051pt x 729.4452pt>
 File: ./graphs/ConvLow.png Graphic file (type png)
 
 <use ./graphs/ConvLow.png>
@@ -1585,14 +1585,14 @@ l.592
                                                   \fi \fi 
 l.592 
        <./images/wrongM2.png> <./graphs/ConvLow.png>]
-<./graphs/ConvM2.png, id=508, 1189.8051pt x 729.4452pt>
+<./graphs/ConvM2.png, id=503, 1189.8051pt x 729.4452pt>
 File: ./graphs/ConvM2.png Graphic file (type png)
 
 <use ./graphs/ConvM2.png>
 Package pdftex.def Info: ./graphs/ConvM2.png used on input line 597.
 (pdftex.def)             Requested size: 441.01773pt x 270.38023pt.
 
-<./graphs/rdfM1M2.pdf, id=511, 945.04318pt x 397.19173pt>
+<./graphs/rdfM1M2.pdf, id=506, 945.04318pt x 397.19173pt>
 File: ./graphs/rdfM1M2.pdf Graphic file (type pdf)
 
 <use ./graphs/rdfM1M2.pdf>
@@ -1605,14 +1605,14 @@ Package pdftex.def Info: ./graphs/rdfM1M2.pdf used on input line 610.
                                                   \fi \fi 
 l.615 
        <./graphs/ConvM2.png>]
-<./images/M1M2box.png, id=521, 1791.69376pt x 572.1375pt>
+<./images/M1M2box.png, id=516, 1791.69376pt x 572.1375pt>
 File: ./images/M1M2box.png Graphic file (type png)
 
 <use ./images/M1M2box.png>
 Package pdftex.def Info: ./images/M1M2box.png used on input line 622.
 (pdftex.def)             Requested size: 441.01773pt x 140.8253pt.
 
-<./images/M2cut.png, id=523, 1077.7866pt x 621.522pt>
+<./images/M2cut.png, id=518, 1077.7866pt x 621.522pt>
 File: ./images/M2cut.png Graphic file (type png)
  <use ./images/M2cut.png>
 Package pdftex.def Info: ./images/M2cut.png used on input line 632.
@@ -1647,90 +1647,114 @@ l.664
                                                   \fi \fi 
 l.664 
        <./images/M2cut.png>]
+<./graphs/ConvI.png, id=595, 1196.3094pt x 729.4452pt>
+File: ./graphs/ConvI.png Graphic file (type png)
 
-LaTeX Warning: Reference `convI' on page 17 undefined on input line 665.
+<use ./graphs/ConvI.png>
+Package pdftex.def Info: ./graphs/ConvI.png used on input line 669.
+(pdftex.def)             Requested size: 441.01773pt x 268.91103pt.
+
+<./graphs/ConvHigh.png, id=597, 1189.5642pt x 729.4452pt>
+File: ./graphs/ConvHigh.png Graphic file (type png)
+
+<use ./graphs/ConvHigh.png>
+Package pdftex.def Info: ./graphs/ConvHigh.png used on input line 679.
+(pdftex.def)             Requested size: 441.01773pt x 270.43588pt.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 672--679
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 690--697
 
  []
 
-<./graphs/GyraL.png, id=599, 578.16pt x 433.62pt>
+
+Underfull \vbox (badness 1484) has occurred while \output is active []
+
+ [17pdfTeX warning (ext4): destination with the same identifier (name{figure.14
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.697 
+       <./graphs/ConvI.png>] <./graphs/GyraL.png, id=605, 578.16pt x 433.62pt>
 File: ./graphs/GyraL.png Graphic file (type png)
- <use ./graphs/GyraL.png>
-Package pdftex.def Info: ./graphs/GyraL.png used on input line 682.
+
+<use ./graphs/GyraL.png>
+Package pdftex.def Info: ./graphs/GyraL.png used on input line 700.
 (pdftex.def)             Requested size: 176.40439pt x 132.30353pt.
 
-<./graphs/rdfI.pdf, id=600, 496.96916pt x 397.19173pt>
+<./graphs/rdfI.pdf, id=606, 496.96916pt x 397.19173pt>
 File: ./graphs/rdfI.pdf Graphic file (type pdf)
  <use ./graphs/rdfI.pdf>
-Package pdftex.def Info: ./graphs/rdfI.pdf used on input line 690.
+Package pdftex.def Info: ./graphs/rdfI.pdf used on input line 708.
 (pdftex.def)             Requested size: 352.81552pt x 281.99597pt.
 
-<./graphs/GyraI.png, id=601, 578.16pt x 433.62pt>
+<./graphs/GyraI.png, id=607, 578.16pt x 433.62pt>
 File: ./graphs/GyraI.png Graphic file (type png)
  <use ./graphs/GyraI.png>
-Package pdftex.def Info: ./graphs/GyraI.png used on input line 697.
+Package pdftex.def Info: ./graphs/GyraI.png used on input line 715.
 (pdftex.def)             Requested size: 352.81552pt x 264.60706pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 712--726
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 730--733
-
- []
-
-[17pdfTeX warning (ext4): destination with the same identifier (name{figure.14}
+[18pdfTeX warning (ext4): destination with the same identifier (name{figure.15}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.733 
-       <./graphs/GyraL.png>] [18pdfTeX warning (ext4): destination with the sam
-e identifier (name{figure.15}) has been already used, duplicate ignored
+l.719 	\end{figure}
+                   pdfTeX warning (ext4): destination with the same identifier 
+(name{figure.16}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.733 
+l.719 	\end{figure}
+                    <./graphs/ConvHigh.png> <./graphs/GyraL.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 730--744
+
+ []
+
+[19pdfTeX warning (ext4): destination with the same identifier (name{figure.17}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.744 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
-16}) has been already used, duplicate ignored
+18}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.733 
-       <./graphs/rdfI.pdf> <./graphs/GyraI.png>] (./main.bbl
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 33.
+l.744 
+       <./graphs/rdfI.pdf> <./graphs/GyraI.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 748--751
 
-(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+ []
+
+(./main.bbl
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 33.
+ (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 Package microtype Info: Loading generic settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [19]) [20]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 846.
+ [20]) [21]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 864.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.846 \end{document}
+l.864 \end{document}
                      [1]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 846.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 864.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 846.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 846.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 864.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 864.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: A1D566A3B7EA0F5B73496E2E0B72374D;793.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 787CA7834D8A858E5060441D0A508124;855
-(rerunfilecheck)             After:  A1D566A3B7EA0F5B73496E2E0B72374D;793.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 3.25002pt have occurred.
@@ -1738,16 +1762,16 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 846.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 864.
  ) 
 Here is how much of TeX's memory you used:
- 18770 strings out of 493304
- 317937 string characters out of 6139872
- 447048 words of memory out of 5000000
- 21573 multiletter control sequences out of 15000+600000
+ 18780 strings out of 493304
+ 318152 string characters out of 6139871
+ 448314 words of memory out of 5000000
+ 21581 multiletter control sequences out of 15000+600000
  134248 words of font info for 175 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 45i,20n,43p,10461b,483s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 45i,20n,43p,10461b,476s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{cite.dconst} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1762,9 +1786,6 @@ pdfTeX warning (dest): name{cite.bbtat} has been referenced but does not exist,
 
 pdfTeX warning (dest): name{cite.vtstat} has been referenced but does not exist
 , replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.5.4} has been referenced but does not ex
-ist, replaced by a fixed one
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvip
 s/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/t
@@ -1781,10 +1802,10 @@ f/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy1
 0.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts
 /type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/symbols/msam10.pfb>
-Output written on main.pdf (25 pages, 7023126 bytes).
+Output written on main.pdf (26 pages, 8817973 bytes).
 PDF statistics:
- 800 PDF objects out of 1000 (max. 8388607)
- 573 compressed objects within 6 object streams
- 125 named destinations out of 1000 (max. 500000)
- 34006 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 808 PDF objects out of 1000 (max. 8388607)
+ 576 compressed objects within 6 object streams
+ 127 named destinations out of 1000 (max. 500000)
+ 34008 words of extra memory for PDF output out of 35830 (max. 10000000)
 

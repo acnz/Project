@@ -662,9 +662,27 @@ Decisively, M1 was the model chosen for further experiments since it seems to be
 
 A valuable advantage of using MagiC Coarse-grain method is that once a model is fully described  it becomes simple to replicate it using different references. The systematic procedure uses the same structural description to recreate a new model. Nevertheless, minor changes still necessary in the input files for the tools such as, the number of molecules in the system (solvent and solute), trajectory files from the new All-atom simulation and modifications in simulation box size. 
 
-However, the experiment proposed in this section revealed that major differences emerged during the Inversion process. The use of higher concentrations of surfactant in the reference simulation increased drastically the computational effort to obtain the set of potentials. Beginning with $M_{I}$, by observing Figure (\ref{convI}) and crossing with data provided in Table (\ref{tab:MCexp2}), the previous statement is readily confirmed. Moreover, the three phase behaviour is very evident throughout the process.
+However, the experiment proposed in this section revealed that major differences emerged during the Inversion process. The use of higher concentrations of surfactant in the reference simulation increased drastically the computational effort to obtain the set of potentials. Beginning with $M_{I}$, by observing Figure (\ref{Fig:convI}) and crossing with data provided in Table (\ref{tab:MCexp2}), the previous statement is readily confirmed. Moreover, the three phase behaviour is very evident throughout the process. Another important fact is that during later steps even though the number of Monte Carlo simulations was increased greatly, the deviation remained drifting around a certain region. This could indicate that this model probably reached its maximum level of detail, thus hardly precision would get any higher.
 
-Furthermore in the case of the high concentration model, the increased complexity demanded modifications to standard procedure as explaned in Methods section creation of new mdeveloped
+\begin{figure}[H]
+  \begin{center}
+	\includegraphics[width=1 \textwidth]{./graphs/ConvI}
+	\caption{Graphical representation of the inversion process for $M_I$. Graph 1 (top left) show potential progression at certain steps. Graph 2 (top right) show RDF progression at the same steps as the potential. Both graphs are representing N-N interactions and equal colors represent at the same step furthermore, the darker the line color the higher the step. Red lines indicate phase one, blue lines indicate phase two and green lines indicate phase three.  Graph 3 (bottom) shows the root mean square deviation between reference RDF and RDF of a given step (for all interactions). Notice that this graph is using logarithmic scale.}
+	\label{Fig:convI}
+  \end{center}
+\end{figure} 
+
+In the case of the high concentration model, the increased complexity demanded modifications to standard procedure because, even with numerous attempts, the Inversion process for $M_H$ model kept diverging indefinitely during phase two. By comparing potential plots of $M_L$ and $M_I$, it is possible to assume that potential for $M_H$ should be located within the same region. Hence, by setting the initial trial potentials for $M_H$ as being the final potentials of $M_L$ the Inversion process simply skipped phase one and jumped directly to a convergent phase two. As demonstrated in Figure (\ref{Fig:convHigh}), the whole process was considerably smooth and seldom the deviance strayed significantly.
+
+\begin{figure}[h]
+  \begin{center}
+	\includegraphics[width=1 \textwidth]{./graphs/ConvHigh}
+	\caption{Graphical representation of the inversion process for $M_I$. Graph 1 (top left) show potential progression at certain steps. Graph 2 (top right) show RDF progression at the same steps as the potential. Both graphs are representing N-N interactions and equal colors represent at the same step furthermore, the darker the line color the higher the step. Blue lines indicate phase two and green lines indicate phase three.  Graph 3 (bottom) shows the root mean square deviation between reference RDF and RDF of a given step (for all interactions). Notice that this graph is using logarithmic scale.}
+	\label{Fig:convHigh}
+  \end{center}
+\end{figure} 
+
+Therefore, this phenomena indicates that it might be possible to derive potentials for complex system just by adopting a gradual procedure. For further experiments with silica where intermolecular iterations will increase drastically, this technique should be a useful tool to deal with divergent Inversion processes. It is important to keep in mind that this method still need a deeper analysis in order to probe its validation, because it may not be applicable in other cases. However, this analysis is out of the scope of this project and will be evaluated in future studies.
 
 \subsubsection*{Potential Comparison}
 \subsubsection*{Interchangeability Test }
@@ -677,7 +695,7 @@ Furthermore in the case of the high concentration model, the increased complexit
   ------Low @ Low vs High @ Low -> compare\\
    ------High @ High vs Low @ High -> compare\\
 
-	   \begin{figure}
+	   \begin{figure}[H]
   \begin{center}
 		\includegraphics[width=0.4 \textwidth]{./graphs/GyraL}
 	\caption{Gyration Low}
@@ -685,14 +703,14 @@ Furthermore in the case of the high concentration model, the increased complexit
 	\end{center}
 	\end{figure}
 
-     \begin{figure}
+     \begin{figure}[H]
   \begin{center}
 	\includegraphics[width=0.8 \textwidth]{./graphs/rdfI}
 	\caption{rdfIdeal}
 	\label{gfx:rdfI}
 	\end{center}
 	\end{figure}
-	     \begin{figure}
+	     \begin{figure}[H]
   \begin{center}
 		\includegraphics[width=0.8 \textwidth]{./graphs/GyraI}
 	\caption{Gyration Ideal}
