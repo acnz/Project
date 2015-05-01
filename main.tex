@@ -175,10 +175,10 @@ Different concepts has been applied to develop a suitable model for implicit sol
 %  limts of the work\\
 The work presented on following experiments are an attempt to create a cross-link method to upscale silica crystal-liquid phase interactions \cite{silica1} from the atomistic model to a mesoscale model with the advent of this later coarse-grain technique. The methodology applied to reach the desired model is based on the MagiC software package \cite{magic} that in conjunction MD simulation software, in this case GROMACS \cite{gromacs}, will provide a suitable approximation to self-assembly of amphiphilic molecules in presence of silica. Further explanations of the process are described on Experimental Methods section. For the scope of this project, a bolaamphiphilic molecule 1,12-diaminododecane (DMDD) has been chosen as surfactant because that as seen in previous research by \citeA{msuv} it self-assembly in multilamelar vesicles that in presence of a silica precursor is capable of generating a mesoporous structure with remarkable properties. In order to validate this structure formation and further framework formation for silica oligomers, a coarse-grain approximation is suitable option since amphiphilic molecules interaction with solvents can be described efficiently with tabulated Lennard-Jones potentials interactions. As a final objective at the end of this project, a implicit water coarse-grain model for DMDD will be generated and properly validated based on MD simulations and thermodynamic properties,in order to provide a good approximation to interactions with silica oligomers in a mesoscale model. 
 %  continuity?(maybe silica interactions...)\\
-\section{Experimental Methods}
-\subsection{Theoretical Basis}
+\section{Theoretical Basis}
 This work is based on two molecular simulation techniques the former, called Molecular Dynamics, accounts for integration of Newton forces in order to describe positions and velocities of particles in the system. The latter, called Monte Carlo method, is a powerful statistical tool based on stochastic inputs to measure properties of many systems, in this case thermodynamic equilibrium of molecular systems. Following sections will describe the mechanistic behind each technique and further explain how they are used in simulation software.
-\subsubsection*{Molecular Dynamics simulation}
+\subsection{Simulation Methods}
+\subsubsection{Molecular Dynamics simulation}
 
 Molecular Dynamics is a simulation method that originates from dynamic nature of atomic interactions. Generally, a system of atoms can be treated as a multi-particle system ruled by Newton's Law \cite{umd}. Considering a system with $\mathcal{N}$ atoms for each $i$th particle of the system the follow differential equation:
 \begin{equation}
@@ -232,7 +232,7 @@ As a final variation for Verlet method one can derive the "Leap frog method", in
 
 The force term for each step is a key factor to define whether Molecular Dynamics are realistic or not. They are strictly related to the force-field adopted to describe molecular interactions, since they provide parameters to describe Lennard-Jones potentials in which forces can be calculated at any system configuration. Eventually, as seen in innovative methods such as the used on this project, the potential values can also be provided by tables generated specifically for each molecular interaction, explanations about this technique will be given on further sections. Molecular dynamics technique enable the use of thermostats and barostats to control dynamic behaviour of temperature and pressure of the system, recreating different types of thermodynamic ensemble. Hence, at equilibrated states, system properties can be obtained as a temporal average of instantaneous values and those averages can be compared to real experimental data in order to validate simulations.
 
-\subsubsection*{Monte Carlo simulation}
+\subsubsection{Monte Carlo simulation}
 Monte Carlo is  a simulation method based on statistical probability of existence of a system at thermodynamic equilibrium. This happens when free energy reaches a minimum by calculating the energy for each particle's microscopic state. Given a system of $ \mathcal{N}$ particles, temperature $T$ and volume $V$, thus it can be denoted as a canonical ensemble, it is possible to assume that  the free Helmholtz energy of the system is:
 \begin{equation}
 A = U - TS
@@ -265,8 +265,8 @@ Whether the system configuration is generated with considerable number of micros
 \end{equation}
 
 It is important to notice that Monte Carlo simulations do not consider dynamic properties of the system such as kinetic energy, and therefore only Molecular Dynamics can account such things\cite{satoh}. Finally, now that both molecular simulation methods had been properly introduced it is possible to proceed to an overview of both simulation software used on this project. Together they can unite the benefits of both simulation methods, in order to recreate a suitable coarse-grain model for Molecular Dynamics.
-
-\subsubsection*{About GROMACS}
+\subsection{Software Description}
+\subsubsection{About GROMACS}
 
  GROMACS (\textbf{Gro}ningen \textbf{Ma}chine for \textbf{C}hemical \textbf{S}imulations) \cite{gromanual} is a Molecular Dynamics and energy minimization software created at the University of Groningen (the Netherlands), and currently has been developed and updated by Royal Institute of Technology and Uppsala University (Sweden). GROMACS is a widely used tool in the branch of computational chemistry because it is flexible and efficient. Its flexibly comes from the capacity of simulating multiscale molecular models, from atomistic to mesoscale depending on topology described by the user. The efficiency originates from the computational optimisation, by this meaning not only that GROMACS can achieve impressive simulation speed in large system using supercomputing or clusters, but also it can run small simulations in any ordinary computers with great performance.
  
@@ -297,7 +297,7 @@ For every simulation time-step, GROMACS recalculates bonded potentials from Topo
 
 Although speed efficiency is a concern it is not only the unique preoccupation, it is also necessary to control environment variables such as     temperature and pressure, in order to maintain the simulation within physical limits and that demands computational resources. GROMACS is capable of using three types of thermostat which are Berendsen ,v-rescaling and Nosé-Hoover  and three types of barostat Berendsen, Parrinello-Rahman and MTTK \cite{gromanual}. Furthermore, other computational expensive technique is the use of Particle-mesh Ewald (PME) summation method to deal with long-range electrostatic interactions, which is indispensable in ionic environments. All these tools makes GROMACS not only fast but also reliable for Molecular Dynamics simulation, and for this reason the aim of this project is to demonstrate the capacity of this software to simulate realistic multi-scale molecular models.
   
-\subsubsection*{About MagiC}
+\subsubsection{About MagiC}
 
 MagiC is software package developed by \citeA{magic}, which is a systematic method to generate coarse-grain models from all-atomic simulations using Iterative Boltzmann Inversion (IBI) and Inverse Monte Carlo (IMC). As described in Fig.(\ref{Fig:magic}) method consists in a three step process, where the input is the trajectory file of an equilibrated all-atoms simulation from GROMACS, and outputs are a set of tabled potentials and a Topology for a coarse-grained model that uses these potentials to run Molecular Dynamics simulations using GROMACS. 
  \begin{figure}[ht]
@@ -352,8 +352,8 @@ For each inversion step $k$, Monte Carlos simulations are run using a set of pot
 
 Both of the previous methods described rely on a considerably large mount of Monte Carlo simulation steps. That is due to the fact that the closer the set of potentials gets to solution the harder it becomes to distinguish between statistical noise and a suitable potential correction. For his reason, MagiC has a built-in capacity of running parallel Monte Carlo simulation as it an be see on Fig.(\ref{Fig:kernel}), which which enable the user to reach the order of billions of simulation steps in a feasible timespan. Moreover, there is not an unique solution for a given RDF \cite{ibi} and eventually solution can possible diverge at a certain point. Therefore, a satisfactory result depend on analysis of all outputs from inverse steps in order to guarantee convergence. Further explanations regrading functionalities and parameters for MagiC and GROMACS will be provided the next section.   
  
-\subsection{Methods Description} 
-\subsubsection*{GROMACS All-Atom simulations}
+\section{Methods Description} 
+\subsection{GROMACS All-Atom simulations}
 The experimental process of this project is divided in 3 main parts: Firstly, develop a efficient coarse-grain model and validate its use. Secondly, analyse the relationship between concentration  of all-atoms simulation and concentration of coarse-grained simulation. Then finally, create and reproduce a Silica surfactant mesoscale system. 
 
 In order to maintain standard parameters for all GROMACS simulations, all-atoms simulations that were used for coarse-grained reference were run in NPT ensemble. All simulation boxes were created using genbox (GROMACS package utility), first by inserting the desired number of surfactant molecules and then adding the solvent at the adequate ratio. The molecules were designed based on OPLS-AA forcefield \cite{opls} parameters. %because?%
@@ -390,7 +390,7 @@ Regarding the concentration of surfactant in each box, four all-atom boxes were 
 The utility of each box will be described further in each experiment section. Even though they have different structural parameters, all of them followed the same ensemble with temperature kept at $298\ K$ by a Nosé-Hoover thermostat \cite{nosetstat} and pressure kept at $1\ bar$ by a Parrinello-Rahman barostat \cite{prbstat}. Moreover, simulation time was also standardized. Every simulation lasted $350\ ns$ with a time step of $1\ fs$ using leap-frog algorithm. But for the sake of experiments using MagiC, the first $50\ ns$ of the simulations were disregarded because during this time the system still in equilibration, and therefore that would affect reference RDF values.
 
 
-\subsubsection*{Experiment 1}
+\subsection{Experiment 1: Model Creation}
  Since the main objective of this project is to probe the effectiveness of coarse-grain models generated using MagiC, this first experiment is an attempt to understand and analyse to what extent bead size influence on the process of coarse-graining. Hence, two models were proposed: Model 1 (M1) described in Fig.(\ref{Fig:mol1}) and Model 2 (M2) described in Fig. (\ref{Fig:mol2}).
  
  \begin{figure}[ht]
@@ -470,7 +470,7 @@ The utility of each box will be described further in each experiment section. Ev
  
  Finally regarding up-scaling tests, all simulations were made with the same machine using up to 8 MPI threads, depending on the size of the system. All values were obtained from the prediction made by "mdrun" (GROMACS package utility) \cite{gromanual}, which provides an estimated average of simulation speed, however it is important to consider that it may vary throughout the whole simulation. The simulation parameters were the same as the reproduction tests, however now the simulations were run using a higher timestep of $20\ fs$ for M1 and $10\ fs$ for M2. 
 
-\subsubsection*{Experiment 2}
+\subsection{Experiment 2: Concentration Analysis}
  Subsequently, this second experiment has two main objectives, both related to concentration of DMDD in the system. The former objective is focused mainly on influence of concentration variations over the inverse steps, that means how the complexity of the self-assembly 
  structure affects convergence during IBI and IMC. The latter objective is to understand the relationship between the variation of DMDD concentration in the all-atom reference system and its effects in the self-assembly behaviour of the coarse-grain model chosen. Moreover, it will be an attempt to confirm the assumption that implicit water coarse-grain models can assume multiple concentrations, independently of the concentration chosen in the all-atoms reference.
  
@@ -478,7 +478,7 @@ The utility of each box will be described further in each experiment section. Ev
   
  The experiment begins with the development of two new coarse-grain models based on M1 from the previous experiment. However, at this moment the all-atoms box's concentrations were increased to $C_{B2} = 1.62\ mM$ and $C_{B3} = 3.30\ mM$, thus the Intermediate Concentration Model ($M_{I}$) and High Concentration Model ($M_{H}$) were created based on those concentrations respectively. Furthermore, for this experiment, M1 which has the lowest concentration will now be denominated as Low Concentration Model ($M_{L}$).
  
-  A complete description regarding the Inversion process for both latter models is given in Table (\ref{tab:MCexp2}), showing the peculiarities of each one. To be more specific, in order to evaluate the efficiency of inversion method for different concentrations, $M_{I}$ followed almost the same process as like $M_{L}$ with the exception of number inverse steps and Monte Carlo simulations. But, in the other hand, $M_{H}$ had two modifications: the former was the inclusion of a higher number of DMDD molecules in the simulation box and the latter was a new technique adopted to optimize the Inversion process. The first alteration was an inevitable consequence of the increasing  concentration, because otherwise the number of molecules in the all-atom box would not be enough to fulfil the minimum requirements of box size to the adopted cut-off radius $R_{cut} = 1.3 \ nm$. The second alteration in the process of model creation was on the initial phase of inversion, because instead of using IBI to approximate suitable initial trial potentials, we used as a basis the final potential obtained for $M_{L}$. Further explanations regarding this technique are shown in  the Discussion section (See Section \ref{subsec:discexp2}).
+  A complete description regarding the Inversion process for both latter models is given in Table (\ref{tab:MCexp2}), showing the peculiarities of each one. To be more specific, in order to evaluate the efficiency of inversion method for different concentrations, $M_{I}$ followed almost the same process as like $M_{L}$ with the exception of number inverse steps and Monte Carlo simulations. But, in the other hand, $M_{H}$ had two modifications: the former was the inclusion of a higher number of DMDD molecules in the simulation box and the latter was a new technique adopted to optimize the Inversion process. The first alteration was an inevitable consequence of the increasing  concentration, because otherwise the number of molecules in the all-atom box would not be enough to fulfil the minimum requirements of box size to the adopted cut-off radius $R_{cut} = 1.3 \ nm$. The second alteration in the process of model creation was on the initial phase of inversion, because instead of using IBI to approximate suitable initial trial potentials, we used as a basis the final potential obtained for $M_{L}$. Further explanations regarding this technique are shown in  the Results and Discussion section (See Section \ref{subsec:discexp2}).
  \begin{table}[ht!] 
 
   \caption{Inversion Process description for $M_{I}$ and $M_{H}$}
@@ -543,7 +543,7 @@ Time ($ns$)          &           &           &           &           &          
 %  ----gromacs Set-up Self-assembly Model X + Si\\
 %   ------1000, 10000 (Maybe more?)
  
-\section{Results}
+\section{Results and Discussion}
 \subsection{GROMACS simulations}
 Regarding the All-Atom simulations, it is interesting to highlight the different types of self-assembled  structures obtained in each concentration, all of them having its own observable peculiarities. In order to obtain a cohesive comparison basis between themselves and their coarse-grain models, each one of the simulation boxes received its characterization based on their periodicity and Radial Distribution Function.
 
@@ -566,8 +566,8 @@ As a final consideration, it is possible to observe that the peaks of the high c
 	\label{Fig:rdfAA}
   \end{center}
 \end{figure}
-\subsection{Experiment 1}
-\subsubsection*{Convergence Analysis}
+\subsection{Experiment 1: Model Creation}
+\subsubsection{Convergence Analysis}
 The Coarse-grain method adopted in this project rely deeply on visual and numerical analysis of the convergence during Inversion process. For all experiments each inversion step was validated by comparing it with previous steps and with the behaviour observed in atomistic simulations. There is not any guarantee that the set of potentials generated after each step will necessarily reproduce a physically meaningful system.  That is because these potentials are made to reproduce the RDF obtained after inversion, and since the configuration of the system is a probabilistic event there is more than one way to represent a given RDF. Therefore, the smaller the deviation from reference RDFs, the greater the odds that the potential set will reproduce a behaviour with acceptable reliability. A good example of this phenomena in shown in Fig.(\ref{Fig:wrong}) were the deviance between reference RDF and Reproduction test RDF is numerically low, however it is very clear visually that the system is not reflecting the expected result. After extensive trials  with all models, it was verified that an acceptable value for deviances was any sum below $0.025$. In order to proceed beneath this amount, it would require an excessive number of Monte Carlo simulations which might be unnecessary, since at this levels all models reproduced plausible results. Hence, before focusing on the analysis of the final coarse-grain model it is important to make an overview upon the whole Inversion process for both models.
 
 \begin{figure}[ht!]
@@ -603,7 +603,7 @@ Subsequently, Fig. (\ref{Fig:convM2}) presents a similar overview for M2. It is 
 	Once again, three phases of convergence were present during the process, and at this time they are clearer to visualize graphically. The shape of the deviation curve reveals the first phase, where potential are far from convergence region, but the error is decreasing. Between 
 steps 7 and 30 approximately, the deviance diverged considerably while potentials assumed a position within a characteristic region, indicating a phase two behaviour. Lastly, both graphics began to slowly converge to the final aspect until desired deviance value was reached.
 
-\subsubsection*{Reproduction Tests}
+\subsubsection{Reproduction Tests}
  The efficiency of both models can be evaluated by making a side by side comparison between reproduction test results. Figures (\ref{Fig:M1M2rdf}) and (\ref{Fig:M1M2box}) promptly provide not only a quantitative, but also a qualitative validation both models' capacity of representing the atomistic system. It is important to notice that the RDFs should reproduce exactly the same RDF as the reference however, at some points they mismatch. This fact is directly related to two factors: level of convergence and cut-off radius adopted.
      \begin{figure}[ht!]
   \begin{center}
@@ -635,7 +635,7 @@ Regarding the influence of the cut-off radius, the simulation analysis using dif
   \end{center}
 \end{figure}
 
-\subsubsection*{System up-scaling}
+\subsubsection{System up-scaling}
 
 A major concern for coarse-grain models is that even though they are made be a good approximation of atomic models, they should be designed in such a manner that the system can be up-scaled. Simulation speed and system size need to be optimized as much as possible without excessive information loss deal to lack of level of detail. In order to improve simulation performance, the time-step for each model was readjusted since it is related to the bond size. The movement of one bead in relation to its bonded pair must not exceed maximum bond distance. Therefore, a lower level of detail result in an increased bond size enabling the use of bigger time-steps. Both models proposed for this experiment were able to breed reasonable results from reproduction test, then the last criteria to evaluate which is the most suitable model are the up-scaling capacities. Table (\ref{tab:upscale}) shows a comparison of multiple system sizes and respective simulation speed. 
 
@@ -655,10 +655,10 @@ Simul. speed for M2 &  $ ~1458\ ns/day$  &   $ ~208\ ns/day$   &   $ ~62\ ns/day
 
 Decisively, M1 was the model chosen for further experiments since it seems to be in all cases much more efficient when up-scaling than M2. Although M2 is able to reproduce finer results, the error committed by using M1 can be neglected for the benefit of simulation speed. Moreover, the Inversion process presented a smoother behaviour requiring lesser amounts of Monte Carlo simulations.
 
-\subsection{Experiment 2}
+\subsection{Experiment 2: Concentration Analysis}
 \label{subsec:resexp2}
 
-\subsubsection*{Systematic Replication}
+\subsubsection{Systematic Replication}
 
 A valuable advantage of using MagiC Coarse-grain method is that once a model is fully described  it becomes simple to replicate it using different references. The systematic procedure uses the same structural description to recreate a new model. Nevertheless, minor changes still necessary in the input files for the tools such as, the number of molecules in the system (solvent and solute), trajectory files from the new All-atom simulation and modifications in simulation box size. 
 
@@ -672,6 +672,7 @@ However, the experiment proposed in this section revealed that major differences
   \end{center}
 \end{figure} 
 
+\label{subsec:discexp2}
 In the case of the high concentration model, the increased complexity demanded modifications to standard procedure because, even with numerous attempts, the Inversion process for $M_H$ model kept diverging indefinitely during phase two. By comparing potential plots of $M_L$ and $M_I$, it is possible to assume that potential for $M_H$ should be located within the same region. Hence, by setting the initial trial potentials for $M_H$ as being the final potentials of $M_L$ the Inversion process simply skipped phase one and jumped directly to a convergent phase two. As demonstrated in Figure (\ref{Fig:convHigh}), the whole process was considerably smooth and seldom the deviance strayed significantly.
 
 \begin{figure}[h]
@@ -684,7 +685,9 @@ In the case of the high concentration model, the increased complexity demanded m
 
 Therefore, this phenomena indicates that it might be possible to derive potentials for complex system just by adopting a gradual procedure. For further experiments with silica where intermolecular iterations will increase drastically, this technique should be a useful tool to deal with divergent Inversion processes. It is important to keep in mind that this method still need a deeper analysis in order to probe its validation, because it may not be applicable in other cases. However, this analysis is out of the scope of this project and will be evaluated in future studies.
 
-\subsubsection*{Potential Comparison}
+\subsubsection{Potential Comparison}
+
+
 
 \begin{figure}[H]
   \begin{center}
@@ -703,7 +706,7 @@ Therefore, this phenomena indicates that it might be possible to derive potentia
 \end{figure} 
   
 	
-\subsubsection*{Interchangeability Test }
+\subsubsection{Interchangeability Test }
 
 Low Test
 
@@ -734,29 +737,6 @@ High test
 	\label{Fig:InterHigh}
   \end{center}
 \end{figure} 
-
-\section{Discussion}
-\label{subsec:discexp2}
-%The purpose of the discussion is to interpret and compare the results. Be objec
-%tive; point out the features and limitations of the work. Relate your results to cur
-%rent knowledge in the field and to the original purpose in undertaking the project:
-%Was the problem resolved? What has been contributed? Briefly state the logical
-%implications of the results. Suggest further study or applications if warranted.
-
-Experiment 1\\
- --Which is the best Model?\\
- --Why Model X is better than Model Y?\\
- --To what extent Model X represent well the AA model?\\
- --What are the limitations and advantages of Model X?\\
-Experiment 2\\
- --What is the relation between the entropy "error" and concentration? \\
- --Is the concentration really an problem?\\
- --Do you need to run an AA for each con or the Ideal can represent any?\\
- --Even extreme cases can be approximated? In this case how much is the "error"?\\
-Experiment 3\\
- --Is The silica CG model suitable? \\
- --Can you the proprieties validate it?\\
- --The self-assembly behaviour change with silica addition?\\
 
 \section{Conclusion}
 
