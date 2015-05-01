@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.6.12)  30 APR 2015 18:21
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.3.2)  1 MAY 2015 02:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1664,11 +1664,12 @@ Package pdftex.def Info: ./graphs/ConvHigh.png used on input line 679.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+<./graphs/PotCompInter.png, id=598, 1078.0275pt x 341.5962pt>
+File: ./graphs/PotCompInter.png Graphic file (type png)
 
-Underfull \hbox (badness 10000) in paragraph at lines 690--697
-
- []
-
+<use ./graphs/PotCompInter.png>
+Package pdftex.def Info: ./graphs/PotCompInter.png used on input line 691.
+(pdftex.def)             Requested size: 441.01773pt x 139.7478pt.
 
 Underfull \vbox (badness 1484) has occurred while \output is active []
 
@@ -1677,57 +1678,79 @@ Underfull \vbox (badness 1484) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.697 
-       <./graphs/ConvI.png>] <./graphs/GyraL.png, id=605, 578.16pt x 433.62pt>
-File: ./graphs/GyraL.png Graphic file (type png)
+l.696 
+       <./graphs/ConvI.png>]
+<./graphs/PotCompIntra.png, id=606, 1080.6774pt x 341.5962pt>
+File: ./graphs/PotCompIntra.png Graphic file (type png)
 
-<use ./graphs/GyraL.png>
-Package pdftex.def Info: ./graphs/GyraL.png used on input line 700.
-(pdftex.def)             Requested size: 176.40439pt x 132.30353pt.
+<use ./graphs/PotCompIntra.png>
+Package pdftex.def Info: ./graphs/PotCompIntra.png used on input line 699.
+(pdftex.def)             Requested size: 441.01773pt x 139.4038pt.
 
-<./graphs/rdfI.pdf, id=606, 496.96916pt x 397.19173pt>
-File: ./graphs/rdfI.pdf Graphic file (type pdf)
- <use ./graphs/rdfI.pdf>
-Package pdftex.def Info: ./graphs/rdfI.pdf used on input line 708.
-(pdftex.def)             Requested size: 352.81552pt x 281.99597pt.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<./graphs/GyraI.png, id=607, 578.16pt x 433.62pt>
-File: ./graphs/GyraI.png Graphic file (type png)
- <use ./graphs/GyraI.png>
-Package pdftex.def Info: ./graphs/GyraI.png used on input line 715.
-(pdftex.def)             Requested size: 352.81552pt x 264.60706pt.
-
-[18pdfTeX warning (ext4): destination with the same identifier (name{figure.15}
-) has been already used, duplicate ignored
+ [18pdfTeX warning (ext4): destination with the same identifier (name{figure.15
+}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.719 	\end{figure}
-                   pdfTeX warning (ext4): destination with the same identifier 
-(name{figure.16}) has been already used, duplicate ignored
+l.704 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+16}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.719 	\end{figure}
-                    <./graphs/ConvHigh.png> <./graphs/GyraL.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 730--744
+l.704 
+       <./graphs/ConvHigh.png> <./graphs/PotCompInter.png>]
+<./images/InterLow.png, id=615, 2368.85pt x 692.5875pt>
+File: ./images/InterLow.png Graphic file (type png)
 
- []
+<use ./images/InterLow.png>
+Package pdftex.def Info: ./images/InterLow.png used on input line 712.
+(pdftex.def)             Requested size: 441.01773pt x 128.94041pt.
 
-[19pdfTeX warning (ext4): destination with the same identifier (name{figure.17}
-) has been already used, duplicate ignored
+<./images/InterI.png, id=616, 2479.2625pt x 627.34375pt>
+File: ./images/InterI.png Graphic file (type png)
+
+<use ./images/InterI.png>
+Package pdftex.def Info: ./images/InterI.png used on input line 722.
+(pdftex.def)             Requested size: 441.01773pt x 111.58643pt.
+
+<./images/InterHigh.png, id=617, 2283.53125pt x 692.5875pt>
+File: ./images/InterHigh.png Graphic file (type png)
+
+<use ./images/InterHigh.png>
+Package pdftex.def Info: ./images/InterHigh.png used on input line 732.
+(pdftex.def)             Requested size: 441.01773pt x 133.75943pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19pdfTeX warning (ext4): destination with the same identifier (name{figure.17
+}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.744 
+l.737 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 18}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.744 
-       <./graphs/rdfI.pdf> <./graphs/GyraI.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 748--751
+l.737 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+19}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.737 
+       <./graphs/PotCompIntra.png> <./images/InterLow.png> <./images/InterI.png
+>]
+Underfull \hbox (badness 10000) in paragraph at lines 746--760
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 764--767
 
  []
 
@@ -1740,18 +1763,28 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [20]) [21]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 864.
+ [20pdfTeX warning (ext4): destination with the same identifier (name{figure.20
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.99 
+      <./images/InterHigh.png>]
+Underfull \vbox (badness 1005) has occurred while \output is active []
+
+ [21])
+[22]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 880.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.864 \end{document}
+l.880 \end{document}
                      [1]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 864.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 880.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 864.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 864.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 880.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 880.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: A1D566A3B7EA0F5B73496E2E0B72374D;793.
 
@@ -1762,16 +1795,16 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 864.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 880.
  ) 
 Here is how much of TeX's memory you used:
- 18780 strings out of 493304
- 318152 string characters out of 6139871
- 448314 words of memory out of 5000000
- 21581 multiletter control sequences out of 15000+600000
+ 18793 strings out of 493304
+ 318504 string characters out of 6139872
+ 448441 words of memory out of 5000000
+ 21591 multiletter control sequences out of 15000+600000
  134248 words of font info for 175 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 45i,20n,43p,10461b,476s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 45i,20n,43p,10461b,491s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{cite.dconst} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1802,10 +1835,10 @@ f/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy1
 0.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts
 /type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/symbols/msam10.pfb>
-Output written on main.pdf (26 pages, 8817973 bytes).
+Output written on main.pdf (27 pages, 13321154 bytes).
 PDF statistics:
- 808 PDF objects out of 1000 (max. 8388607)
- 576 compressed objects within 6 object streams
- 127 named destinations out of 1000 (max. 500000)
- 34008 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 763 PDF objects out of 1000 (max. 8388607)
+ 563 compressed objects within 6 object streams
+ 130 named destinations out of 1000 (max. 500000)
+ 34018 words of extra memory for PDF output out of 35830 (max. 10000000)
 
