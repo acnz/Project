@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.6.12)  1 MAY 2015 13:33
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.3.2)  2 MAY 2015 14:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1626,61 +1626,50 @@ File: ./images/M2cut.png Graphic file (type png)
 Package pdftex.def Info: ./images/M2cut.png used on input line 632.
 (pdftex.def)             Requested size: 441.01773pt x 254.31355pt.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16pdfTeX warning (ext4): destination with the same identifier (name{figure.11
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.637 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+12}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.637 
+       <./graphs/rdfM1M2.pdf> <./images/M1M2box.png>]
 
 Package tabulary Warning: No suitable columns! on input line 652.
 
-[16pdfTeX warning (ext4): destination with the same identifier (name{figure.11}
+[17pdfTeX warning (ext4): destination with the same identifier (name{figure.13}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.658 \subsection
-                 {Experiment 2: Concentration Analysis}pdfTeX warning (ext4): d
-estination with the same identifier (name{figure.12}) has been already used, du
-plicate ignored
+l.666 
+      pdfTeX warning (ext4): destination with the same identifier (name{table.6
+}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.658 \subsection
-                 {Experiment 2: Concentration Analysis} <./graphs/rdfM1M2.pdf> 
-<./images/M1M2box.png>] <./graphs/ConvI.png, id=649, 1196.3094pt x 729.4452pt>
+l.666 
+       <./images/M2cut.png>]
+<./graphs/ConvI.png, id=654, 1196.3094pt x 729.4452pt>
 File: ./graphs/ConvI.png Graphic file (type png)
 
 <use ./graphs/ConvI.png>
 Package pdftex.def Info: ./graphs/ConvI.png used on input line 669.
 (pdftex.def)             Requested size: 441.01773pt x 268.91103pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [17pdfTeX warning (ext4): destination with the same identifier (name{figure.13
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.674 
-      pdfTeX warning (ext4): destination with the same identifier (name{table.6
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.674 
-       <./images/M2cut.png>]
 <./graphs/ConvHigh.png, id=656, 1189.5642pt x 729.4452pt>
 File: ./graphs/ConvHigh.png Graphic file (type png)
 
 <use ./graphs/ConvHigh.png>
 Package pdftex.def Info: ./graphs/ConvHigh.png used on input line 680.
 (pdftex.def)             Requested size: 441.01773pt x 270.43588pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<./graphs/PotCompInter.png, id=657, 1078.0275pt x 341.5962pt>
-File: ./graphs/PotCompInter.png Graphic file (type png)
-
-<use ./graphs/PotCompInter.png>
-Package pdftex.def Info: ./graphs/PotCompInter.png used on input line 694.
-(pdftex.def)             Requested size: 441.01773pt x 139.7478pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1689,74 +1678,80 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.699 
+l.685 
        <./graphs/ConvI.png>]
-<./graphs/PotCompIntra.png, id=664, 1080.6774pt x 341.5962pt>
-File: ./graphs/PotCompIntra.png Graphic file (type png)
+<./graphs/PotCompInter.png, id=664, 1078.0275pt x 341.5962pt>
+File: ./graphs/PotCompInter.png Graphic file (type png)
 
-<use ./graphs/PotCompIntra.png>
-Package pdftex.def Info: ./graphs/PotCompIntra.png used on input line 702.
-(pdftex.def)             Requested size: 441.01773pt x 139.4038pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+<use ./graphs/PotCompInter.png>
+Package pdftex.def Info: ./graphs/PotCompInter.png used on input line 697.
+(pdftex.def)             Requested size: 441.01773pt x 139.7478pt.
  [19pdfTeX warning (ext4): destination with the same identifier (name{figure.15
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.707 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-16}) has been already used, duplicate ignored
+l.702 
+       <./graphs/ConvHigh.png>]
+<./graphs/PotCompIntra.png, id=671, 1080.6774pt x 341.5962pt>
+File: ./graphs/PotCompIntra.png Graphic file (type png)
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.707 
-       <./graphs/ConvHigh.png> <./graphs/PotCompInter.png>]
-<./images/InterLow.png, id=672, 2368.85pt x 692.5875pt>
+<use ./graphs/PotCompIntra.png>
+Package pdftex.def Info: ./graphs/PotCompIntra.png used on input line 705.
+(pdftex.def)             Requested size: 441.01773pt x 139.4038pt.
+
+<./images/InterLow.png, id=673, 2368.85pt x 692.5875pt>
 File: ./images/InterLow.png Graphic file (type png)
 
 <use ./images/InterLow.png>
-Package pdftex.def Info: ./images/InterLow.png used on input line 715.
+Package pdftex.def Info: ./images/InterLow.png used on input line 720.
 (pdftex.def)             Requested size: 441.01773pt x 128.94041pt.
-
-<./images/InterI.png, id=673, 2479.2625pt x 627.34375pt>
-File: ./images/InterI.png Graphic file (type png)
-
-<use ./images/InterI.png>
-Package pdftex.def Info: ./images/InterI.png used on input line 725.
-(pdftex.def)             Requested size: 441.01773pt x 111.58643pt.
-
-<./images/InterHigh.png, id=674, 2283.53125pt x 692.5875pt>
-File: ./images/InterHigh.png Graphic file (type png)
-
-<use ./images/InterHigh.png>
-Package pdftex.def Info: ./images/InterHigh.png used on input line 735.
-(pdftex.def)             Requested size: 441.01773pt x 133.75943pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20pdfTeX warning (ext4): destination with the same identifier (name{figure.17
+ [20pdfTeX warning (ext4): destination with the same identifier (name{figure.16
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.740 
+l.725 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
-18}) has been already used, duplicate ignored
+17}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.740 
+l.725 
+       <./graphs/PotCompInter.png> <./graphs/PotCompIntra.png>]
+<./images/InterI.png, id=683, 2479.2625pt x 627.34375pt>
+File: ./images/InterI.png Graphic file (type png)
+
+<use ./images/InterI.png>
+Package pdftex.def Info: ./images/InterI.png used on input line 730.
+(pdftex.def)             Requested size: 441.01773pt x 111.58643pt.
+
+<./images/InterHigh.png, id=685, 2283.53125pt x 692.5875pt>
+File: ./images/InterHigh.png Graphic file (type png)
+
+<use ./images/InterHigh.png>
+Package pdftex.def Info: ./images/InterHigh.png used on input line 740.
+(pdftex.def)             Requested size: 441.01773pt x 133.75943pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21pdfTeX warning (ext4): destination with the same identifier (name{figure.18
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.745 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 19}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.740 
-       <./graphs/PotCompIntra.png> <./images/InterLow.png> <./images/InterI.png
->]
-Underfull \hbox (badness 10000) in paragraph at lines 744--747
+l.745 
+       <./images/InterLow.png> <./images/InterI.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 751--754
 
  []
 
@@ -1769,24 +1764,24 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [21pdfTeX warning (ext4): destination with the same identifier (name{figure.20
+ [22pdfTeX warning (ext4): destination with the same identifier (name{figure.20
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.270 
-       <./images/InterHigh.png>]) [22]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 860.
+l.231 
+       <./images/InterHigh.png>]) [23]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 867.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.860 \end{document}
+l.867 \end{document}
                      [1]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 860.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 867.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 860.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 860.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 867.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 867.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: C9EF6FFEF7380DE077E0550500BA2CEF;1894.
 
@@ -1797,16 +1792,16 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 860.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 867.
  ) 
 Here is how much of TeX's memory you used:
- 18806 strings out of 493304
- 318859 string characters out of 6139871
- 453578 words of memory out of 5000000
+ 18807 strings out of 493304
+ 318866 string characters out of 6139872
+ 453926 words of memory out of 5000000
  21604 multiletter control sequences out of 15000+600000
  134248 words of font info for 175 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 45i,20n,43p,10461b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 45i,20n,43p,10461b,477s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{cite.dconst} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1837,10 +1832,10 @@ f/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy1
 0.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts
 /type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/symbols/msam10.pfb>
-Output written on main.pdf (27 pages, 13322275 bytes).
+Output written on main.pdf (28 pages, 13326839 bytes).
 PDF statistics:
- 815 PDF objects out of 1000 (max. 8388607)
- 615 compressed objects within 7 object streams
- 130 named destinations out of 1000 (max. 500000)
+ 823 PDF objects out of 1000 (max. 8388607)
+ 622 compressed objects within 7 object streams
+ 131 named destinations out of 1000 (max. 500000)
  34122 words of extra memory for PDF output out of 35830 (max. 10000000)
 

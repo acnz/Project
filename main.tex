@@ -511,7 +511,7 @@ The utility of each box will be described further in each experiment section. Ev
 
 \end{table}
   
-  After, with the three models, a comparison test was made in order to observe wheter the systems behave similarly with the same box size, that means concentration. Nevertheless, since the surfactant self-assembly simulations were using coarse-grained models, the system had been up-scaled. Each simulation box contained $1000$ molecules of Coarse-grained DMDD and the size of the box's edge was determined by rescaling average box size from Table (\ref{tab:boxes}) using the following equation:  
+  After, with the three models, a comparison test was made in order to observe whether the systems behave similarly with the same box size, that means concentration. Nevertheless, since the surfactant self-assembly simulations were using coarse-grained models, the system had been up-scaled. Each simulation box contained $1000$ molecules of Coarse-grained DMDD and the size of the box's edge was determined by rescaling average box size from Table (\ref{tab:boxes}) using the following equation:  
 \begin{equation}
 L_{CG}=\sqrt[3]{\frac{N_{CG} {L_{AA}}^3}{N_{AA}}}
 \label{eqn:bsize}
@@ -627,7 +627,7 @@ Firstly since M2 is a more detailed  model, as expected the RDF aspect is more s
 
 Regarding the influence of the cut-off radius, the simulation analysis using different Cut-offs in M2 demonstrated that long range interactions are important for coarse-grain models. Figure (\ref{Fig:M2cut}) provides a brief example about to what extent  $R_{cut}$ can influence the system's behaviour. Hence, differently from All-Atoms simulations long-range interatomic interactions carries a major responsibility regarding self-assembled structures, and the adoption of a short cut-off will cause loss of important information thus reproducing unrealistic results.
 
- \begin{figure}[ht!]
+ \begin{figure}[H]
   \begin{center}
 	\includegraphics[width=1 \textwidth]{./images/M2cut}
 	\caption{Graphical representation of the potential cut-off radius influence over simulation. Each box is using the respective cut-off. For the simulation any point after the dashed lines will be considered zero. }
@@ -675,7 +675,7 @@ However, the experiment proposed in this section revealed that major differences
 \label{subsec:discexp2}
 In the case of the high concentration model, the increased complexity demanded modifications to standard procedure because, even with numerous attempts, the Inversion process for $M_H$ model kept diverging indefinitely during phase two. By comparing potential plots of $M_L$ and $M_I$, it is possible to assume that potential for $M_H$ should be located within the same region. Hence, by setting the initial trial potentials for $M_H$ as being the final potentials of $M_L$ the Inversion process simply skipped phase one and jumped directly to a convergent phase two. As demonstrated in Figure (\ref{Fig:convHigh}), the whole process was considerably smooth and seldom the deviance strayed significantly.
 
-\begin{figure}[h]
+\begin{figure}[H]
   \begin{center}
 	\includegraphics[width=1 \textwidth]{./graphs/ConvHigh}
 	\caption{Graphical representation of the inversion process for $M_I$. Graph 1 (top left) show potential progression at certain steps. Graph 2 (top right) show RDF progression at the same steps as the potential. Both graphs are representing N-N interactions and equal colors represent at the same step furthermore, the darker the line color the higher the step. Blue lines indicate phase two and green lines indicate phase three.  Graph 3 (bottom) shows the root mean square deviation between reference RDF and RDF of a given step (for all interactions). Notice that this graph is using logarithmic scale.}
@@ -687,12 +687,15 @@ Therefore, this phenomena indicates that it might be possible to derive potentia
 
 \subsubsection{Potential Comparison}
 
+In atomic models the Lennard-Jones potentials  only accounts for short range intermolecular interactions because surfactant's atoms seldom interact with each other. Therefore, long-range interaction occurs via a solvent which carries the received forces through solvent media until it reaches other molecules. However for an implicit water coarse-grain model these forces must be included in each bead interaction. With use of different concentrations, the set of potentials obtained for each model revealed interesting features regarding this phenomena. As showed in Figure (\ref{Fig:PotCompInter}) the long-range potentials presented more regions of low energy rather than the initial first pit. Hence, these regions will be responsible for the self-assembly structures, which means for example, that $M_H$ will always tend to aggregate in more well structured and rigid structures. That is because the low energy regions are deeper and limited within a shorter region, but in the other hand the other models present wider regions which allows a more flexible structure. This is better illustrated by the C-C potential, however it occurs in all the others.
 
+
+For instance, the intramolecular interactions are quite similar with the exception of the angular potential. It seem that for $M_H$ angular positions smaller than $120^{\circ}$ the potential energy starts to increase drastically meaning that the molecules will rarely present these angles. This characteristic implies that molecules will occupy less space in the structure formed, therefore the structure  will be more compact when compared to the other models.
 
 \begin{figure}[H]
   \begin{center}
 	\includegraphics[width=1 \textwidth]{./graphs/PotCompInter}
-	\caption{Comparison between Intermolecular potentials}
+	\caption{Comparison between Intermolecular potentials for different concentrations. The color shown in the label indicates which model the curve refers. The title in the top indicates which bead types will have these potentials}
 	\label{Fig:PotCompInter}
   \end{center}
 \end{figure} 
@@ -700,7 +703,7 @@ Therefore, this phenomena indicates that it might be possible to derive potentia
 \begin{figure}[H]
   \begin{center}
 	\includegraphics[width=1 \textwidth]{./graphs/PotCompIntra}
-	\caption{Comparison between Intramolecular potentials}
+	\caption{Comparison between Intramolecular potentials for different concentrations. The color shown in the label indicates which model the curve refers. The title in the top indicates which bead types will have these potentials}
 	\label{Fig:PotCompIntra}
   \end{center}
 \end{figure} 
@@ -708,7 +711,9 @@ Therefore, this phenomena indicates that it might be possible to derive potentia
 	
 \subsubsection{Interchangeability Test }
 
-Low Test
+The final procedure proposed for this project is an attempt to make a cross-comparison to evaluate the capacities of each model at different concentrations. For this the following nine simulations were run until the system equilibrates in a certain configuration. In case the models were interchangeable, the expected result should be self-assembled structures with similar layout.
+
+ The first test used low concentration for the simulations, so Box A in Figure (\ref{Fig:InterLow}) is the reference. Due to the lack o molecules in the system the final structure was similar to  a vesicle which is an efficient way to reduce contact between solvent and the apolar part. It is noticeable that it is not a complete vesicle, instead the transversal cut of the aggregate reveals that several short crossed planes were the preferred structure. In the other cases, $M_I$ formed a tube like periodic structure and $M_H$ formed a complete "tetrahedral" vesicle with well defined planes.
 
 \begin{figure}[H]
   \begin{center}
@@ -718,7 +723,7 @@ Low Test
   \end{center}
 \end{figure} 
 
-Int Test
+Secondly, the intermediate concentration test possible is the one that revealed the real nature of each model. In figure \ref{Fig:InterI} it is observable that all three models presented a periodic interconnected cylindrical structure. In the case of $M_L$ and $M_I$, the stable configuration shown bridge like interconnections which seemed to not only maintain the structure but at the same time leave space to solvent flow through it. Notwithstanding, $M_H$ preferred a complete plane to interconnect the cylinders blocking solvent flow through the membrane. Furthermore, the cutting planes expose that inside the cylindrical structure $M_L$ kept forming randomly distributed short planes while the others attempted to complete the structure with another concentric cylinder like aggregate. 
 
 \begin{figure}[H]
   \begin{center}
@@ -728,7 +733,7 @@ Int Test
   \end{center}
 \end{figure} 
 
-High test
+Lastly, the high concentration test induced complete periodic planes in all cases. Even for $M_L$ which in all other cases preferentially formed short planes, at this concentration stabilized forming long planar lattice structures. Contrastingly, instead of a mesh the other two models favoured parallel planes. Another noticeable feature for $M_L$ and $M_H$ shown in Figure (\ref{Fig:InterHigh}) is the existence of a interplanar region with high density of surfactant arranged in alternative directions. However, for $M_H$ case there is only one direction for all planes and as expected, for $M_L$  they appear to be randomly distributed. Exceptionally, $M_I$ does not present this region forming three planes instead. 
 
 \begin{figure}[H]
   \begin{center}
@@ -737,6 +742,8 @@ High test
 	\label{Fig:InterHigh}
   \end{center}
 \end{figure} 
+
+Generally, $M_L$ and $M_I$
 
 \section{Conclusion}
 
