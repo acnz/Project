@@ -50,7 +50,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \rhead{André Crescenzo}
-\lhead{Computer-aided Design of Bio-inspired Nanoporous Silica Materials}
+\lhead{\small{Introduction to Computer-aided Design of Bio-inspired Nanoporous Silica Materials}}
 \lfoot{\today}
 \rfoot{\thepage}
 
@@ -96,7 +96,7 @@
 
 
 \HRule \\[0.4cm]
-{ \huge \bfseries Computer-aided Design of Bio-inspired Nanoporous Silica Materials}\\[0.4cm] % Title of your document
+{ \huge \bfseries Introduction to Computer-aided Design of Bio-inspired Nanoporous Silica Materials}\\[0.4cm] % Title of your document
 \HRule \\[1.5cm]
  
 
@@ -711,9 +711,9 @@ For instance, the intramolecular interactions are quite similar with the excepti
 	
 \subsubsection{Interchangeability Test }
 
-The final procedure proposed for this project is an attempt to make a cross-comparison to evaluate the capacities of each model at different concentrations. For this the following nine simulations were run until the system equilibrates in a certain configuration. In case the models were interchangeable, the expected result should be self-assembled structures with similar layout.
+The final procedure proposed for this project is an attempt to make a cross-comparison to evaluate the capacities of each model at different concentrations. For this, the following nine simulations were run until the system equilibrates in a certain configuration. In case the models were interchangeable, the expected result should be self-assembled structures with similar layout. It is important to keep in mind  that the number of molecules is the same in all simulations, therefore only the box size was modified to reproduce varying densities.
 
- The first test used low concentration for the simulations, so Box A in Figure (\ref{Fig:InterLow}) is the reference. Due to the lack o molecules in the system the final structure was similar to  a vesicle which is an efficient way to reduce contact between solvent and the apolar part. It is noticeable that it is not a complete vesicle, instead the transversal cut of the aggregate reveals that several short crossed planes were the preferred structure. In the other cases, $M_I$ formed a tube like periodic structure and $M_H$ formed a complete "tetrahedral" vesicle with well defined planes.
+ The first test used low concentration for the simulations, so Box A in Figure (\ref{Fig:InterLow}) is the reference. Due to the excess of space in the system the final structure was similar to  a vesicle, which is an efficient way to reduce contact between solvent and the apolar part. It is noticeable that it is not a complete vesicle, instead the transversal cut of the aggregate reveals that several short crossed planes were the preferred structure. In the other cases, $M_I$ formed a tube like periodic structure and $M_H$ formed a complete "tetrahedral" vesicle with well defined planes.
 
 \begin{figure}[H]
   \begin{center}
@@ -733,7 +733,7 @@ Secondly, the intermediate concentration test possible is the one that revealed 
   \end{center}
 \end{figure} 
 
-Lastly, the high concentration test induced complete periodic planes in all cases. Even for $M_L$ which in all other cases preferentially formed short planes, at this concentration stabilized forming long planar lattice structures. Contrastingly, instead of a mesh the other two models favoured parallel planes. Another noticeable feature for $M_L$ and $M_H$ shown in Figure (\ref{Fig:InterHigh}) is the existence of a interplanar region with high density of surfactant arranged in alternative directions. However, for $M_H$ case there is only one direction for all planes and as expected, for $M_L$  they appear to be randomly distributed. Exceptionally, $M_I$ does not present this region forming three planes instead. 
+Lastly, the high concentration test induced complete periodic planes in all cases. Even for $M_L$ which in all other cases preferentially formed short planes, at this concentration stabilized forming long planar lattice structures. Contrastingly, instead of a mesh the other two models favoured parallel planes. Another noticeable feature for $M_L$ and $M_H$ shown in Figure (\ref{Fig:InterHigh}) is the existence of a interplanar region with high density of short planes arranged in alternative directions. However, for $M_H$ case there is only one direction for all planes and as expected, for $M_L$  they appear to be randomly distributed. Exceptionally, $M_I$ does not presented this region forming three planes instead. 
 
 \begin{figure}[H]
   \begin{center}
@@ -743,16 +743,16 @@ Lastly, the high concentration test induced complete periodic planes in all case
   \end{center}
 \end{figure} 
 
-Generally, $M_L$ and $M_I$
+In general, $M_L$ and $M_I$ presented exposure of the apolar part of entire layers to the solvent media. The reason is because the reference simulation presented this characteristic for both models thus this artefact was carried to the coarse-grain model. Differently from the others, $M_H$ presented exposure of apolar parts only in the last case, which was expected since the all-atoms reference itself presented spare molecules over the layer at high concentration. Hence, once again an ideal concentration for the reference simulation seems to be an important factor since apparently undesired characteristics will be carried to the Coarse-grain model.
 
 \section{Conclusion}
+In this  project, an Coarse-grain model was created following the systematic method provided by MagiC package. The efficiency and limitations of this model were properly evaluated using comparisons between several models. Moreover, several techniques regarding the usage of MagiC were developed.
 
- %Make a fair conclusion... Repeating the results is not drawing a conclusion...
- What did you really see from the results?\\
- There was any bad assumption that is contestable?\\
- What will be the next step to your research? \\
+Regarding the models, either the complex and the simpler model presented a satisfactory efficiency to represent self-assembly of amphiphilic molecules, being capable of reach outstanding system sizes and long time horizons. The interchangeability test revealed that the implicit water condition can be rather explored within a certain limit since the models demonstrated common characteristics for different concentrations. However, it still necessary to determine an ideal All-Atom reference in order to avoid unrealistic behaviours. Another important characteristic derives from the angular potential plot in which indicates that an even simpler model can be proposed. The reason is because the DMDD molecules seldom presented significant angular bending in other locations rather than the central region, hence this fact suggest that a three bead model could provide enough approximation to this surfactant.
  
- Due to the enormous discrepancy between number of Monte Carlo steps per Inversion step required for M2 and M1, it is possible to conclude that there is direct relationship between model complexity and effort necessary to obtain a potential set.
+ Due to the enormous discrepancy between number of Monte Carlo steps per Inversion step required for M2, M1 and $M_L$, it is possible to conclude that there is a direct relationship between model and reference complexity to the effort necessary to obtain a potential set. As long as implicit water model need to carry information concerning long-range interactions, reducing the size of the reference simulation to reduce the complexity  during Inversion process is not a suitable solution. Instead diminish model complexity or make the proposed gradual modelling seems to be better options. Nevertheless, both possibilities need to be better evaluated by this means enabling the creation of more complex scenarios, such as with silica addition or ionic environments.
+ 
+ In summary, this project provided reasonable introduction to molecular multi-scale modelling and simulation, analysing vastly the characteristics of the DMDD without silica addition, opening terrain to further studies concerning nanoporous silica materials.
  
 \section{Nomenclature} 
    \begin{tabulary}{1.0\textwidth}{LCL}
